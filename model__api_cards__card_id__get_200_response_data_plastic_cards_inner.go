@@ -25,7 +25,7 @@ type ApiCardsCardIdGet200ResponseDataPlasticCardsInner struct {
 	StatusDate *string `json:"statusDate,omitempty"`
 	PlasticType *string `json:"plasticType,omitempty"`
 	Description *string `json:"description,omitempty"`
-	Nickname map[string]interface{} `json:"nickname,omitempty"`
+	Nickname NullableString `json:"nickname,omitempty"`
 }
 
 // NewApiCardsCardIdGet200ResponseDataPlasticCardsInner instantiates a new ApiCardsCardIdGet200ResponseDataPlasticCardsInner object
@@ -238,36 +238,45 @@ func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) SetDescription(v str
 }
 
 // GetNickname returns the Nickname field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) GetNickname() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) GetNickname() string {
+	if o == nil || IsNil(o.Nickname.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Nickname
+	return *o.Nickname.Get()
 }
 
 // GetNicknameOk returns a tuple with the Nickname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) GetNicknameOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Nickname) {
-		return map[string]interface{}{}, false
+func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) GetNicknameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Nickname, true
+	return o.Nickname.Get(), o.Nickname.IsSet()
 }
 
 // HasNickname returns a boolean if a field has been set.
 func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) HasNickname() bool {
-	if o != nil && !IsNil(o.Nickname) {
+	if o != nil && o.Nickname.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNickname gets a reference to the given map[string]interface{} and assigns it to the Nickname field.
-func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) SetNickname(v map[string]interface{}) {
-	o.Nickname = v
+// SetNickname gets a reference to the given NullableString and assigns it to the Nickname field.
+func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) SetNickname(v string) {
+	o.Nickname.Set(&v)
+}
+// SetNicknameNil sets the value for Nickname to be an explicit nil
+func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) SetNicknameNil() {
+	o.Nickname.Set(nil)
+}
+
+// UnsetNickname ensures that no value is present for Nickname, not even an explicit nil
+func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) UnsetNickname() {
+	o.Nickname.Unset()
 }
 
 func (o ApiCardsCardIdGet200ResponseDataPlasticCardsInner) MarshalJSON() ([]byte, error) {
@@ -298,8 +307,8 @@ func (o ApiCardsCardIdGet200ResponseDataPlasticCardsInner) ToMap() (map[string]i
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if o.Nickname != nil {
-		toSerialize["nickname"] = o.Nickname
+	if o.Nickname.IsSet() {
+		toSerialize["nickname"] = o.Nickname.Get()
 	}
 	return toSerialize, nil
 }

@@ -19,7 +19,7 @@ var _ MappedNullable = &ApiTransactionsDepositAccountsDepositAccountIdGet200Resp
 
 // ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount struct for ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount
 type ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount struct {
-	CurrencyCode map[string]interface{} `json:"currencyCode,omitempty"`
+	CurrencyCode NullableString `json:"currencyCode,omitempty"`
 	Amount *float32 `json:"amount,omitempty"`
 }
 
@@ -41,36 +41,45 @@ func NewApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOri
 }
 
 // GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) GetCurrencyCode() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) GetCurrencyCode() string {
+	if o == nil || IsNil(o.CurrencyCode.Get()) {
+		var ret string
 		return ret
 	}
-	return o.CurrencyCode
+	return *o.CurrencyCode.Get()
 }
 
 // GetCurrencyCodeOk returns a tuple with the CurrencyCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) GetCurrencyCodeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.CurrencyCode) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) GetCurrencyCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.CurrencyCode, true
+	return o.CurrencyCode.Get(), o.CurrencyCode.IsSet()
 }
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) HasCurrencyCode() bool {
-	if o != nil && !IsNil(o.CurrencyCode) {
+	if o != nil && o.CurrencyCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrencyCode gets a reference to the given map[string]interface{} and assigns it to the CurrencyCode field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) SetCurrencyCode(v map[string]interface{}) {
-	o.CurrencyCode = v
+// SetCurrencyCode gets a reference to the given NullableString and assigns it to the CurrencyCode field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) SetCurrencyCode(v string) {
+	o.CurrencyCode.Set(&v)
+}
+// SetCurrencyCodeNil sets the value for CurrencyCode to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) SetCurrencyCodeNil() {
+	o.CurrencyCode.Set(nil)
+}
+
+// UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) UnsetCurrencyCode() {
+	o.CurrencyCode.Unset()
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
@@ -115,8 +124,8 @@ func (o ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOri
 
 func (o ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CurrencyCode != nil {
-		toSerialize["currencyCode"] = o.CurrencyCode
+	if o.CurrencyCode.IsSet() {
+		toSerialize["currencyCode"] = o.CurrencyCode.Get()
 	}
 	if !IsNil(o.Amount) {
 		toSerialize["amount"] = o.Amount

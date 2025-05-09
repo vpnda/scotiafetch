@@ -21,36 +21,36 @@ var _ MappedNullable = &ApiTransactionsDepositAccountsDepositAccountIdGet200Resp
 type ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner struct {
 	Key *string `json:"key,omitempty"`
 	Id *string `json:"id,omitempty"`
-	PostedDate map[string]interface{} `json:"postedDate,omitempty"`
+	PostedDate NullableString `json:"postedDate,omitempty"`
 	Description *string `json:"description,omitempty"`
-	SubDescription map[string]interface{} `json:"subDescription,omitempty"`
+	SubDescription NullableString `json:"subDescription,omitempty"`
 	CleanDescription *string `json:"cleanDescription,omitempty"`
 	TypeCode *string `json:"typeCode,omitempty"`
 	MnemonicCode *string `json:"mnemonicCode,omitempty"`
-	TsysCode map[string]interface{} `json:"tsysCode,omitempty"`
+	TsysCode NullableString `json:"tsysCode,omitempty"`
 	IsTsys *bool `json:"isTsys,omitempty"`
-	IsDisputable map[string]interface{} `json:"isDisputable,omitempty"`
+	IsDisputable NullableBool `json:"isDisputable,omitempty"`
 	OriginalAmount *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount `json:"originalAmount,omitempty"`
 	RunningBalance *ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner `json:"runningBalance,omitempty"`
-	AssociatedCardNumber map[string]interface{} `json:"associatedCardNumber,omitempty"`
-	PurchaseCountryCode map[string]interface{} `json:"purchaseCountryCode,omitempty"`
+	AssociatedCardNumber NullableString `json:"associatedCardNumber,omitempty"`
+	PurchaseCountryCode NullableString `json:"purchaseCountryCode,omitempty"`
 	OutOfCountryIndicator *bool `json:"outOfCountryIndicator,omitempty"`
-	ReasonCode map[string]interface{} `json:"reasonCode,omitempty"`
-	Status map[string]interface{} `json:"status,omitempty"`
-	RecurringPaymentIndicator map[string]interface{} `json:"recurringPaymentIndicator,omitempty"`
+	ReasonCode NullableString `json:"reasonCode,omitempty"`
+	Status NullableString `json:"status,omitempty"`
+	RecurringPaymentIndicator NullableString `json:"recurringPaymentIndicator,omitempty"`
 	DirectionIndicator *string `json:"directionIndicator,omitempty"`
-	StatementIndicator map[string]interface{} `json:"statementIndicator,omitempty"`
-	FromAccount map[string]interface{} `json:"fromAccount,omitempty"`
-	ToAccount map[string]interface{} `json:"toAccount,omitempty"`
-	PurchaseType map[string]interface{} `json:"purchaseType,omitempty"`
-	RewardsCategory map[string]interface{} `json:"rewardsCategory,omitempty"`
-	RewardCard map[string]interface{} `json:"rewardCard,omitempty"`
+	StatementIndicator NullableString `json:"statementIndicator,omitempty"`
+	FromAccount NullableString `json:"fromAccount,omitempty"`
+	ToAccount NullableString `json:"toAccount,omitempty"`
+	PurchaseType NullableString `json:"purchaseType,omitempty"`
+	RewardsCategory NullableString `json:"rewardsCategory,omitempty"`
+	RewardCard NullableString `json:"rewardCard,omitempty"`
 	Category *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerCategory `json:"category,omitempty"`
-	UserInputTag map[string]interface{} `json:"userInputTag,omitempty"`
-	Cheque map[string]interface{} `json:"cheque,omitempty"`
+	UserInputTag NullableString `json:"userInputTag,omitempty"`
+	Cheque NullableString `json:"cheque,omitempty"`
 	Merchant *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant `json:"merchant,omitempty"`
 	Enriched *bool `json:"enriched,omitempty"`
-	AcquirerReferenceNumber map[string]interface{} `json:"acquirerReferenceNumber,omitempty"`
+	AcquirerReferenceNumber NullableString `json:"acquirerReferenceNumber,omitempty"`
 	TransactionId *string `json:"transactionId,omitempty"`
 	Subdescription *string `json:"subdescription,omitempty"`
 	TransactionDate *string `json:"transactionDate,omitempty"`
@@ -62,7 +62,7 @@ type ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner struc
 	TransactionType *string `json:"transactionType,omitempty"`
 	TransactionTypeCode *string `json:"transactionTypeCode,omitempty"`
 	DescriptionLine1 *string `json:"descriptionLine1,omitempty"`
-	DescriptionLine2 map[string]interface{} `json:"descriptionLine2,omitempty"`
+	DescriptionLine2 NullableString `json:"descriptionLine2,omitempty"`
 }
 
 // NewApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner instantiates a new ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner object
@@ -147,36 +147,45 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) 
 }
 
 // GetPostedDate returns the PostedDate field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetPostedDate() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetPostedDate() string {
+	if o == nil || IsNil(o.PostedDate.Get()) {
+		var ret string
 		return ret
 	}
-	return o.PostedDate
+	return *o.PostedDate.Get()
 }
 
 // GetPostedDateOk returns a tuple with the PostedDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetPostedDateOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.PostedDate) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetPostedDateOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.PostedDate, true
+	return o.PostedDate.Get(), o.PostedDate.IsSet()
 }
 
 // HasPostedDate returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasPostedDate() bool {
-	if o != nil && !IsNil(o.PostedDate) {
+	if o != nil && o.PostedDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPostedDate gets a reference to the given map[string]interface{} and assigns it to the PostedDate field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetPostedDate(v map[string]interface{}) {
-	o.PostedDate = v
+// SetPostedDate gets a reference to the given NullableString and assigns it to the PostedDate field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetPostedDate(v string) {
+	o.PostedDate.Set(&v)
+}
+// SetPostedDateNil sets the value for PostedDate to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetPostedDateNil() {
+	o.PostedDate.Set(nil)
+}
+
+// UnsetPostedDate ensures that no value is present for PostedDate, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetPostedDate() {
+	o.PostedDate.Unset()
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -212,36 +221,45 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) 
 }
 
 // GetSubDescription returns the SubDescription field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetSubDescription() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetSubDescription() string {
+	if o == nil || IsNil(o.SubDescription.Get()) {
+		var ret string
 		return ret
 	}
-	return o.SubDescription
+	return *o.SubDescription.Get()
 }
 
 // GetSubDescriptionOk returns a tuple with the SubDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetSubDescriptionOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.SubDescription) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetSubDescriptionOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.SubDescription, true
+	return o.SubDescription.Get(), o.SubDescription.IsSet()
 }
 
 // HasSubDescription returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasSubDescription() bool {
-	if o != nil && !IsNil(o.SubDescription) {
+	if o != nil && o.SubDescription.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubDescription gets a reference to the given map[string]interface{} and assigns it to the SubDescription field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetSubDescription(v map[string]interface{}) {
-	o.SubDescription = v
+// SetSubDescription gets a reference to the given NullableString and assigns it to the SubDescription field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetSubDescription(v string) {
+	o.SubDescription.Set(&v)
+}
+// SetSubDescriptionNil sets the value for SubDescription to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetSubDescriptionNil() {
+	o.SubDescription.Set(nil)
+}
+
+// UnsetSubDescription ensures that no value is present for SubDescription, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetSubDescription() {
+	o.SubDescription.Unset()
 }
 
 // GetCleanDescription returns the CleanDescription field value if set, zero value otherwise.
@@ -341,36 +359,45 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) 
 }
 
 // GetTsysCode returns the TsysCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetTsysCode() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetTsysCode() string {
+	if o == nil || IsNil(o.TsysCode.Get()) {
+		var ret string
 		return ret
 	}
-	return o.TsysCode
+	return *o.TsysCode.Get()
 }
 
 // GetTsysCodeOk returns a tuple with the TsysCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetTsysCodeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.TsysCode) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetTsysCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.TsysCode, true
+	return o.TsysCode.Get(), o.TsysCode.IsSet()
 }
 
 // HasTsysCode returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasTsysCode() bool {
-	if o != nil && !IsNil(o.TsysCode) {
+	if o != nil && o.TsysCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTsysCode gets a reference to the given map[string]interface{} and assigns it to the TsysCode field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetTsysCode(v map[string]interface{}) {
-	o.TsysCode = v
+// SetTsysCode gets a reference to the given NullableString and assigns it to the TsysCode field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetTsysCode(v string) {
+	o.TsysCode.Set(&v)
+}
+// SetTsysCodeNil sets the value for TsysCode to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetTsysCodeNil() {
+	o.TsysCode.Set(nil)
+}
+
+// UnsetTsysCode ensures that no value is present for TsysCode, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetTsysCode() {
+	o.TsysCode.Unset()
 }
 
 // GetIsTsys returns the IsTsys field value if set, zero value otherwise.
@@ -406,36 +433,45 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) 
 }
 
 // GetIsDisputable returns the IsDisputable field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetIsDisputable() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetIsDisputable() bool {
+	if o == nil || IsNil(o.IsDisputable.Get()) {
+		var ret bool
 		return ret
 	}
-	return o.IsDisputable
+	return *o.IsDisputable.Get()
 }
 
 // GetIsDisputableOk returns a tuple with the IsDisputable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetIsDisputableOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.IsDisputable) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetIsDisputableOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.IsDisputable, true
+	return o.IsDisputable.Get(), o.IsDisputable.IsSet()
 }
 
 // HasIsDisputable returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasIsDisputable() bool {
-	if o != nil && !IsNil(o.IsDisputable) {
+	if o != nil && o.IsDisputable.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIsDisputable gets a reference to the given map[string]interface{} and assigns it to the IsDisputable field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetIsDisputable(v map[string]interface{}) {
-	o.IsDisputable = v
+// SetIsDisputable gets a reference to the given NullableBool and assigns it to the IsDisputable field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetIsDisputable(v bool) {
+	o.IsDisputable.Set(&v)
+}
+// SetIsDisputableNil sets the value for IsDisputable to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetIsDisputableNil() {
+	o.IsDisputable.Set(nil)
+}
+
+// UnsetIsDisputable ensures that no value is present for IsDisputable, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetIsDisputable() {
+	o.IsDisputable.Unset()
 }
 
 // GetOriginalAmount returns the OriginalAmount field value if set, zero value otherwise.
@@ -503,69 +539,87 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) 
 }
 
 // GetAssociatedCardNumber returns the AssociatedCardNumber field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetAssociatedCardNumber() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetAssociatedCardNumber() string {
+	if o == nil || IsNil(o.AssociatedCardNumber.Get()) {
+		var ret string
 		return ret
 	}
-	return o.AssociatedCardNumber
+	return *o.AssociatedCardNumber.Get()
 }
 
 // GetAssociatedCardNumberOk returns a tuple with the AssociatedCardNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetAssociatedCardNumberOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.AssociatedCardNumber) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetAssociatedCardNumberOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.AssociatedCardNumber, true
+	return o.AssociatedCardNumber.Get(), o.AssociatedCardNumber.IsSet()
 }
 
 // HasAssociatedCardNumber returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasAssociatedCardNumber() bool {
-	if o != nil && !IsNil(o.AssociatedCardNumber) {
+	if o != nil && o.AssociatedCardNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAssociatedCardNumber gets a reference to the given map[string]interface{} and assigns it to the AssociatedCardNumber field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetAssociatedCardNumber(v map[string]interface{}) {
-	o.AssociatedCardNumber = v
+// SetAssociatedCardNumber gets a reference to the given NullableString and assigns it to the AssociatedCardNumber field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetAssociatedCardNumber(v string) {
+	o.AssociatedCardNumber.Set(&v)
+}
+// SetAssociatedCardNumberNil sets the value for AssociatedCardNumber to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetAssociatedCardNumberNil() {
+	o.AssociatedCardNumber.Set(nil)
+}
+
+// UnsetAssociatedCardNumber ensures that no value is present for AssociatedCardNumber, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetAssociatedCardNumber() {
+	o.AssociatedCardNumber.Unset()
 }
 
 // GetPurchaseCountryCode returns the PurchaseCountryCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetPurchaseCountryCode() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetPurchaseCountryCode() string {
+	if o == nil || IsNil(o.PurchaseCountryCode.Get()) {
+		var ret string
 		return ret
 	}
-	return o.PurchaseCountryCode
+	return *o.PurchaseCountryCode.Get()
 }
 
 // GetPurchaseCountryCodeOk returns a tuple with the PurchaseCountryCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetPurchaseCountryCodeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.PurchaseCountryCode) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetPurchaseCountryCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.PurchaseCountryCode, true
+	return o.PurchaseCountryCode.Get(), o.PurchaseCountryCode.IsSet()
 }
 
 // HasPurchaseCountryCode returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasPurchaseCountryCode() bool {
-	if o != nil && !IsNil(o.PurchaseCountryCode) {
+	if o != nil && o.PurchaseCountryCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPurchaseCountryCode gets a reference to the given map[string]interface{} and assigns it to the PurchaseCountryCode field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetPurchaseCountryCode(v map[string]interface{}) {
-	o.PurchaseCountryCode = v
+// SetPurchaseCountryCode gets a reference to the given NullableString and assigns it to the PurchaseCountryCode field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetPurchaseCountryCode(v string) {
+	o.PurchaseCountryCode.Set(&v)
+}
+// SetPurchaseCountryCodeNil sets the value for PurchaseCountryCode to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetPurchaseCountryCodeNil() {
+	o.PurchaseCountryCode.Set(nil)
+}
+
+// UnsetPurchaseCountryCode ensures that no value is present for PurchaseCountryCode, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetPurchaseCountryCode() {
+	o.PurchaseCountryCode.Unset()
 }
 
 // GetOutOfCountryIndicator returns the OutOfCountryIndicator field value if set, zero value otherwise.
@@ -601,102 +655,129 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) 
 }
 
 // GetReasonCode returns the ReasonCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetReasonCode() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetReasonCode() string {
+	if o == nil || IsNil(o.ReasonCode.Get()) {
+		var ret string
 		return ret
 	}
-	return o.ReasonCode
+	return *o.ReasonCode.Get()
 }
 
 // GetReasonCodeOk returns a tuple with the ReasonCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetReasonCodeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.ReasonCode) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetReasonCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.ReasonCode, true
+	return o.ReasonCode.Get(), o.ReasonCode.IsSet()
 }
 
 // HasReasonCode returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasReasonCode() bool {
-	if o != nil && !IsNil(o.ReasonCode) {
+	if o != nil && o.ReasonCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetReasonCode gets a reference to the given map[string]interface{} and assigns it to the ReasonCode field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetReasonCode(v map[string]interface{}) {
-	o.ReasonCode = v
+// SetReasonCode gets a reference to the given NullableString and assigns it to the ReasonCode field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetReasonCode(v string) {
+	o.ReasonCode.Set(&v)
+}
+// SetReasonCodeNil sets the value for ReasonCode to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetReasonCodeNil() {
+	o.ReasonCode.Set(nil)
+}
+
+// UnsetReasonCode ensures that no value is present for ReasonCode, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetReasonCode() {
+	o.ReasonCode.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetStatus() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetStatus() string {
+	if o == nil || IsNil(o.Status.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Status
+	return *o.Status.Get()
 }
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetStatusOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Status) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetStatusOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Status, true
+	return o.Status.Get(), o.Status.IsSet()
 }
 
 // HasStatus returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && o.Status.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatus gets a reference to the given map[string]interface{} and assigns it to the Status field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetStatus(v map[string]interface{}) {
-	o.Status = v
+// SetStatus gets a reference to the given NullableString and assigns it to the Status field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetStatus(v string) {
+	o.Status.Set(&v)
+}
+// SetStatusNil sets the value for Status to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetStatusNil() {
+	o.Status.Set(nil)
+}
+
+// UnsetStatus ensures that no value is present for Status, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetStatus() {
+	o.Status.Unset()
 }
 
 // GetRecurringPaymentIndicator returns the RecurringPaymentIndicator field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetRecurringPaymentIndicator() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetRecurringPaymentIndicator() string {
+	if o == nil || IsNil(o.RecurringPaymentIndicator.Get()) {
+		var ret string
 		return ret
 	}
-	return o.RecurringPaymentIndicator
+	return *o.RecurringPaymentIndicator.Get()
 }
 
 // GetRecurringPaymentIndicatorOk returns a tuple with the RecurringPaymentIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetRecurringPaymentIndicatorOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.RecurringPaymentIndicator) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetRecurringPaymentIndicatorOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.RecurringPaymentIndicator, true
+	return o.RecurringPaymentIndicator.Get(), o.RecurringPaymentIndicator.IsSet()
 }
 
 // HasRecurringPaymentIndicator returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasRecurringPaymentIndicator() bool {
-	if o != nil && !IsNil(o.RecurringPaymentIndicator) {
+	if o != nil && o.RecurringPaymentIndicator.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRecurringPaymentIndicator gets a reference to the given map[string]interface{} and assigns it to the RecurringPaymentIndicator field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetRecurringPaymentIndicator(v map[string]interface{}) {
-	o.RecurringPaymentIndicator = v
+// SetRecurringPaymentIndicator gets a reference to the given NullableString and assigns it to the RecurringPaymentIndicator field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetRecurringPaymentIndicator(v string) {
+	o.RecurringPaymentIndicator.Set(&v)
+}
+// SetRecurringPaymentIndicatorNil sets the value for RecurringPaymentIndicator to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetRecurringPaymentIndicatorNil() {
+	o.RecurringPaymentIndicator.Set(nil)
+}
+
+// UnsetRecurringPaymentIndicator ensures that no value is present for RecurringPaymentIndicator, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetRecurringPaymentIndicator() {
+	o.RecurringPaymentIndicator.Unset()
 }
 
 // GetDirectionIndicator returns the DirectionIndicator field value if set, zero value otherwise.
@@ -732,201 +813,255 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) 
 }
 
 // GetStatementIndicator returns the StatementIndicator field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetStatementIndicator() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetStatementIndicator() string {
+	if o == nil || IsNil(o.StatementIndicator.Get()) {
+		var ret string
 		return ret
 	}
-	return o.StatementIndicator
+	return *o.StatementIndicator.Get()
 }
 
 // GetStatementIndicatorOk returns a tuple with the StatementIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetStatementIndicatorOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.StatementIndicator) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetStatementIndicatorOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.StatementIndicator, true
+	return o.StatementIndicator.Get(), o.StatementIndicator.IsSet()
 }
 
 // HasStatementIndicator returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasStatementIndicator() bool {
-	if o != nil && !IsNil(o.StatementIndicator) {
+	if o != nil && o.StatementIndicator.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatementIndicator gets a reference to the given map[string]interface{} and assigns it to the StatementIndicator field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetStatementIndicator(v map[string]interface{}) {
-	o.StatementIndicator = v
+// SetStatementIndicator gets a reference to the given NullableString and assigns it to the StatementIndicator field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetStatementIndicator(v string) {
+	o.StatementIndicator.Set(&v)
+}
+// SetStatementIndicatorNil sets the value for StatementIndicator to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetStatementIndicatorNil() {
+	o.StatementIndicator.Set(nil)
+}
+
+// UnsetStatementIndicator ensures that no value is present for StatementIndicator, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetStatementIndicator() {
+	o.StatementIndicator.Unset()
 }
 
 // GetFromAccount returns the FromAccount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetFromAccount() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetFromAccount() string {
+	if o == nil || IsNil(o.FromAccount.Get()) {
+		var ret string
 		return ret
 	}
-	return o.FromAccount
+	return *o.FromAccount.Get()
 }
 
 // GetFromAccountOk returns a tuple with the FromAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetFromAccountOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.FromAccount) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetFromAccountOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.FromAccount, true
+	return o.FromAccount.Get(), o.FromAccount.IsSet()
 }
 
 // HasFromAccount returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasFromAccount() bool {
-	if o != nil && !IsNil(o.FromAccount) {
+	if o != nil && o.FromAccount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFromAccount gets a reference to the given map[string]interface{} and assigns it to the FromAccount field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetFromAccount(v map[string]interface{}) {
-	o.FromAccount = v
+// SetFromAccount gets a reference to the given NullableString and assigns it to the FromAccount field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetFromAccount(v string) {
+	o.FromAccount.Set(&v)
+}
+// SetFromAccountNil sets the value for FromAccount to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetFromAccountNil() {
+	o.FromAccount.Set(nil)
+}
+
+// UnsetFromAccount ensures that no value is present for FromAccount, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetFromAccount() {
+	o.FromAccount.Unset()
 }
 
 // GetToAccount returns the ToAccount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetToAccount() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetToAccount() string {
+	if o == nil || IsNil(o.ToAccount.Get()) {
+		var ret string
 		return ret
 	}
-	return o.ToAccount
+	return *o.ToAccount.Get()
 }
 
 // GetToAccountOk returns a tuple with the ToAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetToAccountOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.ToAccount) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetToAccountOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.ToAccount, true
+	return o.ToAccount.Get(), o.ToAccount.IsSet()
 }
 
 // HasToAccount returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasToAccount() bool {
-	if o != nil && !IsNil(o.ToAccount) {
+	if o != nil && o.ToAccount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetToAccount gets a reference to the given map[string]interface{} and assigns it to the ToAccount field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetToAccount(v map[string]interface{}) {
-	o.ToAccount = v
+// SetToAccount gets a reference to the given NullableString and assigns it to the ToAccount field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetToAccount(v string) {
+	o.ToAccount.Set(&v)
+}
+// SetToAccountNil sets the value for ToAccount to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetToAccountNil() {
+	o.ToAccount.Set(nil)
+}
+
+// UnsetToAccount ensures that no value is present for ToAccount, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetToAccount() {
+	o.ToAccount.Unset()
 }
 
 // GetPurchaseType returns the PurchaseType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetPurchaseType() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetPurchaseType() string {
+	if o == nil || IsNil(o.PurchaseType.Get()) {
+		var ret string
 		return ret
 	}
-	return o.PurchaseType
+	return *o.PurchaseType.Get()
 }
 
 // GetPurchaseTypeOk returns a tuple with the PurchaseType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetPurchaseTypeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.PurchaseType) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetPurchaseTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.PurchaseType, true
+	return o.PurchaseType.Get(), o.PurchaseType.IsSet()
 }
 
 // HasPurchaseType returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasPurchaseType() bool {
-	if o != nil && !IsNil(o.PurchaseType) {
+	if o != nil && o.PurchaseType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPurchaseType gets a reference to the given map[string]interface{} and assigns it to the PurchaseType field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetPurchaseType(v map[string]interface{}) {
-	o.PurchaseType = v
+// SetPurchaseType gets a reference to the given NullableString and assigns it to the PurchaseType field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetPurchaseType(v string) {
+	o.PurchaseType.Set(&v)
+}
+// SetPurchaseTypeNil sets the value for PurchaseType to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetPurchaseTypeNil() {
+	o.PurchaseType.Set(nil)
+}
+
+// UnsetPurchaseType ensures that no value is present for PurchaseType, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetPurchaseType() {
+	o.PurchaseType.Unset()
 }
 
 // GetRewardsCategory returns the RewardsCategory field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetRewardsCategory() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetRewardsCategory() string {
+	if o == nil || IsNil(o.RewardsCategory.Get()) {
+		var ret string
 		return ret
 	}
-	return o.RewardsCategory
+	return *o.RewardsCategory.Get()
 }
 
 // GetRewardsCategoryOk returns a tuple with the RewardsCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetRewardsCategoryOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.RewardsCategory) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetRewardsCategoryOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.RewardsCategory, true
+	return o.RewardsCategory.Get(), o.RewardsCategory.IsSet()
 }
 
 // HasRewardsCategory returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasRewardsCategory() bool {
-	if o != nil && !IsNil(o.RewardsCategory) {
+	if o != nil && o.RewardsCategory.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRewardsCategory gets a reference to the given map[string]interface{} and assigns it to the RewardsCategory field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetRewardsCategory(v map[string]interface{}) {
-	o.RewardsCategory = v
+// SetRewardsCategory gets a reference to the given NullableString and assigns it to the RewardsCategory field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetRewardsCategory(v string) {
+	o.RewardsCategory.Set(&v)
+}
+// SetRewardsCategoryNil sets the value for RewardsCategory to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetRewardsCategoryNil() {
+	o.RewardsCategory.Set(nil)
+}
+
+// UnsetRewardsCategory ensures that no value is present for RewardsCategory, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetRewardsCategory() {
+	o.RewardsCategory.Unset()
 }
 
 // GetRewardCard returns the RewardCard field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetRewardCard() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetRewardCard() string {
+	if o == nil || IsNil(o.RewardCard.Get()) {
+		var ret string
 		return ret
 	}
-	return o.RewardCard
+	return *o.RewardCard.Get()
 }
 
 // GetRewardCardOk returns a tuple with the RewardCard field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetRewardCardOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.RewardCard) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetRewardCardOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.RewardCard, true
+	return o.RewardCard.Get(), o.RewardCard.IsSet()
 }
 
 // HasRewardCard returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasRewardCard() bool {
-	if o != nil && !IsNil(o.RewardCard) {
+	if o != nil && o.RewardCard.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRewardCard gets a reference to the given map[string]interface{} and assigns it to the RewardCard field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetRewardCard(v map[string]interface{}) {
-	o.RewardCard = v
+// SetRewardCard gets a reference to the given NullableString and assigns it to the RewardCard field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetRewardCard(v string) {
+	o.RewardCard.Set(&v)
+}
+// SetRewardCardNil sets the value for RewardCard to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetRewardCardNil() {
+	o.RewardCard.Set(nil)
+}
+
+// UnsetRewardCard ensures that no value is present for RewardCard, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetRewardCard() {
+	o.RewardCard.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -962,69 +1097,87 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) 
 }
 
 // GetUserInputTag returns the UserInputTag field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetUserInputTag() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetUserInputTag() string {
+	if o == nil || IsNil(o.UserInputTag.Get()) {
+		var ret string
 		return ret
 	}
-	return o.UserInputTag
+	return *o.UserInputTag.Get()
 }
 
 // GetUserInputTagOk returns a tuple with the UserInputTag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetUserInputTagOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.UserInputTag) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetUserInputTagOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.UserInputTag, true
+	return o.UserInputTag.Get(), o.UserInputTag.IsSet()
 }
 
 // HasUserInputTag returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasUserInputTag() bool {
-	if o != nil && !IsNil(o.UserInputTag) {
+	if o != nil && o.UserInputTag.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUserInputTag gets a reference to the given map[string]interface{} and assigns it to the UserInputTag field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetUserInputTag(v map[string]interface{}) {
-	o.UserInputTag = v
+// SetUserInputTag gets a reference to the given NullableString and assigns it to the UserInputTag field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetUserInputTag(v string) {
+	o.UserInputTag.Set(&v)
+}
+// SetUserInputTagNil sets the value for UserInputTag to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetUserInputTagNil() {
+	o.UserInputTag.Set(nil)
+}
+
+// UnsetUserInputTag ensures that no value is present for UserInputTag, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetUserInputTag() {
+	o.UserInputTag.Unset()
 }
 
 // GetCheque returns the Cheque field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetCheque() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetCheque() string {
+	if o == nil || IsNil(o.Cheque.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Cheque
+	return *o.Cheque.Get()
 }
 
 // GetChequeOk returns a tuple with the Cheque field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetChequeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Cheque) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetChequeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Cheque, true
+	return o.Cheque.Get(), o.Cheque.IsSet()
 }
 
 // HasCheque returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasCheque() bool {
-	if o != nil && !IsNil(o.Cheque) {
+	if o != nil && o.Cheque.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCheque gets a reference to the given map[string]interface{} and assigns it to the Cheque field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetCheque(v map[string]interface{}) {
-	o.Cheque = v
+// SetCheque gets a reference to the given NullableString and assigns it to the Cheque field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetCheque(v string) {
+	o.Cheque.Set(&v)
+}
+// SetChequeNil sets the value for Cheque to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetChequeNil() {
+	o.Cheque.Set(nil)
+}
+
+// UnsetCheque ensures that no value is present for Cheque, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetCheque() {
+	o.Cheque.Unset()
 }
 
 // GetMerchant returns the Merchant field value if set, zero value otherwise.
@@ -1092,36 +1245,45 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) 
 }
 
 // GetAcquirerReferenceNumber returns the AcquirerReferenceNumber field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetAcquirerReferenceNumber() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetAcquirerReferenceNumber() string {
+	if o == nil || IsNil(o.AcquirerReferenceNumber.Get()) {
+		var ret string
 		return ret
 	}
-	return o.AcquirerReferenceNumber
+	return *o.AcquirerReferenceNumber.Get()
 }
 
 // GetAcquirerReferenceNumberOk returns a tuple with the AcquirerReferenceNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetAcquirerReferenceNumberOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.AcquirerReferenceNumber) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetAcquirerReferenceNumberOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.AcquirerReferenceNumber, true
+	return o.AcquirerReferenceNumber.Get(), o.AcquirerReferenceNumber.IsSet()
 }
 
 // HasAcquirerReferenceNumber returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasAcquirerReferenceNumber() bool {
-	if o != nil && !IsNil(o.AcquirerReferenceNumber) {
+	if o != nil && o.AcquirerReferenceNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAcquirerReferenceNumber gets a reference to the given map[string]interface{} and assigns it to the AcquirerReferenceNumber field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetAcquirerReferenceNumber(v map[string]interface{}) {
-	o.AcquirerReferenceNumber = v
+// SetAcquirerReferenceNumber gets a reference to the given NullableString and assigns it to the AcquirerReferenceNumber field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetAcquirerReferenceNumber(v string) {
+	o.AcquirerReferenceNumber.Set(&v)
+}
+// SetAcquirerReferenceNumberNil sets the value for AcquirerReferenceNumber to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetAcquirerReferenceNumberNil() {
+	o.AcquirerReferenceNumber.Set(nil)
+}
+
+// UnsetAcquirerReferenceNumber ensures that no value is present for AcquirerReferenceNumber, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetAcquirerReferenceNumber() {
+	o.AcquirerReferenceNumber.Unset()
 }
 
 // GetTransactionId returns the TransactionId field value if set, zero value otherwise.
@@ -1477,36 +1639,45 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) 
 }
 
 // GetDescriptionLine2 returns the DescriptionLine2 field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetDescriptionLine2() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetDescriptionLine2() string {
+	if o == nil || IsNil(o.DescriptionLine2.Get()) {
+		var ret string
 		return ret
 	}
-	return o.DescriptionLine2
+	return *o.DescriptionLine2.Get()
 }
 
 // GetDescriptionLine2Ok returns a tuple with the DescriptionLine2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetDescriptionLine2Ok() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.DescriptionLine2) {
-		return map[string]interface{}{}, false
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetDescriptionLine2Ok() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.DescriptionLine2, true
+	return o.DescriptionLine2.Get(), o.DescriptionLine2.IsSet()
 }
 
 // HasDescriptionLine2 returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasDescriptionLine2() bool {
-	if o != nil && !IsNil(o.DescriptionLine2) {
+	if o != nil && o.DescriptionLine2.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescriptionLine2 gets a reference to the given map[string]interface{} and assigns it to the DescriptionLine2 field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetDescriptionLine2(v map[string]interface{}) {
-	o.DescriptionLine2 = v
+// SetDescriptionLine2 gets a reference to the given NullableString and assigns it to the DescriptionLine2 field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetDescriptionLine2(v string) {
+	o.DescriptionLine2.Set(&v)
+}
+// SetDescriptionLine2Nil sets the value for DescriptionLine2 to be an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetDescriptionLine2Nil() {
+	o.DescriptionLine2.Set(nil)
+}
+
+// UnsetDescriptionLine2 ensures that no value is present for DescriptionLine2, not even an explicit nil
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetDescriptionLine2() {
+	o.DescriptionLine2.Unset()
 }
 
 func (o ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) MarshalJSON() ([]byte, error) {
@@ -1525,14 +1696,14 @@ func (o ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) T
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if o.PostedDate != nil {
-		toSerialize["postedDate"] = o.PostedDate
+	if o.PostedDate.IsSet() {
+		toSerialize["postedDate"] = o.PostedDate.Get()
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if o.SubDescription != nil {
-		toSerialize["subDescription"] = o.SubDescription
+	if o.SubDescription.IsSet() {
+		toSerialize["subDescription"] = o.SubDescription.Get()
 	}
 	if !IsNil(o.CleanDescription) {
 		toSerialize["cleanDescription"] = o.CleanDescription
@@ -1543,14 +1714,14 @@ func (o ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) T
 	if !IsNil(o.MnemonicCode) {
 		toSerialize["mnemonicCode"] = o.MnemonicCode
 	}
-	if o.TsysCode != nil {
-		toSerialize["tsysCode"] = o.TsysCode
+	if o.TsysCode.IsSet() {
+		toSerialize["tsysCode"] = o.TsysCode.Get()
 	}
 	if !IsNil(o.IsTsys) {
 		toSerialize["isTsys"] = o.IsTsys
 	}
-	if o.IsDisputable != nil {
-		toSerialize["isDisputable"] = o.IsDisputable
+	if o.IsDisputable.IsSet() {
+		toSerialize["isDisputable"] = o.IsDisputable.Get()
 	}
 	if !IsNil(o.OriginalAmount) {
 		toSerialize["originalAmount"] = o.OriginalAmount
@@ -1558,53 +1729,53 @@ func (o ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) T
 	if !IsNil(o.RunningBalance) {
 		toSerialize["runningBalance"] = o.RunningBalance
 	}
-	if o.AssociatedCardNumber != nil {
-		toSerialize["associatedCardNumber"] = o.AssociatedCardNumber
+	if o.AssociatedCardNumber.IsSet() {
+		toSerialize["associatedCardNumber"] = o.AssociatedCardNumber.Get()
 	}
-	if o.PurchaseCountryCode != nil {
-		toSerialize["purchaseCountryCode"] = o.PurchaseCountryCode
+	if o.PurchaseCountryCode.IsSet() {
+		toSerialize["purchaseCountryCode"] = o.PurchaseCountryCode.Get()
 	}
 	if !IsNil(o.OutOfCountryIndicator) {
 		toSerialize["outOfCountryIndicator"] = o.OutOfCountryIndicator
 	}
-	if o.ReasonCode != nil {
-		toSerialize["reasonCode"] = o.ReasonCode
+	if o.ReasonCode.IsSet() {
+		toSerialize["reasonCode"] = o.ReasonCode.Get()
 	}
-	if o.Status != nil {
-		toSerialize["status"] = o.Status
+	if o.Status.IsSet() {
+		toSerialize["status"] = o.Status.Get()
 	}
-	if o.RecurringPaymentIndicator != nil {
-		toSerialize["recurringPaymentIndicator"] = o.RecurringPaymentIndicator
+	if o.RecurringPaymentIndicator.IsSet() {
+		toSerialize["recurringPaymentIndicator"] = o.RecurringPaymentIndicator.Get()
 	}
 	if !IsNil(o.DirectionIndicator) {
 		toSerialize["directionIndicator"] = o.DirectionIndicator
 	}
-	if o.StatementIndicator != nil {
-		toSerialize["statementIndicator"] = o.StatementIndicator
+	if o.StatementIndicator.IsSet() {
+		toSerialize["statementIndicator"] = o.StatementIndicator.Get()
 	}
-	if o.FromAccount != nil {
-		toSerialize["fromAccount"] = o.FromAccount
+	if o.FromAccount.IsSet() {
+		toSerialize["fromAccount"] = o.FromAccount.Get()
 	}
-	if o.ToAccount != nil {
-		toSerialize["toAccount"] = o.ToAccount
+	if o.ToAccount.IsSet() {
+		toSerialize["toAccount"] = o.ToAccount.Get()
 	}
-	if o.PurchaseType != nil {
-		toSerialize["purchaseType"] = o.PurchaseType
+	if o.PurchaseType.IsSet() {
+		toSerialize["purchaseType"] = o.PurchaseType.Get()
 	}
-	if o.RewardsCategory != nil {
-		toSerialize["rewardsCategory"] = o.RewardsCategory
+	if o.RewardsCategory.IsSet() {
+		toSerialize["rewardsCategory"] = o.RewardsCategory.Get()
 	}
-	if o.RewardCard != nil {
-		toSerialize["rewardCard"] = o.RewardCard
+	if o.RewardCard.IsSet() {
+		toSerialize["rewardCard"] = o.RewardCard.Get()
 	}
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
-	if o.UserInputTag != nil {
-		toSerialize["userInputTag"] = o.UserInputTag
+	if o.UserInputTag.IsSet() {
+		toSerialize["userInputTag"] = o.UserInputTag.Get()
 	}
-	if o.Cheque != nil {
-		toSerialize["cheque"] = o.Cheque
+	if o.Cheque.IsSet() {
+		toSerialize["cheque"] = o.Cheque.Get()
 	}
 	if !IsNil(o.Merchant) {
 		toSerialize["merchant"] = o.Merchant
@@ -1612,8 +1783,8 @@ func (o ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) T
 	if !IsNil(o.Enriched) {
 		toSerialize["enriched"] = o.Enriched
 	}
-	if o.AcquirerReferenceNumber != nil {
-		toSerialize["acquirerReferenceNumber"] = o.AcquirerReferenceNumber
+	if o.AcquirerReferenceNumber.IsSet() {
+		toSerialize["acquirerReferenceNumber"] = o.AcquirerReferenceNumber.Get()
 	}
 	if !IsNil(o.TransactionId) {
 		toSerialize["transactionId"] = o.TransactionId
@@ -1648,8 +1819,8 @@ func (o ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) T
 	if !IsNil(o.DescriptionLine1) {
 		toSerialize["descriptionLine1"] = o.DescriptionLine1
 	}
-	if o.DescriptionLine2 != nil {
-		toSerialize["descriptionLine2"] = o.DescriptionLine2
+	if o.DescriptionLine2.IsSet() {
+		toSerialize["descriptionLine2"] = o.DescriptionLine2.Get()
 	}
 	return toSerialize, nil
 }

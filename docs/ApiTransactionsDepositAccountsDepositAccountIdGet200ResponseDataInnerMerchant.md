@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**CategoryCode** | Pointer to **map[string]interface{}** |  | [optional] 
-**Category** | Pointer to **map[string]interface{}** |  | [optional] 
-**CountryCode** | Pointer to **map[string]interface{}** |  | [optional] 
-**Address** | Pointer to **map[string]interface{}** |  | [optional] 
-**City** | Pointer to **map[string]interface{}** |  | [optional] 
-**State** | Pointer to **map[string]interface{}** |  | [optional] 
+**CategoryCode** | Pointer to **NullableString** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
+**CountryCode** | Pointer to **NullableString** |  | [optional] 
+**Address** | Pointer to **NullableString** |  | [optional] 
+**City** | Pointer to **NullableString** |  | [optional] 
+**State** | Pointer to **NullableString** |  | [optional] 
 **Country** | Pointer to **string** |  | [optional] 
-**ZipCode** | Pointer to **map[string]interface{}** |  | [optional] 
+**ZipCode** | Pointer to **NullableString** |  | [optional] 
 **Website** | Pointer to **string** |  | [optional] 
 **CustomerServicePageUrl** | Pointer to **string** |  | [optional] 
 **FacebookPageUrl** | Pointer to **string** |  | [optional] 
@@ -65,20 +65,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetCategoryCode
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCategoryCode() map[string]interface{}`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCategoryCode() string`
 
 GetCategoryCode returns the CategoryCode field if non-nil, zero value otherwise.
 
 ### GetCategoryCodeOk
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCategoryCodeOk() (*map[string]interface{}, bool)`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCategoryCodeOk() (*string, bool)`
 
 GetCategoryCodeOk returns a tuple with the CategoryCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCategoryCode
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetCategoryCode(v map[string]interface{})`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetCategoryCode(v string)`
 
 SetCategoryCode sets CategoryCode field to given value.
 
@@ -100,20 +100,20 @@ HasCategoryCode returns a boolean if a field has been set.
 UnsetCategoryCode ensures that no value is present for CategoryCode, not even an explicit nil
 ### GetCategory
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCategory() map[string]interface{}`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCategory() string`
 
 GetCategory returns the Category field if non-nil, zero value otherwise.
 
 ### GetCategoryOk
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCategoryOk() (*map[string]interface{}, bool)`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCategoryOk() (*string, bool)`
 
 GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCategory
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetCategory(v map[string]interface{})`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetCategory(v string)`
 
 SetCategory sets Category field to given value.
 
@@ -135,20 +135,20 @@ HasCategory returns a boolean if a field has been set.
 UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetCountryCode
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCountryCode() map[string]interface{}`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCountryCode() string`
 
 GetCountryCode returns the CountryCode field if non-nil, zero value otherwise.
 
 ### GetCountryCodeOk
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCountryCodeOk() (*map[string]interface{}, bool)`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCountryCodeOk() (*string, bool)`
 
 GetCountryCodeOk returns a tuple with the CountryCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCountryCode
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetCountryCode(v map[string]interface{})`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetCountryCode(v string)`
 
 SetCountryCode sets CountryCode field to given value.
 
@@ -170,20 +170,20 @@ HasCountryCode returns a boolean if a field has been set.
 UnsetCountryCode ensures that no value is present for CountryCode, not even an explicit nil
 ### GetAddress
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetAddress() map[string]interface{}`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetAddress() string`
 
 GetAddress returns the Address field if non-nil, zero value otherwise.
 
 ### GetAddressOk
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetAddressOk() (*map[string]interface{}, bool)`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetAddressOk() (*string, bool)`
 
 GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddress
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetAddress(v map[string]interface{})`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetAddress(v string)`
 
 SetAddress sets Address field to given value.
 
@@ -205,20 +205,20 @@ HasAddress returns a boolean if a field has been set.
 UnsetAddress ensures that no value is present for Address, not even an explicit nil
 ### GetCity
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCity() map[string]interface{}`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCity() string`
 
 GetCity returns the City field if non-nil, zero value otherwise.
 
 ### GetCityOk
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCityOk() (*map[string]interface{}, bool)`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetCityOk() (*string, bool)`
 
 GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCity
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetCity(v map[string]interface{})`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetCity(v string)`
 
 SetCity sets City field to given value.
 
@@ -240,20 +240,20 @@ HasCity returns a boolean if a field has been set.
 UnsetCity ensures that no value is present for City, not even an explicit nil
 ### GetState
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetState() map[string]interface{}`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetState() string`
 
 GetState returns the State field if non-nil, zero value otherwise.
 
 ### GetStateOk
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetStateOk() (*map[string]interface{}, bool)`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetStateOk() (*string, bool)`
 
 GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetState
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetState(v map[string]interface{})`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetState(v string)`
 
 SetState sets State field to given value.
 
@@ -300,20 +300,20 @@ HasCountry returns a boolean if a field has been set.
 
 ### GetZipCode
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetZipCode() map[string]interface{}`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetZipCode() string`
 
 GetZipCode returns the ZipCode field if non-nil, zero value otherwise.
 
 ### GetZipCodeOk
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetZipCodeOk() (*map[string]interface{}, bool)`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) GetZipCodeOk() (*string, bool)`
 
 GetZipCodeOk returns a tuple with the ZipCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZipCode
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetZipCode(v map[string]interface{})`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerMerchant) SetZipCode(v string)`
 
 SetZipCode sets ZipCode field to given value.
 

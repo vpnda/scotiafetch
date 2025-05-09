@@ -22,18 +22,18 @@ type ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner struct {
 	TransactionKey *string `json:"transactionKey,omitempty"`
 	TransactionId *string `json:"transactionId,omitempty"`
 	Description *string `json:"description,omitempty"`
-	TransactionRecipient map[string]interface{} `json:"transactionRecipient,omitempty"`
-	TransactionTypeCode map[string]interface{} `json:"transactionTypeCode,omitempty"`
+	TransactionRecipient NullableString `json:"transactionRecipient,omitempty"`
+	TransactionTypeCode NullableString `json:"transactionTypeCode,omitempty"`
 	TransactionType *string `json:"transactionType,omitempty"`
 	TransactionAmount *ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner `json:"transactionAmount,omitempty"`
 	RunningBalance *ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner `json:"runningBalance,omitempty"`
-	ChequeNumber map[string]interface{} `json:"chequeNumber,omitempty"`
-	ChequeImage map[string]interface{} `json:"chequeImage,omitempty"`
-	ChequeImageStatus map[string]interface{} `json:"chequeImageStatus,omitempty"`
-	ChequeImageKey map[string]interface{} `json:"chequeImageKey,omitempty"`
+	ChequeNumber NullableString `json:"chequeNumber,omitempty"`
+	ChequeImage NullableString `json:"chequeImage,omitempty"`
+	ChequeImageStatus NullableString `json:"chequeImageStatus,omitempty"`
+	ChequeImageKey NullableString `json:"chequeImageKey,omitempty"`
 	CardNumber *string `json:"cardNumber,omitempty"`
-	MerchantName map[string]interface{} `json:"merchantName,omitempty"`
-	TransactionCategory map[string]interface{} `json:"transactionCategory,omitempty"`
+	MerchantName NullableString `json:"merchantName,omitempty"`
+	TransactionCategory NullableString `json:"transactionCategory,omitempty"`
 	TransactionDate *string `json:"transactionDate,omitempty"`
 }
 
@@ -151,69 +151,87 @@ func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetDescrip
 }
 
 // GetTransactionRecipient returns the TransactionRecipient field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionRecipient() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionRecipient() string {
+	if o == nil || IsNil(o.TransactionRecipient.Get()) {
+		var ret string
 		return ret
 	}
-	return o.TransactionRecipient
+	return *o.TransactionRecipient.Get()
 }
 
 // GetTransactionRecipientOk returns a tuple with the TransactionRecipient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionRecipientOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.TransactionRecipient) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionRecipientOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.TransactionRecipient, true
+	return o.TransactionRecipient.Get(), o.TransactionRecipient.IsSet()
 }
 
 // HasTransactionRecipient returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) HasTransactionRecipient() bool {
-	if o != nil && !IsNil(o.TransactionRecipient) {
+	if o != nil && o.TransactionRecipient.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTransactionRecipient gets a reference to the given map[string]interface{} and assigns it to the TransactionRecipient field.
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionRecipient(v map[string]interface{}) {
-	o.TransactionRecipient = v
+// SetTransactionRecipient gets a reference to the given NullableString and assigns it to the TransactionRecipient field.
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionRecipient(v string) {
+	o.TransactionRecipient.Set(&v)
+}
+// SetTransactionRecipientNil sets the value for TransactionRecipient to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionRecipientNil() {
+	o.TransactionRecipient.Set(nil)
+}
+
+// UnsetTransactionRecipient ensures that no value is present for TransactionRecipient, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) UnsetTransactionRecipient() {
+	o.TransactionRecipient.Unset()
 }
 
 // GetTransactionTypeCode returns the TransactionTypeCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionTypeCode() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionTypeCode() string {
+	if o == nil || IsNil(o.TransactionTypeCode.Get()) {
+		var ret string
 		return ret
 	}
-	return o.TransactionTypeCode
+	return *o.TransactionTypeCode.Get()
 }
 
 // GetTransactionTypeCodeOk returns a tuple with the TransactionTypeCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionTypeCodeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.TransactionTypeCode) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionTypeCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.TransactionTypeCode, true
+	return o.TransactionTypeCode.Get(), o.TransactionTypeCode.IsSet()
 }
 
 // HasTransactionTypeCode returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) HasTransactionTypeCode() bool {
-	if o != nil && !IsNil(o.TransactionTypeCode) {
+	if o != nil && o.TransactionTypeCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTransactionTypeCode gets a reference to the given map[string]interface{} and assigns it to the TransactionTypeCode field.
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionTypeCode(v map[string]interface{}) {
-	o.TransactionTypeCode = v
+// SetTransactionTypeCode gets a reference to the given NullableString and assigns it to the TransactionTypeCode field.
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionTypeCode(v string) {
+	o.TransactionTypeCode.Set(&v)
+}
+// SetTransactionTypeCodeNil sets the value for TransactionTypeCode to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionTypeCodeNil() {
+	o.TransactionTypeCode.Set(nil)
+}
+
+// UnsetTransactionTypeCode ensures that no value is present for TransactionTypeCode, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) UnsetTransactionTypeCode() {
+	o.TransactionTypeCode.Unset()
 }
 
 // GetTransactionType returns the TransactionType field value if set, zero value otherwise.
@@ -313,135 +331,171 @@ func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetRunning
 }
 
 // GetChequeNumber returns the ChequeNumber field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeNumber() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeNumber() string {
+	if o == nil || IsNil(o.ChequeNumber.Get()) {
+		var ret string
 		return ret
 	}
-	return o.ChequeNumber
+	return *o.ChequeNumber.Get()
 }
 
 // GetChequeNumberOk returns a tuple with the ChequeNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeNumberOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.ChequeNumber) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeNumberOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.ChequeNumber, true
+	return o.ChequeNumber.Get(), o.ChequeNumber.IsSet()
 }
 
 // HasChequeNumber returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) HasChequeNumber() bool {
-	if o != nil && !IsNil(o.ChequeNumber) {
+	if o != nil && o.ChequeNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetChequeNumber gets a reference to the given map[string]interface{} and assigns it to the ChequeNumber field.
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeNumber(v map[string]interface{}) {
-	o.ChequeNumber = v
+// SetChequeNumber gets a reference to the given NullableString and assigns it to the ChequeNumber field.
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeNumber(v string) {
+	o.ChequeNumber.Set(&v)
+}
+// SetChequeNumberNil sets the value for ChequeNumber to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeNumberNil() {
+	o.ChequeNumber.Set(nil)
+}
+
+// UnsetChequeNumber ensures that no value is present for ChequeNumber, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) UnsetChequeNumber() {
+	o.ChequeNumber.Unset()
 }
 
 // GetChequeImage returns the ChequeImage field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImage() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImage() string {
+	if o == nil || IsNil(o.ChequeImage.Get()) {
+		var ret string
 		return ret
 	}
-	return o.ChequeImage
+	return *o.ChequeImage.Get()
 }
 
 // GetChequeImageOk returns a tuple with the ChequeImage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.ChequeImage) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.ChequeImage, true
+	return o.ChequeImage.Get(), o.ChequeImage.IsSet()
 }
 
 // HasChequeImage returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) HasChequeImage() bool {
-	if o != nil && !IsNil(o.ChequeImage) {
+	if o != nil && o.ChequeImage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetChequeImage gets a reference to the given map[string]interface{} and assigns it to the ChequeImage field.
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImage(v map[string]interface{}) {
-	o.ChequeImage = v
+// SetChequeImage gets a reference to the given NullableString and assigns it to the ChequeImage field.
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImage(v string) {
+	o.ChequeImage.Set(&v)
+}
+// SetChequeImageNil sets the value for ChequeImage to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImageNil() {
+	o.ChequeImage.Set(nil)
+}
+
+// UnsetChequeImage ensures that no value is present for ChequeImage, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) UnsetChequeImage() {
+	o.ChequeImage.Unset()
 }
 
 // GetChequeImageStatus returns the ChequeImageStatus field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageStatus() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageStatus() string {
+	if o == nil || IsNil(o.ChequeImageStatus.Get()) {
+		var ret string
 		return ret
 	}
-	return o.ChequeImageStatus
+	return *o.ChequeImageStatus.Get()
 }
 
 // GetChequeImageStatusOk returns a tuple with the ChequeImageStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageStatusOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.ChequeImageStatus) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageStatusOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.ChequeImageStatus, true
+	return o.ChequeImageStatus.Get(), o.ChequeImageStatus.IsSet()
 }
 
 // HasChequeImageStatus returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) HasChequeImageStatus() bool {
-	if o != nil && !IsNil(o.ChequeImageStatus) {
+	if o != nil && o.ChequeImageStatus.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetChequeImageStatus gets a reference to the given map[string]interface{} and assigns it to the ChequeImageStatus field.
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImageStatus(v map[string]interface{}) {
-	o.ChequeImageStatus = v
+// SetChequeImageStatus gets a reference to the given NullableString and assigns it to the ChequeImageStatus field.
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImageStatus(v string) {
+	o.ChequeImageStatus.Set(&v)
+}
+// SetChequeImageStatusNil sets the value for ChequeImageStatus to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImageStatusNil() {
+	o.ChequeImageStatus.Set(nil)
+}
+
+// UnsetChequeImageStatus ensures that no value is present for ChequeImageStatus, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) UnsetChequeImageStatus() {
+	o.ChequeImageStatus.Unset()
 }
 
 // GetChequeImageKey returns the ChequeImageKey field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageKey() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageKey() string {
+	if o == nil || IsNil(o.ChequeImageKey.Get()) {
+		var ret string
 		return ret
 	}
-	return o.ChequeImageKey
+	return *o.ChequeImageKey.Get()
 }
 
 // GetChequeImageKeyOk returns a tuple with the ChequeImageKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageKeyOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.ChequeImageKey) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageKeyOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.ChequeImageKey, true
+	return o.ChequeImageKey.Get(), o.ChequeImageKey.IsSet()
 }
 
 // HasChequeImageKey returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) HasChequeImageKey() bool {
-	if o != nil && !IsNil(o.ChequeImageKey) {
+	if o != nil && o.ChequeImageKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetChequeImageKey gets a reference to the given map[string]interface{} and assigns it to the ChequeImageKey field.
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImageKey(v map[string]interface{}) {
-	o.ChequeImageKey = v
+// SetChequeImageKey gets a reference to the given NullableString and assigns it to the ChequeImageKey field.
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImageKey(v string) {
+	o.ChequeImageKey.Set(&v)
+}
+// SetChequeImageKeyNil sets the value for ChequeImageKey to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImageKeyNil() {
+	o.ChequeImageKey.Set(nil)
+}
+
+// UnsetChequeImageKey ensures that no value is present for ChequeImageKey, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) UnsetChequeImageKey() {
+	o.ChequeImageKey.Unset()
 }
 
 // GetCardNumber returns the CardNumber field value if set, zero value otherwise.
@@ -477,69 +531,87 @@ func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetCardNum
 }
 
 // GetMerchantName returns the MerchantName field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetMerchantName() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetMerchantName() string {
+	if o == nil || IsNil(o.MerchantName.Get()) {
+		var ret string
 		return ret
 	}
-	return o.MerchantName
+	return *o.MerchantName.Get()
 }
 
 // GetMerchantNameOk returns a tuple with the MerchantName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetMerchantNameOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.MerchantName) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetMerchantNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.MerchantName, true
+	return o.MerchantName.Get(), o.MerchantName.IsSet()
 }
 
 // HasMerchantName returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) HasMerchantName() bool {
-	if o != nil && !IsNil(o.MerchantName) {
+	if o != nil && o.MerchantName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMerchantName gets a reference to the given map[string]interface{} and assigns it to the MerchantName field.
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetMerchantName(v map[string]interface{}) {
-	o.MerchantName = v
+// SetMerchantName gets a reference to the given NullableString and assigns it to the MerchantName field.
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetMerchantName(v string) {
+	o.MerchantName.Set(&v)
+}
+// SetMerchantNameNil sets the value for MerchantName to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetMerchantNameNil() {
+	o.MerchantName.Set(nil)
+}
+
+// UnsetMerchantName ensures that no value is present for MerchantName, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) UnsetMerchantName() {
+	o.MerchantName.Unset()
 }
 
 // GetTransactionCategory returns the TransactionCategory field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionCategory() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionCategory() string {
+	if o == nil || IsNil(o.TransactionCategory.Get()) {
+		var ret string
 		return ret
 	}
-	return o.TransactionCategory
+	return *o.TransactionCategory.Get()
 }
 
 // GetTransactionCategoryOk returns a tuple with the TransactionCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionCategoryOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.TransactionCategory) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionCategoryOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.TransactionCategory, true
+	return o.TransactionCategory.Get(), o.TransactionCategory.IsSet()
 }
 
 // HasTransactionCategory returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) HasTransactionCategory() bool {
-	if o != nil && !IsNil(o.TransactionCategory) {
+	if o != nil && o.TransactionCategory.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTransactionCategory gets a reference to the given map[string]interface{} and assigns it to the TransactionCategory field.
-func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionCategory(v map[string]interface{}) {
-	o.TransactionCategory = v
+// SetTransactionCategory gets a reference to the given NullableString and assigns it to the TransactionCategory field.
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionCategory(v string) {
+	o.TransactionCategory.Set(&v)
+}
+// SetTransactionCategoryNil sets the value for TransactionCategory to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionCategoryNil() {
+	o.TransactionCategory.Set(nil)
+}
+
+// UnsetTransactionCategory ensures that no value is present for TransactionCategory, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) UnsetTransactionCategory() {
+	o.TransactionCategory.Unset()
 }
 
 // GetTransactionDate returns the TransactionDate field value if set, zero value otherwise.
@@ -593,11 +665,11 @@ func (o ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) ToMap() (ma
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if o.TransactionRecipient != nil {
-		toSerialize["transactionRecipient"] = o.TransactionRecipient
+	if o.TransactionRecipient.IsSet() {
+		toSerialize["transactionRecipient"] = o.TransactionRecipient.Get()
 	}
-	if o.TransactionTypeCode != nil {
-		toSerialize["transactionTypeCode"] = o.TransactionTypeCode
+	if o.TransactionTypeCode.IsSet() {
+		toSerialize["transactionTypeCode"] = o.TransactionTypeCode.Get()
 	}
 	if !IsNil(o.TransactionType) {
 		toSerialize["transactionType"] = o.TransactionType
@@ -608,26 +680,26 @@ func (o ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) ToMap() (ma
 	if !IsNil(o.RunningBalance) {
 		toSerialize["runningBalance"] = o.RunningBalance
 	}
-	if o.ChequeNumber != nil {
-		toSerialize["chequeNumber"] = o.ChequeNumber
+	if o.ChequeNumber.IsSet() {
+		toSerialize["chequeNumber"] = o.ChequeNumber.Get()
 	}
-	if o.ChequeImage != nil {
-		toSerialize["chequeImage"] = o.ChequeImage
+	if o.ChequeImage.IsSet() {
+		toSerialize["chequeImage"] = o.ChequeImage.Get()
 	}
-	if o.ChequeImageStatus != nil {
-		toSerialize["chequeImageStatus"] = o.ChequeImageStatus
+	if o.ChequeImageStatus.IsSet() {
+		toSerialize["chequeImageStatus"] = o.ChequeImageStatus.Get()
 	}
-	if o.ChequeImageKey != nil {
-		toSerialize["chequeImageKey"] = o.ChequeImageKey
+	if o.ChequeImageKey.IsSet() {
+		toSerialize["chequeImageKey"] = o.ChequeImageKey.Get()
 	}
 	if !IsNil(o.CardNumber) {
 		toSerialize["cardNumber"] = o.CardNumber
 	}
-	if o.MerchantName != nil {
-		toSerialize["merchantName"] = o.MerchantName
+	if o.MerchantName.IsSet() {
+		toSerialize["merchantName"] = o.MerchantName.Get()
 	}
-	if o.TransactionCategory != nil {
-		toSerialize["transactionCategory"] = o.TransactionCategory
+	if o.TransactionCategory.IsSet() {
+		toSerialize["transactionCategory"] = o.TransactionCategory.Get()
 	}
 	if !IsNil(o.TransactionDate) {
 		toSerialize["transactionDate"] = o.TransactionDate

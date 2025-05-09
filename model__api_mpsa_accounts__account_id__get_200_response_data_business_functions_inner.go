@@ -20,7 +20,7 @@ var _ MappedNullable = &ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFuncti
 // ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner struct for ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner
 type ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner struct {
 	FunctionName *string `json:"functionName,omitempty"`
-	Conditions map[string]interface{} `json:"conditions,omitempty"`
+	Conditions NullableString `json:"conditions,omitempty"`
 }
 
 // NewApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner instantiates a new ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner object
@@ -73,36 +73,45 @@ func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) SetFu
 }
 
 // GetConditions returns the Conditions field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) GetConditions() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) GetConditions() string {
+	if o == nil || IsNil(o.Conditions.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Conditions
+	return *o.Conditions.Get()
 }
 
 // GetConditionsOk returns a tuple with the Conditions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) GetConditionsOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Conditions) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) GetConditionsOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Conditions, true
+	return o.Conditions.Get(), o.Conditions.IsSet()
 }
 
 // HasConditions returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) HasConditions() bool {
-	if o != nil && !IsNil(o.Conditions) {
+	if o != nil && o.Conditions.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConditions gets a reference to the given map[string]interface{} and assigns it to the Conditions field.
-func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) SetConditions(v map[string]interface{}) {
-	o.Conditions = v
+// SetConditions gets a reference to the given NullableString and assigns it to the Conditions field.
+func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) SetConditions(v string) {
+	o.Conditions.Set(&v)
+}
+// SetConditionsNil sets the value for Conditions to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) SetConditionsNil() {
+	o.Conditions.Set(nil)
+}
+
+// UnsetConditions ensures that no value is present for Conditions, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) UnsetConditions() {
+	o.Conditions.Unset()
 }
 
 func (o ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) MarshalJSON() ([]byte, error) {
@@ -118,8 +127,8 @@ func (o ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) ToMap(
 	if !IsNil(o.FunctionName) {
 		toSerialize["functionName"] = o.FunctionName
 	}
-	if o.Conditions != nil {
-		toSerialize["conditions"] = o.Conditions
+	if o.Conditions.IsSet() {
+		toSerialize["conditions"] = o.Conditions.Get()
 	}
 	return toSerialize, nil
 }

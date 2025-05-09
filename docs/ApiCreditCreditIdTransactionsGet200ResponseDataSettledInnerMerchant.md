@@ -6,18 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **CategoryCode** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **map[string]interface{}** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
 **CountryCode** | Pointer to **string** |  | [optional] 
-**Address** | Pointer to **map[string]interface{}** |  | [optional] 
+**Address** | Pointer to **NullableString** |  | [optional] 
 **City** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
-**Country** | Pointer to **map[string]interface{}** |  | [optional] 
-**ZipCode** | Pointer to **map[string]interface{}** |  | [optional] 
-**Website** | Pointer to **map[string]interface{}** |  | [optional] 
-**CustomerServicePageUrl** | Pointer to **map[string]interface{}** |  | [optional] 
-**FacebookPageUrl** | Pointer to **map[string]interface{}** |  | [optional] 
-**TwitterPageUrl** | Pointer to **map[string]interface{}** |  | [optional] 
-**MerchantImageRef** | Pointer to **map[string]interface{}** |  | [optional] 
+**Country** | Pointer to **NullableString** |  | [optional] 
+**ZipCode** | Pointer to **NullableString** |  | [optional] 
+**Website** | Pointer to **NullableString** |  | [optional] 
+**CustomerServicePageUrl** | Pointer to **NullableString** |  | [optional] 
+**FacebookPageUrl** | Pointer to **NullableString** |  | [optional] 
+**TwitterPageUrl** | Pointer to **NullableString** |  | [optional] 
+**MerchantImageRef** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ HasCategoryCode returns a boolean if a field has been set.
 
 ### GetCategory
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCategory() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCategory() string`
 
 GetCategory returns the Category field if non-nil, zero value otherwise.
 
 ### GetCategoryOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCategoryOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCategoryOk() (*string, bool)`
 
 GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCategory
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCategory(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCategory(v string)`
 
 SetCategory sets Category field to given value.
 
@@ -150,20 +150,20 @@ HasCountryCode returns a boolean if a field has been set.
 
 ### GetAddress
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetAddress() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetAddress() string`
 
 GetAddress returns the Address field if non-nil, zero value otherwise.
 
 ### GetAddressOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetAddressOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetAddressOk() (*string, bool)`
 
 GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddress
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetAddress(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetAddress(v string)`
 
 SetAddress sets Address field to given value.
 
@@ -235,20 +235,20 @@ HasState returns a boolean if a field has been set.
 
 ### GetCountry
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCountry() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCountry() string`
 
 GetCountry returns the Country field if non-nil, zero value otherwise.
 
 ### GetCountryOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCountryOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCountryOk() (*string, bool)`
 
 GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCountry
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCountry(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCountry(v string)`
 
 SetCountry sets Country field to given value.
 
@@ -270,20 +270,20 @@ HasCountry returns a boolean if a field has been set.
 UnsetCountry ensures that no value is present for Country, not even an explicit nil
 ### GetZipCode
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetZipCode() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetZipCode() string`
 
 GetZipCode returns the ZipCode field if non-nil, zero value otherwise.
 
 ### GetZipCodeOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetZipCodeOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetZipCodeOk() (*string, bool)`
 
 GetZipCodeOk returns a tuple with the ZipCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZipCode
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetZipCode(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetZipCode(v string)`
 
 SetZipCode sets ZipCode field to given value.
 
@@ -305,20 +305,20 @@ HasZipCode returns a boolean if a field has been set.
 UnsetZipCode ensures that no value is present for ZipCode, not even an explicit nil
 ### GetWebsite
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetWebsite() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetWebsite() string`
 
 GetWebsite returns the Website field if non-nil, zero value otherwise.
 
 ### GetWebsiteOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetWebsiteOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetWebsiteOk() (*string, bool)`
 
 GetWebsiteOk returns a tuple with the Website field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWebsite
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetWebsite(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetWebsite(v string)`
 
 SetWebsite sets Website field to given value.
 
@@ -340,20 +340,20 @@ HasWebsite returns a boolean if a field has been set.
 UnsetWebsite ensures that no value is present for Website, not even an explicit nil
 ### GetCustomerServicePageUrl
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCustomerServicePageUrl() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCustomerServicePageUrl() string`
 
 GetCustomerServicePageUrl returns the CustomerServicePageUrl field if non-nil, zero value otherwise.
 
 ### GetCustomerServicePageUrlOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCustomerServicePageUrlOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCustomerServicePageUrlOk() (*string, bool)`
 
 GetCustomerServicePageUrlOk returns a tuple with the CustomerServicePageUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerServicePageUrl
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCustomerServicePageUrl(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCustomerServicePageUrl(v string)`
 
 SetCustomerServicePageUrl sets CustomerServicePageUrl field to given value.
 
@@ -375,20 +375,20 @@ HasCustomerServicePageUrl returns a boolean if a field has been set.
 UnsetCustomerServicePageUrl ensures that no value is present for CustomerServicePageUrl, not even an explicit nil
 ### GetFacebookPageUrl
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetFacebookPageUrl() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetFacebookPageUrl() string`
 
 GetFacebookPageUrl returns the FacebookPageUrl field if non-nil, zero value otherwise.
 
 ### GetFacebookPageUrlOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetFacebookPageUrlOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetFacebookPageUrlOk() (*string, bool)`
 
 GetFacebookPageUrlOk returns a tuple with the FacebookPageUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFacebookPageUrl
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetFacebookPageUrl(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetFacebookPageUrl(v string)`
 
 SetFacebookPageUrl sets FacebookPageUrl field to given value.
 
@@ -410,20 +410,20 @@ HasFacebookPageUrl returns a boolean if a field has been set.
 UnsetFacebookPageUrl ensures that no value is present for FacebookPageUrl, not even an explicit nil
 ### GetTwitterPageUrl
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetTwitterPageUrl() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetTwitterPageUrl() string`
 
 GetTwitterPageUrl returns the TwitterPageUrl field if non-nil, zero value otherwise.
 
 ### GetTwitterPageUrlOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetTwitterPageUrlOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetTwitterPageUrlOk() (*string, bool)`
 
 GetTwitterPageUrlOk returns a tuple with the TwitterPageUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTwitterPageUrl
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetTwitterPageUrl(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetTwitterPageUrl(v string)`
 
 SetTwitterPageUrl sets TwitterPageUrl field to given value.
 
@@ -445,20 +445,20 @@ HasTwitterPageUrl returns a boolean if a field has been set.
 UnsetTwitterPageUrl ensures that no value is present for TwitterPageUrl, not even an explicit nil
 ### GetMerchantImageRef
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetMerchantImageRef() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetMerchantImageRef() string`
 
 GetMerchantImageRef returns the MerchantImageRef field if non-nil, zero value otherwise.
 
 ### GetMerchantImageRefOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetMerchantImageRefOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetMerchantImageRefOk() (*string, bool)`
 
 GetMerchantImageRefOk returns a tuple with the MerchantImageRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantImageRef
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetMerchantImageRef(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetMerchantImageRef(v string)`
 
 SetMerchantImageRef sets MerchantImageRef field to given value.
 

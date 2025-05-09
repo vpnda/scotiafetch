@@ -8,32 +8,32 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **PostedDate** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**DescriptionLines** | Pointer to **map[string]interface{}** |  | [optional] 
+**DescriptionLines** | Pointer to **NullableString** |  | [optional] 
 **SubDescription** | Pointer to **string** |  | [optional] 
 **CleanDescription** | Pointer to **string** |  | [optional] 
-**MnemonicCode** | Pointer to **map[string]interface{}** |  | [optional] 
+**MnemonicCode** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **TsysCode** | Pointer to **string** |  | [optional] 
 **IsTsys** | Pointer to **bool** |  | [optional] 
 **IsDisputable** | Pointer to **string** |  | [optional] 
-**OriginalAmount** | Pointer to **map[string]interface{}** |  | [optional] 
-**RunningBalance** | Pointer to **map[string]interface{}** |  | [optional] 
+**OriginalAmount** | Pointer to **NullableString** |  | [optional] 
+**RunningBalance** | Pointer to **NullableString** |  | [optional] 
 **AssociatedCardNumber** | Pointer to **string** |  | [optional] 
-**PurchaseCountryCode** | Pointer to **map[string]interface{}** |  | [optional] 
-**OutOfCountryIndicator** | Pointer to **map[string]interface{}** |  | [optional] 
-**ReferenceNumber** | Pointer to **map[string]interface{}** |  | [optional] 
-**ReasonCode** | Pointer to **map[string]interface{}** |  | [optional] 
+**PurchaseCountryCode** | Pointer to **NullableString** |  | [optional] 
+**OutOfCountryIndicator** | Pointer to **NullableString** |  | [optional] 
+**ReferenceNumber** | Pointer to **NullableString** |  | [optional] 
+**ReasonCode** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**RecurringPaymentIndicator** | Pointer to **map[string]interface{}** |  | [optional] 
+**RecurringPaymentIndicator** | Pointer to **NullableString** |  | [optional] 
 **StatementIndicator** | Pointer to **bool** |  | [optional] 
-**FromAccount** | Pointer to **map[string]interface{}** |  | [optional] 
-**ToAccount** | Pointer to **map[string]interface{}** |  | [optional] 
-**PurchaseType** | Pointer to **map[string]interface{}** |  | [optional] 
+**FromAccount** | Pointer to **NullableString** |  | [optional] 
+**ToAccount** | Pointer to **NullableString** |  | [optional] 
+**PurchaseType** | Pointer to **NullableString** |  | [optional] 
 **RewardsCategory** | Pointer to **string** |  | [optional] 
-**RewardCard** | Pointer to **map[string]interface{}** |  | [optional] 
+**RewardCard** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to [**ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerCategory**](ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerCategory.md) |  | [optional] 
-**UserInputTag** | Pointer to **map[string]interface{}** |  | [optional] 
-**Cheque** | Pointer to **map[string]interface{}** |  | [optional] 
+**UserInputTag** | Pointer to **NullableString** |  | [optional] 
+**Cheque** | Pointer to **NullableString** |  | [optional] 
 **Merchant** | Pointer to [**ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant**](ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant.md) |  | [optional] 
 **Enriched** | Pointer to **bool** |  | [optional] 
 **AcquirerReferenceNumber** | Pointer to **string** |  | [optional] 
@@ -170,20 +170,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetDescriptionLines
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetDescriptionLines() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetDescriptionLines() string`
 
 GetDescriptionLines returns the DescriptionLines field if non-nil, zero value otherwise.
 
 ### GetDescriptionLinesOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetDescriptionLinesOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetDescriptionLinesOk() (*string, bool)`
 
 GetDescriptionLinesOk returns a tuple with the DescriptionLines field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDescriptionLines
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetDescriptionLines(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetDescriptionLines(v string)`
 
 SetDescriptionLines sets DescriptionLines field to given value.
 
@@ -255,20 +255,20 @@ HasCleanDescription returns a boolean if a field has been set.
 
 ### GetMnemonicCode
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetMnemonicCode() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetMnemonicCode() string`
 
 GetMnemonicCode returns the MnemonicCode field if non-nil, zero value otherwise.
 
 ### GetMnemonicCodeOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetMnemonicCodeOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetMnemonicCodeOk() (*string, bool)`
 
 GetMnemonicCodeOk returns a tuple with the MnemonicCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMnemonicCode
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetMnemonicCode(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetMnemonicCode(v string)`
 
 SetMnemonicCode sets MnemonicCode field to given value.
 
@@ -390,20 +390,20 @@ HasIsDisputable returns a boolean if a field has been set.
 
 ### GetOriginalAmount
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOriginalAmount() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOriginalAmount() string`
 
 GetOriginalAmount returns the OriginalAmount field if non-nil, zero value otherwise.
 
 ### GetOriginalAmountOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOriginalAmountOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOriginalAmountOk() (*string, bool)`
 
 GetOriginalAmountOk returns a tuple with the OriginalAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOriginalAmount
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetOriginalAmount(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetOriginalAmount(v string)`
 
 SetOriginalAmount sets OriginalAmount field to given value.
 
@@ -425,20 +425,20 @@ HasOriginalAmount returns a boolean if a field has been set.
 UnsetOriginalAmount ensures that no value is present for OriginalAmount, not even an explicit nil
 ### GetRunningBalance
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetRunningBalance() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetRunningBalance() string`
 
 GetRunningBalance returns the RunningBalance field if non-nil, zero value otherwise.
 
 ### GetRunningBalanceOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetRunningBalanceOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetRunningBalanceOk() (*string, bool)`
 
 GetRunningBalanceOk returns a tuple with the RunningBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRunningBalance
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetRunningBalance(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetRunningBalance(v string)`
 
 SetRunningBalance sets RunningBalance field to given value.
 
@@ -485,20 +485,20 @@ HasAssociatedCardNumber returns a boolean if a field has been set.
 
 ### GetPurchaseCountryCode
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetPurchaseCountryCode() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetPurchaseCountryCode() string`
 
 GetPurchaseCountryCode returns the PurchaseCountryCode field if non-nil, zero value otherwise.
 
 ### GetPurchaseCountryCodeOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetPurchaseCountryCodeOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetPurchaseCountryCodeOk() (*string, bool)`
 
 GetPurchaseCountryCodeOk returns a tuple with the PurchaseCountryCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPurchaseCountryCode
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetPurchaseCountryCode(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetPurchaseCountryCode(v string)`
 
 SetPurchaseCountryCode sets PurchaseCountryCode field to given value.
 
@@ -520,20 +520,20 @@ HasPurchaseCountryCode returns a boolean if a field has been set.
 UnsetPurchaseCountryCode ensures that no value is present for PurchaseCountryCode, not even an explicit nil
 ### GetOutOfCountryIndicator
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOutOfCountryIndicator() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOutOfCountryIndicator() string`
 
 GetOutOfCountryIndicator returns the OutOfCountryIndicator field if non-nil, zero value otherwise.
 
 ### GetOutOfCountryIndicatorOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOutOfCountryIndicatorOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOutOfCountryIndicatorOk() (*string, bool)`
 
 GetOutOfCountryIndicatorOk returns a tuple with the OutOfCountryIndicator field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOutOfCountryIndicator
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetOutOfCountryIndicator(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetOutOfCountryIndicator(v string)`
 
 SetOutOfCountryIndicator sets OutOfCountryIndicator field to given value.
 
@@ -555,20 +555,20 @@ HasOutOfCountryIndicator returns a boolean if a field has been set.
 UnsetOutOfCountryIndicator ensures that no value is present for OutOfCountryIndicator, not even an explicit nil
 ### GetReferenceNumber
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetReferenceNumber() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetReferenceNumber() string`
 
 GetReferenceNumber returns the ReferenceNumber field if non-nil, zero value otherwise.
 
 ### GetReferenceNumberOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetReferenceNumberOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetReferenceNumberOk() (*string, bool)`
 
 GetReferenceNumberOk returns a tuple with the ReferenceNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReferenceNumber
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetReferenceNumber(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetReferenceNumber(v string)`
 
 SetReferenceNumber sets ReferenceNumber field to given value.
 
@@ -590,20 +590,20 @@ HasReferenceNumber returns a boolean if a field has been set.
 UnsetReferenceNumber ensures that no value is present for ReferenceNumber, not even an explicit nil
 ### GetReasonCode
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetReasonCode() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetReasonCode() string`
 
 GetReasonCode returns the ReasonCode field if non-nil, zero value otherwise.
 
 ### GetReasonCodeOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetReasonCodeOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetReasonCodeOk() (*string, bool)`
 
 GetReasonCodeOk returns a tuple with the ReasonCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReasonCode
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetReasonCode(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetReasonCode(v string)`
 
 SetReasonCode sets ReasonCode field to given value.
 
@@ -650,20 +650,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRecurringPaymentIndicator
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetRecurringPaymentIndicator() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetRecurringPaymentIndicator() string`
 
 GetRecurringPaymentIndicator returns the RecurringPaymentIndicator field if non-nil, zero value otherwise.
 
 ### GetRecurringPaymentIndicatorOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetRecurringPaymentIndicatorOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetRecurringPaymentIndicatorOk() (*string, bool)`
 
 GetRecurringPaymentIndicatorOk returns a tuple with the RecurringPaymentIndicator field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRecurringPaymentIndicator
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetRecurringPaymentIndicator(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetRecurringPaymentIndicator(v string)`
 
 SetRecurringPaymentIndicator sets RecurringPaymentIndicator field to given value.
 
@@ -710,20 +710,20 @@ HasStatementIndicator returns a boolean if a field has been set.
 
 ### GetFromAccount
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetFromAccount() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetFromAccount() string`
 
 GetFromAccount returns the FromAccount field if non-nil, zero value otherwise.
 
 ### GetFromAccountOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetFromAccountOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetFromAccountOk() (*string, bool)`
 
 GetFromAccountOk returns a tuple with the FromAccount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFromAccount
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetFromAccount(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetFromAccount(v string)`
 
 SetFromAccount sets FromAccount field to given value.
 
@@ -745,20 +745,20 @@ HasFromAccount returns a boolean if a field has been set.
 UnsetFromAccount ensures that no value is present for FromAccount, not even an explicit nil
 ### GetToAccount
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetToAccount() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetToAccount() string`
 
 GetToAccount returns the ToAccount field if non-nil, zero value otherwise.
 
 ### GetToAccountOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetToAccountOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetToAccountOk() (*string, bool)`
 
 GetToAccountOk returns a tuple with the ToAccount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetToAccount
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetToAccount(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetToAccount(v string)`
 
 SetToAccount sets ToAccount field to given value.
 
@@ -780,20 +780,20 @@ HasToAccount returns a boolean if a field has been set.
 UnsetToAccount ensures that no value is present for ToAccount, not even an explicit nil
 ### GetPurchaseType
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetPurchaseType() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetPurchaseType() string`
 
 GetPurchaseType returns the PurchaseType field if non-nil, zero value otherwise.
 
 ### GetPurchaseTypeOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetPurchaseTypeOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetPurchaseTypeOk() (*string, bool)`
 
 GetPurchaseTypeOk returns a tuple with the PurchaseType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPurchaseType
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetPurchaseType(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetPurchaseType(v string)`
 
 SetPurchaseType sets PurchaseType field to given value.
 
@@ -840,20 +840,20 @@ HasRewardsCategory returns a boolean if a field has been set.
 
 ### GetRewardCard
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetRewardCard() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetRewardCard() string`
 
 GetRewardCard returns the RewardCard field if non-nil, zero value otherwise.
 
 ### GetRewardCardOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetRewardCardOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetRewardCardOk() (*string, bool)`
 
 GetRewardCardOk returns a tuple with the RewardCard field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRewardCard
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetRewardCard(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetRewardCard(v string)`
 
 SetRewardCard sets RewardCard field to given value.
 
@@ -900,20 +900,20 @@ HasCategory returns a boolean if a field has been set.
 
 ### GetUserInputTag
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetUserInputTag() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetUserInputTag() string`
 
 GetUserInputTag returns the UserInputTag field if non-nil, zero value otherwise.
 
 ### GetUserInputTagOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetUserInputTagOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetUserInputTagOk() (*string, bool)`
 
 GetUserInputTagOk returns a tuple with the UserInputTag field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserInputTag
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetUserInputTag(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetUserInputTag(v string)`
 
 SetUserInputTag sets UserInputTag field to given value.
 
@@ -935,20 +935,20 @@ HasUserInputTag returns a boolean if a field has been set.
 UnsetUserInputTag ensures that no value is present for UserInputTag, not even an explicit nil
 ### GetCheque
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetCheque() map[string]interface{}`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetCheque() string`
 
 GetCheque returns the Cheque field if non-nil, zero value otherwise.
 
 ### GetChequeOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetChequeOk() (*map[string]interface{}, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetChequeOk() (*string, bool)`
 
 GetChequeOk returns a tuple with the Cheque field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCheque
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetCheque(v map[string]interface{})`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetCheque(v string)`
 
 SetCheque sets Cheque field to given value.
 

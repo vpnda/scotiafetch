@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **StatusDate** | Pointer to **string** |  | [optional] 
 **PlasticType** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Nickname** | Pointer to **map[string]interface{}** |  | [optional] 
+**Nickname** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -183,20 +183,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetNickname
 
-`func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) GetNickname() map[string]interface{}`
+`func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) GetNickname() string`
 
 GetNickname returns the Nickname field if non-nil, zero value otherwise.
 
 ### GetNicknameOk
 
-`func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) GetNicknameOk() (*map[string]interface{}, bool)`
+`func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) GetNicknameOk() (*string, bool)`
 
 GetNicknameOk returns a tuple with the Nickname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNickname
 
-`func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) SetNickname(v map[string]interface{})`
+`func (o *ApiCardsCardIdGet200ResponseDataPlasticCardsInner) SetNickname(v string)`
 
 SetNickname sets Nickname field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CurrencyCode** | Pointer to **map[string]interface{}** |  | [optional] 
+**CurrencyCode** | Pointer to **NullableString** |  | [optional] 
 **Amount** | Pointer to **float32** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCurrencyCode
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) GetCurrencyCode() map[string]interface{}`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) GetCurrencyCode() string`
 
 GetCurrencyCode returns the CurrencyCode field if non-nil, zero value otherwise.
 
 ### GetCurrencyCodeOk
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) GetCurrencyCodeOk() (*map[string]interface{}, bool)`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) GetCurrencyCodeOk() (*string, bool)`
 
 GetCurrencyCodeOk returns a tuple with the CurrencyCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrencyCode
 
-`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) SetCurrencyCode(v map[string]interface{})`
+`func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount) SetCurrencyCode(v string)`
 
 SetCurrencyCode sets CurrencyCode field to given value.
 

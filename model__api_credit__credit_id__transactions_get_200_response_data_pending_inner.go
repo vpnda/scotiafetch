@@ -22,43 +22,43 @@ type ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner struct {
 	Key *string `json:"key,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Description *string `json:"description,omitempty"`
-	DescriptionLines map[string]interface{} `json:"descriptionLines,omitempty"`
-	SubDescription map[string]interface{} `json:"subDescription,omitempty"`
-	CleanDescription map[string]interface{} `json:"cleanDescription,omitempty"`
-	MnemonicCode map[string]interface{} `json:"mnemonicCode,omitempty"`
-	Type map[string]interface{} `json:"type,omitempty"`
-	TsysCode map[string]interface{} `json:"tsysCode,omitempty"`
+	DescriptionLines NullableString `json:"descriptionLines,omitempty"`
+	SubDescription NullableString `json:"subDescription,omitempty"`
+	CleanDescription NullableString `json:"cleanDescription,omitempty"`
+	MnemonicCode NullableString `json:"mnemonicCode,omitempty"`
+	Type NullableString `json:"type,omitempty"`
+	TsysCode NullableString `json:"tsysCode,omitempty"`
 	IsTsys *bool `json:"isTsys,omitempty"`
 	IsDisputable *string `json:"isDisputable,omitempty"`
 	OriginalAmount *ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner `json:"originalAmount,omitempty"`
-	RunningBalance map[string]interface{} `json:"runningBalance,omitempty"`
+	RunningBalance NullableString `json:"runningBalance,omitempty"`
 	AssociatedCardNumber *string `json:"associatedCardNumber,omitempty"`
-	PurchaseCountryCode map[string]interface{} `json:"purchaseCountryCode,omitempty"`
-	OutOfCountryIndicator map[string]interface{} `json:"outOfCountryIndicator,omitempty"`
-	ReferenceNumber map[string]interface{} `json:"referenceNumber,omitempty"`
-	ReasonCode map[string]interface{} `json:"reasonCode,omitempty"`
+	PurchaseCountryCode NullableString `json:"purchaseCountryCode,omitempty"`
+	OutOfCountryIndicator NullableString `json:"outOfCountryIndicator,omitempty"`
+	ReferenceNumber NullableString `json:"referenceNumber,omitempty"`
+	ReasonCode NullableString `json:"reasonCode,omitempty"`
 	Status *string `json:"status,omitempty"`
 	RecurringPaymentIndicator *string `json:"recurringPaymentIndicator,omitempty"`
-	StatementIndicator map[string]interface{} `json:"statementIndicator,omitempty"`
-	FromAccount map[string]interface{} `json:"fromAccount,omitempty"`
-	ToAccount map[string]interface{} `json:"toAccount,omitempty"`
-	PurchaseType map[string]interface{} `json:"purchaseType,omitempty"`
-	RewardsCategory map[string]interface{} `json:"rewardsCategory,omitempty"`
-	RewardCard map[string]interface{} `json:"rewardCard,omitempty"`
-	Category map[string]interface{} `json:"category,omitempty"`
-	UserInputTag map[string]interface{} `json:"userInputTag,omitempty"`
-	Cheque map[string]interface{} `json:"cheque,omitempty"`
+	StatementIndicator NullableString `json:"statementIndicator,omitempty"`
+	FromAccount NullableString `json:"fromAccount,omitempty"`
+	ToAccount NullableString `json:"toAccount,omitempty"`
+	PurchaseType NullableString `json:"purchaseType,omitempty"`
+	RewardsCategory NullableString `json:"rewardsCategory,omitempty"`
+	RewardCard NullableString `json:"rewardCard,omitempty"`
+	Category NullableString `json:"category,omitempty"`
+	UserInputTag NullableString `json:"userInputTag,omitempty"`
+	Cheque NullableString `json:"cheque,omitempty"`
 	Merchant *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInnerMerchant `json:"merchant,omitempty"`
 	Enriched *bool `json:"enriched,omitempty"`
-	AcquirerReferenceNumber map[string]interface{} `json:"acquirerReferenceNumber,omitempty"`
+	AcquirerReferenceNumber NullableString `json:"acquirerReferenceNumber,omitempty"`
 	TransactionId *string `json:"transactionId,omitempty"`
 	TransactionKey *string `json:"transactionKey,omitempty"`
 	TransactionDate *string `json:"transactionDate,omitempty"`
-	TransactionCode map[string]interface{} `json:"transactionCode,omitempty"`
+	TransactionCode NullableString `json:"transactionCode,omitempty"`
 	TransactionAmount *ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner `json:"transactionAmount,omitempty"`
 	TransactionType *string `json:"transactionType,omitempty"`
-	TransactionCategory map[string]interface{} `json:"transactionCategory,omitempty"`
-	Subdescription map[string]interface{} `json:"subdescription,omitempty"`
+	TransactionCategory NullableString `json:"transactionCategory,omitempty"`
+	Subdescription NullableString `json:"subdescription,omitempty"`
 }
 
 // NewApiCreditCreditIdTransactionsGet200ResponseDataPendingInner instantiates a new ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner object
@@ -175,201 +175,255 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetDescrip
 }
 
 // GetDescriptionLines returns the DescriptionLines field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetDescriptionLines() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetDescriptionLines() string {
+	if o == nil || IsNil(o.DescriptionLines.Get()) {
+		var ret string
 		return ret
 	}
-	return o.DescriptionLines
+	return *o.DescriptionLines.Get()
 }
 
 // GetDescriptionLinesOk returns a tuple with the DescriptionLines field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetDescriptionLinesOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.DescriptionLines) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetDescriptionLinesOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.DescriptionLines, true
+	return o.DescriptionLines.Get(), o.DescriptionLines.IsSet()
 }
 
 // HasDescriptionLines returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasDescriptionLines() bool {
-	if o != nil && !IsNil(o.DescriptionLines) {
+	if o != nil && o.DescriptionLines.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescriptionLines gets a reference to the given map[string]interface{} and assigns it to the DescriptionLines field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetDescriptionLines(v map[string]interface{}) {
-	o.DescriptionLines = v
+// SetDescriptionLines gets a reference to the given NullableString and assigns it to the DescriptionLines field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetDescriptionLines(v string) {
+	o.DescriptionLines.Set(&v)
+}
+// SetDescriptionLinesNil sets the value for DescriptionLines to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetDescriptionLinesNil() {
+	o.DescriptionLines.Set(nil)
+}
+
+// UnsetDescriptionLines ensures that no value is present for DescriptionLines, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetDescriptionLines() {
+	o.DescriptionLines.Unset()
 }
 
 // GetSubDescription returns the SubDescription field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetSubDescription() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetSubDescription() string {
+	if o == nil || IsNil(o.SubDescription.Get()) {
+		var ret string
 		return ret
 	}
-	return o.SubDescription
+	return *o.SubDescription.Get()
 }
 
 // GetSubDescriptionOk returns a tuple with the SubDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetSubDescriptionOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.SubDescription) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetSubDescriptionOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.SubDescription, true
+	return o.SubDescription.Get(), o.SubDescription.IsSet()
 }
 
 // HasSubDescription returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasSubDescription() bool {
-	if o != nil && !IsNil(o.SubDescription) {
+	if o != nil && o.SubDescription.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubDescription gets a reference to the given map[string]interface{} and assigns it to the SubDescription field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetSubDescription(v map[string]interface{}) {
-	o.SubDescription = v
+// SetSubDescription gets a reference to the given NullableString and assigns it to the SubDescription field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetSubDescription(v string) {
+	o.SubDescription.Set(&v)
+}
+// SetSubDescriptionNil sets the value for SubDescription to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetSubDescriptionNil() {
+	o.SubDescription.Set(nil)
+}
+
+// UnsetSubDescription ensures that no value is present for SubDescription, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetSubDescription() {
+	o.SubDescription.Unset()
 }
 
 // GetCleanDescription returns the CleanDescription field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetCleanDescription() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetCleanDescription() string {
+	if o == nil || IsNil(o.CleanDescription.Get()) {
+		var ret string
 		return ret
 	}
-	return o.CleanDescription
+	return *o.CleanDescription.Get()
 }
 
 // GetCleanDescriptionOk returns a tuple with the CleanDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetCleanDescriptionOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.CleanDescription) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetCleanDescriptionOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.CleanDescription, true
+	return o.CleanDescription.Get(), o.CleanDescription.IsSet()
 }
 
 // HasCleanDescription returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasCleanDescription() bool {
-	if o != nil && !IsNil(o.CleanDescription) {
+	if o != nil && o.CleanDescription.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCleanDescription gets a reference to the given map[string]interface{} and assigns it to the CleanDescription field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetCleanDescription(v map[string]interface{}) {
-	o.CleanDescription = v
+// SetCleanDescription gets a reference to the given NullableString and assigns it to the CleanDescription field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetCleanDescription(v string) {
+	o.CleanDescription.Set(&v)
+}
+// SetCleanDescriptionNil sets the value for CleanDescription to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetCleanDescriptionNil() {
+	o.CleanDescription.Set(nil)
+}
+
+// UnsetCleanDescription ensures that no value is present for CleanDescription, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetCleanDescription() {
+	o.CleanDescription.Unset()
 }
 
 // GetMnemonicCode returns the MnemonicCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetMnemonicCode() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetMnemonicCode() string {
+	if o == nil || IsNil(o.MnemonicCode.Get()) {
+		var ret string
 		return ret
 	}
-	return o.MnemonicCode
+	return *o.MnemonicCode.Get()
 }
 
 // GetMnemonicCodeOk returns a tuple with the MnemonicCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetMnemonicCodeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.MnemonicCode) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetMnemonicCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.MnemonicCode, true
+	return o.MnemonicCode.Get(), o.MnemonicCode.IsSet()
 }
 
 // HasMnemonicCode returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasMnemonicCode() bool {
-	if o != nil && !IsNil(o.MnemonicCode) {
+	if o != nil && o.MnemonicCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMnemonicCode gets a reference to the given map[string]interface{} and assigns it to the MnemonicCode field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetMnemonicCode(v map[string]interface{}) {
-	o.MnemonicCode = v
+// SetMnemonicCode gets a reference to the given NullableString and assigns it to the MnemonicCode field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetMnemonicCode(v string) {
+	o.MnemonicCode.Set(&v)
+}
+// SetMnemonicCodeNil sets the value for MnemonicCode to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetMnemonicCodeNil() {
+	o.MnemonicCode.Set(nil)
+}
+
+// UnsetMnemonicCode ensures that no value is present for MnemonicCode, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetMnemonicCode() {
+	o.MnemonicCode.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetType() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetType() string {
+	if o == nil || IsNil(o.Type.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Type
+	return *o.Type.Get()
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTypeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Type, true
+	return o.Type.Get(), o.Type.IsSet()
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
+	if o != nil && o.Type.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given map[string]interface{} and assigns it to the Type field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetType(v map[string]interface{}) {
-	o.Type = v
+// SetType gets a reference to the given NullableString and assigns it to the Type field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetType(v string) {
+	o.Type.Set(&v)
+}
+// SetTypeNil sets the value for Type to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetTypeNil() {
+	o.Type.Set(nil)
+}
+
+// UnsetType ensures that no value is present for Type, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetType() {
+	o.Type.Unset()
 }
 
 // GetTsysCode returns the TsysCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTsysCode() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTsysCode() string {
+	if o == nil || IsNil(o.TsysCode.Get()) {
+		var ret string
 		return ret
 	}
-	return o.TsysCode
+	return *o.TsysCode.Get()
 }
 
 // GetTsysCodeOk returns a tuple with the TsysCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTsysCodeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.TsysCode) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTsysCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.TsysCode, true
+	return o.TsysCode.Get(), o.TsysCode.IsSet()
 }
 
 // HasTsysCode returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasTsysCode() bool {
-	if o != nil && !IsNil(o.TsysCode) {
+	if o != nil && o.TsysCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTsysCode gets a reference to the given map[string]interface{} and assigns it to the TsysCode field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetTsysCode(v map[string]interface{}) {
-	o.TsysCode = v
+// SetTsysCode gets a reference to the given NullableString and assigns it to the TsysCode field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetTsysCode(v string) {
+	o.TsysCode.Set(&v)
+}
+// SetTsysCodeNil sets the value for TsysCode to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetTsysCodeNil() {
+	o.TsysCode.Set(nil)
+}
+
+// UnsetTsysCode ensures that no value is present for TsysCode, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetTsysCode() {
+	o.TsysCode.Unset()
 }
 
 // GetIsTsys returns the IsTsys field value if set, zero value otherwise.
@@ -469,36 +523,45 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetOrigina
 }
 
 // GetRunningBalance returns the RunningBalance field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetRunningBalance() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetRunningBalance() string {
+	if o == nil || IsNil(o.RunningBalance.Get()) {
+		var ret string
 		return ret
 	}
-	return o.RunningBalance
+	return *o.RunningBalance.Get()
 }
 
 // GetRunningBalanceOk returns a tuple with the RunningBalance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetRunningBalanceOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.RunningBalance) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetRunningBalanceOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.RunningBalance, true
+	return o.RunningBalance.Get(), o.RunningBalance.IsSet()
 }
 
 // HasRunningBalance returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasRunningBalance() bool {
-	if o != nil && !IsNil(o.RunningBalance) {
+	if o != nil && o.RunningBalance.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRunningBalance gets a reference to the given map[string]interface{} and assigns it to the RunningBalance field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetRunningBalance(v map[string]interface{}) {
-	o.RunningBalance = v
+// SetRunningBalance gets a reference to the given NullableString and assigns it to the RunningBalance field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetRunningBalance(v string) {
+	o.RunningBalance.Set(&v)
+}
+// SetRunningBalanceNil sets the value for RunningBalance to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetRunningBalanceNil() {
+	o.RunningBalance.Set(nil)
+}
+
+// UnsetRunningBalance ensures that no value is present for RunningBalance, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetRunningBalance() {
+	o.RunningBalance.Unset()
 }
 
 // GetAssociatedCardNumber returns the AssociatedCardNumber field value if set, zero value otherwise.
@@ -534,135 +597,171 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetAssocia
 }
 
 // GetPurchaseCountryCode returns the PurchaseCountryCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetPurchaseCountryCode() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetPurchaseCountryCode() string {
+	if o == nil || IsNil(o.PurchaseCountryCode.Get()) {
+		var ret string
 		return ret
 	}
-	return o.PurchaseCountryCode
+	return *o.PurchaseCountryCode.Get()
 }
 
 // GetPurchaseCountryCodeOk returns a tuple with the PurchaseCountryCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetPurchaseCountryCodeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.PurchaseCountryCode) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetPurchaseCountryCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.PurchaseCountryCode, true
+	return o.PurchaseCountryCode.Get(), o.PurchaseCountryCode.IsSet()
 }
 
 // HasPurchaseCountryCode returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasPurchaseCountryCode() bool {
-	if o != nil && !IsNil(o.PurchaseCountryCode) {
+	if o != nil && o.PurchaseCountryCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPurchaseCountryCode gets a reference to the given map[string]interface{} and assigns it to the PurchaseCountryCode field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetPurchaseCountryCode(v map[string]interface{}) {
-	o.PurchaseCountryCode = v
+// SetPurchaseCountryCode gets a reference to the given NullableString and assigns it to the PurchaseCountryCode field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetPurchaseCountryCode(v string) {
+	o.PurchaseCountryCode.Set(&v)
+}
+// SetPurchaseCountryCodeNil sets the value for PurchaseCountryCode to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetPurchaseCountryCodeNil() {
+	o.PurchaseCountryCode.Set(nil)
+}
+
+// UnsetPurchaseCountryCode ensures that no value is present for PurchaseCountryCode, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetPurchaseCountryCode() {
+	o.PurchaseCountryCode.Unset()
 }
 
 // GetOutOfCountryIndicator returns the OutOfCountryIndicator field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetOutOfCountryIndicator() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetOutOfCountryIndicator() string {
+	if o == nil || IsNil(o.OutOfCountryIndicator.Get()) {
+		var ret string
 		return ret
 	}
-	return o.OutOfCountryIndicator
+	return *o.OutOfCountryIndicator.Get()
 }
 
 // GetOutOfCountryIndicatorOk returns a tuple with the OutOfCountryIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetOutOfCountryIndicatorOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.OutOfCountryIndicator) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetOutOfCountryIndicatorOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.OutOfCountryIndicator, true
+	return o.OutOfCountryIndicator.Get(), o.OutOfCountryIndicator.IsSet()
 }
 
 // HasOutOfCountryIndicator returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasOutOfCountryIndicator() bool {
-	if o != nil && !IsNil(o.OutOfCountryIndicator) {
+	if o != nil && o.OutOfCountryIndicator.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOutOfCountryIndicator gets a reference to the given map[string]interface{} and assigns it to the OutOfCountryIndicator field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetOutOfCountryIndicator(v map[string]interface{}) {
-	o.OutOfCountryIndicator = v
+// SetOutOfCountryIndicator gets a reference to the given NullableString and assigns it to the OutOfCountryIndicator field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetOutOfCountryIndicator(v string) {
+	o.OutOfCountryIndicator.Set(&v)
+}
+// SetOutOfCountryIndicatorNil sets the value for OutOfCountryIndicator to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetOutOfCountryIndicatorNil() {
+	o.OutOfCountryIndicator.Set(nil)
+}
+
+// UnsetOutOfCountryIndicator ensures that no value is present for OutOfCountryIndicator, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetOutOfCountryIndicator() {
+	o.OutOfCountryIndicator.Unset()
 }
 
 // GetReferenceNumber returns the ReferenceNumber field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetReferenceNumber() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetReferenceNumber() string {
+	if o == nil || IsNil(o.ReferenceNumber.Get()) {
+		var ret string
 		return ret
 	}
-	return o.ReferenceNumber
+	return *o.ReferenceNumber.Get()
 }
 
 // GetReferenceNumberOk returns a tuple with the ReferenceNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetReferenceNumberOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.ReferenceNumber) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetReferenceNumberOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.ReferenceNumber, true
+	return o.ReferenceNumber.Get(), o.ReferenceNumber.IsSet()
 }
 
 // HasReferenceNumber returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasReferenceNumber() bool {
-	if o != nil && !IsNil(o.ReferenceNumber) {
+	if o != nil && o.ReferenceNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceNumber gets a reference to the given map[string]interface{} and assigns it to the ReferenceNumber field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetReferenceNumber(v map[string]interface{}) {
-	o.ReferenceNumber = v
+// SetReferenceNumber gets a reference to the given NullableString and assigns it to the ReferenceNumber field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetReferenceNumber(v string) {
+	o.ReferenceNumber.Set(&v)
+}
+// SetReferenceNumberNil sets the value for ReferenceNumber to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetReferenceNumberNil() {
+	o.ReferenceNumber.Set(nil)
+}
+
+// UnsetReferenceNumber ensures that no value is present for ReferenceNumber, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetReferenceNumber() {
+	o.ReferenceNumber.Unset()
 }
 
 // GetReasonCode returns the ReasonCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetReasonCode() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetReasonCode() string {
+	if o == nil || IsNil(o.ReasonCode.Get()) {
+		var ret string
 		return ret
 	}
-	return o.ReasonCode
+	return *o.ReasonCode.Get()
 }
 
 // GetReasonCodeOk returns a tuple with the ReasonCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetReasonCodeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.ReasonCode) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetReasonCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.ReasonCode, true
+	return o.ReasonCode.Get(), o.ReasonCode.IsSet()
 }
 
 // HasReasonCode returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasReasonCode() bool {
-	if o != nil && !IsNil(o.ReasonCode) {
+	if o != nil && o.ReasonCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetReasonCode gets a reference to the given map[string]interface{} and assigns it to the ReasonCode field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetReasonCode(v map[string]interface{}) {
-	o.ReasonCode = v
+// SetReasonCode gets a reference to the given NullableString and assigns it to the ReasonCode field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetReasonCode(v string) {
+	o.ReasonCode.Set(&v)
+}
+// SetReasonCodeNil sets the value for ReasonCode to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetReasonCodeNil() {
+	o.ReasonCode.Set(nil)
+}
+
+// UnsetReasonCode ensures that no value is present for ReasonCode, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetReasonCode() {
+	o.ReasonCode.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -730,300 +829,381 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetRecurri
 }
 
 // GetStatementIndicator returns the StatementIndicator field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetStatementIndicator() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetStatementIndicator() string {
+	if o == nil || IsNil(o.StatementIndicator.Get()) {
+		var ret string
 		return ret
 	}
-	return o.StatementIndicator
+	return *o.StatementIndicator.Get()
 }
 
 // GetStatementIndicatorOk returns a tuple with the StatementIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetStatementIndicatorOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.StatementIndicator) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetStatementIndicatorOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.StatementIndicator, true
+	return o.StatementIndicator.Get(), o.StatementIndicator.IsSet()
 }
 
 // HasStatementIndicator returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasStatementIndicator() bool {
-	if o != nil && !IsNil(o.StatementIndicator) {
+	if o != nil && o.StatementIndicator.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatementIndicator gets a reference to the given map[string]interface{} and assigns it to the StatementIndicator field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetStatementIndicator(v map[string]interface{}) {
-	o.StatementIndicator = v
+// SetStatementIndicator gets a reference to the given NullableString and assigns it to the StatementIndicator field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetStatementIndicator(v string) {
+	o.StatementIndicator.Set(&v)
+}
+// SetStatementIndicatorNil sets the value for StatementIndicator to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetStatementIndicatorNil() {
+	o.StatementIndicator.Set(nil)
+}
+
+// UnsetStatementIndicator ensures that no value is present for StatementIndicator, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetStatementIndicator() {
+	o.StatementIndicator.Unset()
 }
 
 // GetFromAccount returns the FromAccount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetFromAccount() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetFromAccount() string {
+	if o == nil || IsNil(o.FromAccount.Get()) {
+		var ret string
 		return ret
 	}
-	return o.FromAccount
+	return *o.FromAccount.Get()
 }
 
 // GetFromAccountOk returns a tuple with the FromAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetFromAccountOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.FromAccount) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetFromAccountOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.FromAccount, true
+	return o.FromAccount.Get(), o.FromAccount.IsSet()
 }
 
 // HasFromAccount returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasFromAccount() bool {
-	if o != nil && !IsNil(o.FromAccount) {
+	if o != nil && o.FromAccount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFromAccount gets a reference to the given map[string]interface{} and assigns it to the FromAccount field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetFromAccount(v map[string]interface{}) {
-	o.FromAccount = v
+// SetFromAccount gets a reference to the given NullableString and assigns it to the FromAccount field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetFromAccount(v string) {
+	o.FromAccount.Set(&v)
+}
+// SetFromAccountNil sets the value for FromAccount to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetFromAccountNil() {
+	o.FromAccount.Set(nil)
+}
+
+// UnsetFromAccount ensures that no value is present for FromAccount, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetFromAccount() {
+	o.FromAccount.Unset()
 }
 
 // GetToAccount returns the ToAccount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetToAccount() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetToAccount() string {
+	if o == nil || IsNil(o.ToAccount.Get()) {
+		var ret string
 		return ret
 	}
-	return o.ToAccount
+	return *o.ToAccount.Get()
 }
 
 // GetToAccountOk returns a tuple with the ToAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetToAccountOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.ToAccount) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetToAccountOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.ToAccount, true
+	return o.ToAccount.Get(), o.ToAccount.IsSet()
 }
 
 // HasToAccount returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasToAccount() bool {
-	if o != nil && !IsNil(o.ToAccount) {
+	if o != nil && o.ToAccount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetToAccount gets a reference to the given map[string]interface{} and assigns it to the ToAccount field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetToAccount(v map[string]interface{}) {
-	o.ToAccount = v
+// SetToAccount gets a reference to the given NullableString and assigns it to the ToAccount field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetToAccount(v string) {
+	o.ToAccount.Set(&v)
+}
+// SetToAccountNil sets the value for ToAccount to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetToAccountNil() {
+	o.ToAccount.Set(nil)
+}
+
+// UnsetToAccount ensures that no value is present for ToAccount, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetToAccount() {
+	o.ToAccount.Unset()
 }
 
 // GetPurchaseType returns the PurchaseType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetPurchaseType() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetPurchaseType() string {
+	if o == nil || IsNil(o.PurchaseType.Get()) {
+		var ret string
 		return ret
 	}
-	return o.PurchaseType
+	return *o.PurchaseType.Get()
 }
 
 // GetPurchaseTypeOk returns a tuple with the PurchaseType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetPurchaseTypeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.PurchaseType) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetPurchaseTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.PurchaseType, true
+	return o.PurchaseType.Get(), o.PurchaseType.IsSet()
 }
 
 // HasPurchaseType returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasPurchaseType() bool {
-	if o != nil && !IsNil(o.PurchaseType) {
+	if o != nil && o.PurchaseType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPurchaseType gets a reference to the given map[string]interface{} and assigns it to the PurchaseType field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetPurchaseType(v map[string]interface{}) {
-	o.PurchaseType = v
+// SetPurchaseType gets a reference to the given NullableString and assigns it to the PurchaseType field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetPurchaseType(v string) {
+	o.PurchaseType.Set(&v)
+}
+// SetPurchaseTypeNil sets the value for PurchaseType to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetPurchaseTypeNil() {
+	o.PurchaseType.Set(nil)
+}
+
+// UnsetPurchaseType ensures that no value is present for PurchaseType, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetPurchaseType() {
+	o.PurchaseType.Unset()
 }
 
 // GetRewardsCategory returns the RewardsCategory field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetRewardsCategory() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetRewardsCategory() string {
+	if o == nil || IsNil(o.RewardsCategory.Get()) {
+		var ret string
 		return ret
 	}
-	return o.RewardsCategory
+	return *o.RewardsCategory.Get()
 }
 
 // GetRewardsCategoryOk returns a tuple with the RewardsCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetRewardsCategoryOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.RewardsCategory) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetRewardsCategoryOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.RewardsCategory, true
+	return o.RewardsCategory.Get(), o.RewardsCategory.IsSet()
 }
 
 // HasRewardsCategory returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasRewardsCategory() bool {
-	if o != nil && !IsNil(o.RewardsCategory) {
+	if o != nil && o.RewardsCategory.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRewardsCategory gets a reference to the given map[string]interface{} and assigns it to the RewardsCategory field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetRewardsCategory(v map[string]interface{}) {
-	o.RewardsCategory = v
+// SetRewardsCategory gets a reference to the given NullableString and assigns it to the RewardsCategory field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetRewardsCategory(v string) {
+	o.RewardsCategory.Set(&v)
+}
+// SetRewardsCategoryNil sets the value for RewardsCategory to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetRewardsCategoryNil() {
+	o.RewardsCategory.Set(nil)
+}
+
+// UnsetRewardsCategory ensures that no value is present for RewardsCategory, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetRewardsCategory() {
+	o.RewardsCategory.Unset()
 }
 
 // GetRewardCard returns the RewardCard field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetRewardCard() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetRewardCard() string {
+	if o == nil || IsNil(o.RewardCard.Get()) {
+		var ret string
 		return ret
 	}
-	return o.RewardCard
+	return *o.RewardCard.Get()
 }
 
 // GetRewardCardOk returns a tuple with the RewardCard field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetRewardCardOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.RewardCard) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetRewardCardOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.RewardCard, true
+	return o.RewardCard.Get(), o.RewardCard.IsSet()
 }
 
 // HasRewardCard returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasRewardCard() bool {
-	if o != nil && !IsNil(o.RewardCard) {
+	if o != nil && o.RewardCard.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRewardCard gets a reference to the given map[string]interface{} and assigns it to the RewardCard field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetRewardCard(v map[string]interface{}) {
-	o.RewardCard = v
+// SetRewardCard gets a reference to the given NullableString and assigns it to the RewardCard field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetRewardCard(v string) {
+	o.RewardCard.Set(&v)
+}
+// SetRewardCardNil sets the value for RewardCard to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetRewardCardNil() {
+	o.RewardCard.Set(nil)
+}
+
+// UnsetRewardCard ensures that no value is present for RewardCard, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetRewardCard() {
+	o.RewardCard.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetCategory() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetCategory() string {
+	if o == nil || IsNil(o.Category.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetCategoryOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Category) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetCategoryOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // HasCategory returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given map[string]interface{} and assigns it to the Category field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetCategory(v map[string]interface{}) {
-	o.Category = v
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetCategory(v string) {
+	o.Category.Set(&v)
+}
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetCategory() {
+	o.Category.Unset()
 }
 
 // GetUserInputTag returns the UserInputTag field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetUserInputTag() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetUserInputTag() string {
+	if o == nil || IsNil(o.UserInputTag.Get()) {
+		var ret string
 		return ret
 	}
-	return o.UserInputTag
+	return *o.UserInputTag.Get()
 }
 
 // GetUserInputTagOk returns a tuple with the UserInputTag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetUserInputTagOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.UserInputTag) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetUserInputTagOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.UserInputTag, true
+	return o.UserInputTag.Get(), o.UserInputTag.IsSet()
 }
 
 // HasUserInputTag returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasUserInputTag() bool {
-	if o != nil && !IsNil(o.UserInputTag) {
+	if o != nil && o.UserInputTag.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUserInputTag gets a reference to the given map[string]interface{} and assigns it to the UserInputTag field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetUserInputTag(v map[string]interface{}) {
-	o.UserInputTag = v
+// SetUserInputTag gets a reference to the given NullableString and assigns it to the UserInputTag field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetUserInputTag(v string) {
+	o.UserInputTag.Set(&v)
+}
+// SetUserInputTagNil sets the value for UserInputTag to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetUserInputTagNil() {
+	o.UserInputTag.Set(nil)
+}
+
+// UnsetUserInputTag ensures that no value is present for UserInputTag, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetUserInputTag() {
+	o.UserInputTag.Unset()
 }
 
 // GetCheque returns the Cheque field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetCheque() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetCheque() string {
+	if o == nil || IsNil(o.Cheque.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Cheque
+	return *o.Cheque.Get()
 }
 
 // GetChequeOk returns a tuple with the Cheque field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetChequeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Cheque) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetChequeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Cheque, true
+	return o.Cheque.Get(), o.Cheque.IsSet()
 }
 
 // HasCheque returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasCheque() bool {
-	if o != nil && !IsNil(o.Cheque) {
+	if o != nil && o.Cheque.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCheque gets a reference to the given map[string]interface{} and assigns it to the Cheque field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetCheque(v map[string]interface{}) {
-	o.Cheque = v
+// SetCheque gets a reference to the given NullableString and assigns it to the Cheque field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetCheque(v string) {
+	o.Cheque.Set(&v)
+}
+// SetChequeNil sets the value for Cheque to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetChequeNil() {
+	o.Cheque.Set(nil)
+}
+
+// UnsetCheque ensures that no value is present for Cheque, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetCheque() {
+	o.Cheque.Unset()
 }
 
 // GetMerchant returns the Merchant field value if set, zero value otherwise.
@@ -1091,36 +1271,45 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetEnriche
 }
 
 // GetAcquirerReferenceNumber returns the AcquirerReferenceNumber field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetAcquirerReferenceNumber() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetAcquirerReferenceNumber() string {
+	if o == nil || IsNil(o.AcquirerReferenceNumber.Get()) {
+		var ret string
 		return ret
 	}
-	return o.AcquirerReferenceNumber
+	return *o.AcquirerReferenceNumber.Get()
 }
 
 // GetAcquirerReferenceNumberOk returns a tuple with the AcquirerReferenceNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetAcquirerReferenceNumberOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.AcquirerReferenceNumber) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetAcquirerReferenceNumberOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.AcquirerReferenceNumber, true
+	return o.AcquirerReferenceNumber.Get(), o.AcquirerReferenceNumber.IsSet()
 }
 
 // HasAcquirerReferenceNumber returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasAcquirerReferenceNumber() bool {
-	if o != nil && !IsNil(o.AcquirerReferenceNumber) {
+	if o != nil && o.AcquirerReferenceNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAcquirerReferenceNumber gets a reference to the given map[string]interface{} and assigns it to the AcquirerReferenceNumber field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetAcquirerReferenceNumber(v map[string]interface{}) {
-	o.AcquirerReferenceNumber = v
+// SetAcquirerReferenceNumber gets a reference to the given NullableString and assigns it to the AcquirerReferenceNumber field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetAcquirerReferenceNumber(v string) {
+	o.AcquirerReferenceNumber.Set(&v)
+}
+// SetAcquirerReferenceNumberNil sets the value for AcquirerReferenceNumber to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetAcquirerReferenceNumberNil() {
+	o.AcquirerReferenceNumber.Set(nil)
+}
+
+// UnsetAcquirerReferenceNumber ensures that no value is present for AcquirerReferenceNumber, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetAcquirerReferenceNumber() {
+	o.AcquirerReferenceNumber.Unset()
 }
 
 // GetTransactionId returns the TransactionId field value if set, zero value otherwise.
@@ -1220,36 +1409,45 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetTransac
 }
 
 // GetTransactionCode returns the TransactionCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTransactionCode() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTransactionCode() string {
+	if o == nil || IsNil(o.TransactionCode.Get()) {
+		var ret string
 		return ret
 	}
-	return o.TransactionCode
+	return *o.TransactionCode.Get()
 }
 
 // GetTransactionCodeOk returns a tuple with the TransactionCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTransactionCodeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.TransactionCode) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTransactionCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.TransactionCode, true
+	return o.TransactionCode.Get(), o.TransactionCode.IsSet()
 }
 
 // HasTransactionCode returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasTransactionCode() bool {
-	if o != nil && !IsNil(o.TransactionCode) {
+	if o != nil && o.TransactionCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTransactionCode gets a reference to the given map[string]interface{} and assigns it to the TransactionCode field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetTransactionCode(v map[string]interface{}) {
-	o.TransactionCode = v
+// SetTransactionCode gets a reference to the given NullableString and assigns it to the TransactionCode field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetTransactionCode(v string) {
+	o.TransactionCode.Set(&v)
+}
+// SetTransactionCodeNil sets the value for TransactionCode to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetTransactionCodeNil() {
+	o.TransactionCode.Set(nil)
+}
+
+// UnsetTransactionCode ensures that no value is present for TransactionCode, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetTransactionCode() {
+	o.TransactionCode.Unset()
 }
 
 // GetTransactionAmount returns the TransactionAmount field value if set, zero value otherwise.
@@ -1317,69 +1515,87 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetTransac
 }
 
 // GetTransactionCategory returns the TransactionCategory field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTransactionCategory() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTransactionCategory() string {
+	if o == nil || IsNil(o.TransactionCategory.Get()) {
+		var ret string
 		return ret
 	}
-	return o.TransactionCategory
+	return *o.TransactionCategory.Get()
 }
 
 // GetTransactionCategoryOk returns a tuple with the TransactionCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTransactionCategoryOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.TransactionCategory) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetTransactionCategoryOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.TransactionCategory, true
+	return o.TransactionCategory.Get(), o.TransactionCategory.IsSet()
 }
 
 // HasTransactionCategory returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasTransactionCategory() bool {
-	if o != nil && !IsNil(o.TransactionCategory) {
+	if o != nil && o.TransactionCategory.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTransactionCategory gets a reference to the given map[string]interface{} and assigns it to the TransactionCategory field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetTransactionCategory(v map[string]interface{}) {
-	o.TransactionCategory = v
+// SetTransactionCategory gets a reference to the given NullableString and assigns it to the TransactionCategory field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetTransactionCategory(v string) {
+	o.TransactionCategory.Set(&v)
+}
+// SetTransactionCategoryNil sets the value for TransactionCategory to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetTransactionCategoryNil() {
+	o.TransactionCategory.Set(nil)
+}
+
+// UnsetTransactionCategory ensures that no value is present for TransactionCategory, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetTransactionCategory() {
+	o.TransactionCategory.Unset()
 }
 
 // GetSubdescription returns the Subdescription field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetSubdescription() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetSubdescription() string {
+	if o == nil || IsNil(o.Subdescription.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Subdescription
+	return *o.Subdescription.Get()
 }
 
 // GetSubdescriptionOk returns a tuple with the Subdescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetSubdescriptionOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Subdescription) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetSubdescriptionOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Subdescription, true
+	return o.Subdescription.Get(), o.Subdescription.IsSet()
 }
 
 // HasSubdescription returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasSubdescription() bool {
-	if o != nil && !IsNil(o.Subdescription) {
+	if o != nil && o.Subdescription.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubdescription gets a reference to the given map[string]interface{} and assigns it to the Subdescription field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetSubdescription(v map[string]interface{}) {
-	o.Subdescription = v
+// SetSubdescription gets a reference to the given NullableString and assigns it to the Subdescription field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetSubdescription(v string) {
+	o.Subdescription.Set(&v)
+}
+// SetSubdescriptionNil sets the value for Subdescription to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetSubdescriptionNil() {
+	o.Subdescription.Set(nil)
+}
+
+// UnsetSubdescription ensures that no value is present for Subdescription, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) UnsetSubdescription() {
+	o.Subdescription.Unset()
 }
 
 func (o ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) MarshalJSON() ([]byte, error) {
@@ -1401,23 +1617,23 @@ func (o ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) ToMap() (ma
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if o.DescriptionLines != nil {
-		toSerialize["descriptionLines"] = o.DescriptionLines
+	if o.DescriptionLines.IsSet() {
+		toSerialize["descriptionLines"] = o.DescriptionLines.Get()
 	}
-	if o.SubDescription != nil {
-		toSerialize["subDescription"] = o.SubDescription
+	if o.SubDescription.IsSet() {
+		toSerialize["subDescription"] = o.SubDescription.Get()
 	}
-	if o.CleanDescription != nil {
-		toSerialize["cleanDescription"] = o.CleanDescription
+	if o.CleanDescription.IsSet() {
+		toSerialize["cleanDescription"] = o.CleanDescription.Get()
 	}
-	if o.MnemonicCode != nil {
-		toSerialize["mnemonicCode"] = o.MnemonicCode
+	if o.MnemonicCode.IsSet() {
+		toSerialize["mnemonicCode"] = o.MnemonicCode.Get()
 	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
+	if o.Type.IsSet() {
+		toSerialize["type"] = o.Type.Get()
 	}
-	if o.TsysCode != nil {
-		toSerialize["tsysCode"] = o.TsysCode
+	if o.TsysCode.IsSet() {
+		toSerialize["tsysCode"] = o.TsysCode.Get()
 	}
 	if !IsNil(o.IsTsys) {
 		toSerialize["isTsys"] = o.IsTsys
@@ -1428,23 +1644,23 @@ func (o ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) ToMap() (ma
 	if !IsNil(o.OriginalAmount) {
 		toSerialize["originalAmount"] = o.OriginalAmount
 	}
-	if o.RunningBalance != nil {
-		toSerialize["runningBalance"] = o.RunningBalance
+	if o.RunningBalance.IsSet() {
+		toSerialize["runningBalance"] = o.RunningBalance.Get()
 	}
 	if !IsNil(o.AssociatedCardNumber) {
 		toSerialize["associatedCardNumber"] = o.AssociatedCardNumber
 	}
-	if o.PurchaseCountryCode != nil {
-		toSerialize["purchaseCountryCode"] = o.PurchaseCountryCode
+	if o.PurchaseCountryCode.IsSet() {
+		toSerialize["purchaseCountryCode"] = o.PurchaseCountryCode.Get()
 	}
-	if o.OutOfCountryIndicator != nil {
-		toSerialize["outOfCountryIndicator"] = o.OutOfCountryIndicator
+	if o.OutOfCountryIndicator.IsSet() {
+		toSerialize["outOfCountryIndicator"] = o.OutOfCountryIndicator.Get()
 	}
-	if o.ReferenceNumber != nil {
-		toSerialize["referenceNumber"] = o.ReferenceNumber
+	if o.ReferenceNumber.IsSet() {
+		toSerialize["referenceNumber"] = o.ReferenceNumber.Get()
 	}
-	if o.ReasonCode != nil {
-		toSerialize["reasonCode"] = o.ReasonCode
+	if o.ReasonCode.IsSet() {
+		toSerialize["reasonCode"] = o.ReasonCode.Get()
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
@@ -1452,32 +1668,32 @@ func (o ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) ToMap() (ma
 	if !IsNil(o.RecurringPaymentIndicator) {
 		toSerialize["recurringPaymentIndicator"] = o.RecurringPaymentIndicator
 	}
-	if o.StatementIndicator != nil {
-		toSerialize["statementIndicator"] = o.StatementIndicator
+	if o.StatementIndicator.IsSet() {
+		toSerialize["statementIndicator"] = o.StatementIndicator.Get()
 	}
-	if o.FromAccount != nil {
-		toSerialize["fromAccount"] = o.FromAccount
+	if o.FromAccount.IsSet() {
+		toSerialize["fromAccount"] = o.FromAccount.Get()
 	}
-	if o.ToAccount != nil {
-		toSerialize["toAccount"] = o.ToAccount
+	if o.ToAccount.IsSet() {
+		toSerialize["toAccount"] = o.ToAccount.Get()
 	}
-	if o.PurchaseType != nil {
-		toSerialize["purchaseType"] = o.PurchaseType
+	if o.PurchaseType.IsSet() {
+		toSerialize["purchaseType"] = o.PurchaseType.Get()
 	}
-	if o.RewardsCategory != nil {
-		toSerialize["rewardsCategory"] = o.RewardsCategory
+	if o.RewardsCategory.IsSet() {
+		toSerialize["rewardsCategory"] = o.RewardsCategory.Get()
 	}
-	if o.RewardCard != nil {
-		toSerialize["rewardCard"] = o.RewardCard
+	if o.RewardCard.IsSet() {
+		toSerialize["rewardCard"] = o.RewardCard.Get()
 	}
-	if o.Category != nil {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
-	if o.UserInputTag != nil {
-		toSerialize["userInputTag"] = o.UserInputTag
+	if o.UserInputTag.IsSet() {
+		toSerialize["userInputTag"] = o.UserInputTag.Get()
 	}
-	if o.Cheque != nil {
-		toSerialize["cheque"] = o.Cheque
+	if o.Cheque.IsSet() {
+		toSerialize["cheque"] = o.Cheque.Get()
 	}
 	if !IsNil(o.Merchant) {
 		toSerialize["merchant"] = o.Merchant
@@ -1485,8 +1701,8 @@ func (o ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) ToMap() (ma
 	if !IsNil(o.Enriched) {
 		toSerialize["enriched"] = o.Enriched
 	}
-	if o.AcquirerReferenceNumber != nil {
-		toSerialize["acquirerReferenceNumber"] = o.AcquirerReferenceNumber
+	if o.AcquirerReferenceNumber.IsSet() {
+		toSerialize["acquirerReferenceNumber"] = o.AcquirerReferenceNumber.Get()
 	}
 	if !IsNil(o.TransactionId) {
 		toSerialize["transactionId"] = o.TransactionId
@@ -1497,8 +1713,8 @@ func (o ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) ToMap() (ma
 	if !IsNil(o.TransactionDate) {
 		toSerialize["transactionDate"] = o.TransactionDate
 	}
-	if o.TransactionCode != nil {
-		toSerialize["transactionCode"] = o.TransactionCode
+	if o.TransactionCode.IsSet() {
+		toSerialize["transactionCode"] = o.TransactionCode.Get()
 	}
 	if !IsNil(o.TransactionAmount) {
 		toSerialize["transactionAmount"] = o.TransactionAmount
@@ -1506,11 +1722,11 @@ func (o ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) ToMap() (ma
 	if !IsNil(o.TransactionType) {
 		toSerialize["transactionType"] = o.TransactionType
 	}
-	if o.TransactionCategory != nil {
-		toSerialize["transactionCategory"] = o.TransactionCategory
+	if o.TransactionCategory.IsSet() {
+		toSerialize["transactionCategory"] = o.TransactionCategory.Get()
 	}
-	if o.Subdescription != nil {
-		toSerialize["subdescription"] = o.Subdescription
+	if o.Subdescription.IsSet() {
+		toSerialize["subdescription"] = o.Subdescription.Get()
 	}
 	return toSerialize, nil
 }

@@ -7,18 +7,18 @@ Name | Type | Description | Notes
 **TransactionKey** | Pointer to **string** |  | [optional] 
 **TransactionId** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**TransactionRecipient** | Pointer to **map[string]interface{}** |  | [optional] 
-**TransactionTypeCode** | Pointer to **map[string]interface{}** |  | [optional] 
+**TransactionRecipient** | Pointer to **NullableString** |  | [optional] 
+**TransactionTypeCode** | Pointer to **NullableString** |  | [optional] 
 **TransactionType** | Pointer to **string** |  | [optional] 
 **TransactionAmount** | Pointer to [**ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner**](ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner.md) |  | [optional] 
 **RunningBalance** | Pointer to [**ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner**](ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner.md) |  | [optional] 
-**ChequeNumber** | Pointer to **map[string]interface{}** |  | [optional] 
-**ChequeImage** | Pointer to **map[string]interface{}** |  | [optional] 
-**ChequeImageStatus** | Pointer to **map[string]interface{}** |  | [optional] 
-**ChequeImageKey** | Pointer to **map[string]interface{}** |  | [optional] 
+**ChequeNumber** | Pointer to **NullableString** |  | [optional] 
+**ChequeImage** | Pointer to **NullableString** |  | [optional] 
+**ChequeImageStatus** | Pointer to **NullableString** |  | [optional] 
+**ChequeImageKey** | Pointer to **NullableString** |  | [optional] 
 **CardNumber** | Pointer to **string** |  | [optional] 
-**MerchantName** | Pointer to **map[string]interface{}** |  | [optional] 
-**TransactionCategory** | Pointer to **map[string]interface{}** |  | [optional] 
+**MerchantName** | Pointer to **NullableString** |  | [optional] 
+**TransactionCategory** | Pointer to **NullableString** |  | [optional] 
 **TransactionDate** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -117,20 +117,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetTransactionRecipient
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionRecipient() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionRecipient() string`
 
 GetTransactionRecipient returns the TransactionRecipient field if non-nil, zero value otherwise.
 
 ### GetTransactionRecipientOk
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionRecipientOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionRecipientOk() (*string, bool)`
 
 GetTransactionRecipientOk returns a tuple with the TransactionRecipient field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTransactionRecipient
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionRecipient(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionRecipient(v string)`
 
 SetTransactionRecipient sets TransactionRecipient field to given value.
 
@@ -152,20 +152,20 @@ HasTransactionRecipient returns a boolean if a field has been set.
 UnsetTransactionRecipient ensures that no value is present for TransactionRecipient, not even an explicit nil
 ### GetTransactionTypeCode
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionTypeCode() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionTypeCode() string`
 
 GetTransactionTypeCode returns the TransactionTypeCode field if non-nil, zero value otherwise.
 
 ### GetTransactionTypeCodeOk
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionTypeCodeOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionTypeCodeOk() (*string, bool)`
 
 GetTransactionTypeCodeOk returns a tuple with the TransactionTypeCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTransactionTypeCode
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionTypeCode(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionTypeCode(v string)`
 
 SetTransactionTypeCode sets TransactionTypeCode field to given value.
 
@@ -262,20 +262,20 @@ HasRunningBalance returns a boolean if a field has been set.
 
 ### GetChequeNumber
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeNumber() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeNumber() string`
 
 GetChequeNumber returns the ChequeNumber field if non-nil, zero value otherwise.
 
 ### GetChequeNumberOk
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeNumberOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeNumberOk() (*string, bool)`
 
 GetChequeNumberOk returns a tuple with the ChequeNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChequeNumber
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeNumber(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeNumber(v string)`
 
 SetChequeNumber sets ChequeNumber field to given value.
 
@@ -297,20 +297,20 @@ HasChequeNumber returns a boolean if a field has been set.
 UnsetChequeNumber ensures that no value is present for ChequeNumber, not even an explicit nil
 ### GetChequeImage
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImage() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImage() string`
 
 GetChequeImage returns the ChequeImage field if non-nil, zero value otherwise.
 
 ### GetChequeImageOk
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageOk() (*string, bool)`
 
 GetChequeImageOk returns a tuple with the ChequeImage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChequeImage
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImage(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImage(v string)`
 
 SetChequeImage sets ChequeImage field to given value.
 
@@ -332,20 +332,20 @@ HasChequeImage returns a boolean if a field has been set.
 UnsetChequeImage ensures that no value is present for ChequeImage, not even an explicit nil
 ### GetChequeImageStatus
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageStatus() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageStatus() string`
 
 GetChequeImageStatus returns the ChequeImageStatus field if non-nil, zero value otherwise.
 
 ### GetChequeImageStatusOk
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageStatusOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageStatusOk() (*string, bool)`
 
 GetChequeImageStatusOk returns a tuple with the ChequeImageStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChequeImageStatus
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImageStatus(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImageStatus(v string)`
 
 SetChequeImageStatus sets ChequeImageStatus field to given value.
 
@@ -367,20 +367,20 @@ HasChequeImageStatus returns a boolean if a field has been set.
 UnsetChequeImageStatus ensures that no value is present for ChequeImageStatus, not even an explicit nil
 ### GetChequeImageKey
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageKey() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageKey() string`
 
 GetChequeImageKey returns the ChequeImageKey field if non-nil, zero value otherwise.
 
 ### GetChequeImageKeyOk
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageKeyOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetChequeImageKeyOk() (*string, bool)`
 
 GetChequeImageKeyOk returns a tuple with the ChequeImageKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChequeImageKey
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImageKey(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetChequeImageKey(v string)`
 
 SetChequeImageKey sets ChequeImageKey field to given value.
 
@@ -427,20 +427,20 @@ HasCardNumber returns a boolean if a field has been set.
 
 ### GetMerchantName
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetMerchantName() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetMerchantName() string`
 
 GetMerchantName returns the MerchantName field if non-nil, zero value otherwise.
 
 ### GetMerchantNameOk
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetMerchantNameOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetMerchantNameOk() (*string, bool)`
 
 GetMerchantNameOk returns a tuple with the MerchantName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantName
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetMerchantName(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetMerchantName(v string)`
 
 SetMerchantName sets MerchantName field to given value.
 
@@ -462,20 +462,20 @@ HasMerchantName returns a boolean if a field has been set.
 UnsetMerchantName ensures that no value is present for MerchantName, not even an explicit nil
 ### GetTransactionCategory
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionCategory() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionCategory() string`
 
 GetTransactionCategory returns the TransactionCategory field if non-nil, zero value otherwise.
 
 ### GetTransactionCategoryOk
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionCategoryOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) GetTransactionCategoryOk() (*string, bool)`
 
 GetTransactionCategoryOk returns a tuple with the TransactionCategory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTransactionCategory
 
-`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionCategory(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdTransactionsGet200ResponseDataInner) SetTransactionCategory(v string)`
 
 SetTransactionCategory sets TransactionCategory field to given value.
 

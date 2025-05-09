@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -107,5 +106,4 @@ model__api_transactions_deposit_accounts__deposit_account_id__get_200_response_d
 model__api_transactions_deposit_accounts__deposit_account_id__get_200_response_data_inner_merchant.go
 model__api_transactions_deposit_accounts__deposit_account_id__get_200_response_data_inner_original_amount.go
 response.go
-test/api_default_test.go
 utils.go

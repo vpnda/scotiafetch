@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **FunctionName** | Pointer to **string** |  | [optional] 
-**Conditions** | Pointer to **map[string]interface{}** |  | [optional] 
+**Conditions** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasFunctionName returns a boolean if a field has been set.
 
 ### GetConditions
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) GetConditions() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) GetConditions() string`
 
 GetConditions returns the Conditions field if non-nil, zero value otherwise.
 
 ### GetConditionsOk
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) GetConditionsOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) GetConditionsOk() (*string, bool)`
 
 GetConditionsOk returns a tuple with the Conditions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConditions
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) SetConditions(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner) SetConditions(v string)`
 
 SetConditions sets Conditions field to given value.
 

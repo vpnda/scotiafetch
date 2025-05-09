@@ -24,19 +24,19 @@ type ApiMpsaAccountsAccountIdGet200ResponseData struct {
 	Type *string `json:"type,omitempty"`
 	Description *string `json:"description,omitempty"`
 	DaysFromStartDate *string `json:"daysFromStartDate,omitempty"`
-	Alias map[string]interface{} `json:"alias,omitempty"`
+	Alias NullableString `json:"alias,omitempty"`
 	PrimaryBalance *ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner `json:"primaryBalance,omitempty"`
-	AvailableBalance map[string]interface{} `json:"availableBalance,omitempty"`
-	Holds map[string]interface{} `json:"holds,omitempty"`
+	AvailableBalance NullableString `json:"availableBalance,omitempty"`
+	Holds NullableString `json:"holds,omitempty"`
 	Interest *ApiMpsaAccountsAccountIdGet200ResponseDataInterest `json:"interest,omitempty"`
 	InterestRates []ApiMpsaAccountsAccountIdGet200ResponseDataInterestRatesInner `json:"interestRates,omitempty"`
-	BankTheRest map[string]interface{} `json:"bankTheRest,omitempty"`
-	OverdraftLimit map[string]interface{} `json:"overdraftLimit,omitempty"`
-	OverdraftPlan map[string]interface{} `json:"overdraftPlan,omitempty"`
-	OpeningDate map[string]interface{} `json:"openingDate,omitempty"`
+	BankTheRest NullableString `json:"bankTheRest,omitempty"`
+	OverdraftLimit NullableString `json:"overdraftLimit,omitempty"`
+	OverdraftPlan NullableString `json:"overdraftPlan,omitempty"`
+	OpeningDate NullableString `json:"openingDate,omitempty"`
 	AssociatedAccounts []interface{} `json:"associatedAccounts,omitempty"`
 	BusinessFunctions []ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner `json:"businessFunctions,omitempty"`
-	ClosingDate map[string]interface{} `json:"closingDate,omitempty"`
+	ClosingDate NullableString `json:"closingDate,omitempty"`
 }
 
 // NewApiMpsaAccountsAccountIdGet200ResponseData instantiates a new ApiMpsaAccountsAccountIdGet200ResponseData object
@@ -217,36 +217,45 @@ func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetDaysFromStartDate(v stri
 }
 
 // GetAlias returns the Alias field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAlias() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAlias() string {
+	if o == nil || IsNil(o.Alias.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Alias
+	return *o.Alias.Get()
 }
 
 // GetAliasOk returns a tuple with the Alias field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAliasOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Alias) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAliasOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Alias, true
+	return o.Alias.Get(), o.Alias.IsSet()
 }
 
 // HasAlias returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdGet200ResponseData) HasAlias() bool {
-	if o != nil && !IsNil(o.Alias) {
+	if o != nil && o.Alias.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAlias gets a reference to the given map[string]interface{} and assigns it to the Alias field.
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetAlias(v map[string]interface{}) {
-	o.Alias = v
+// SetAlias gets a reference to the given NullableString and assigns it to the Alias field.
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetAlias(v string) {
+	o.Alias.Set(&v)
+}
+// SetAliasNil sets the value for Alias to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetAliasNil() {
+	o.Alias.Set(nil)
+}
+
+// UnsetAlias ensures that no value is present for Alias, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) UnsetAlias() {
+	o.Alias.Unset()
 }
 
 // GetPrimaryBalance returns the PrimaryBalance field value if set, zero value otherwise.
@@ -282,69 +291,87 @@ func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetPrimaryBalance(v ApiAcco
 }
 
 // GetAvailableBalance returns the AvailableBalance field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAvailableBalance() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAvailableBalance() string {
+	if o == nil || IsNil(o.AvailableBalance.Get()) {
+		var ret string
 		return ret
 	}
-	return o.AvailableBalance
+	return *o.AvailableBalance.Get()
 }
 
 // GetAvailableBalanceOk returns a tuple with the AvailableBalance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAvailableBalanceOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.AvailableBalance) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAvailableBalanceOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.AvailableBalance, true
+	return o.AvailableBalance.Get(), o.AvailableBalance.IsSet()
 }
 
 // HasAvailableBalance returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdGet200ResponseData) HasAvailableBalance() bool {
-	if o != nil && !IsNil(o.AvailableBalance) {
+	if o != nil && o.AvailableBalance.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAvailableBalance gets a reference to the given map[string]interface{} and assigns it to the AvailableBalance field.
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetAvailableBalance(v map[string]interface{}) {
-	o.AvailableBalance = v
+// SetAvailableBalance gets a reference to the given NullableString and assigns it to the AvailableBalance field.
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetAvailableBalance(v string) {
+	o.AvailableBalance.Set(&v)
+}
+// SetAvailableBalanceNil sets the value for AvailableBalance to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetAvailableBalanceNil() {
+	o.AvailableBalance.Set(nil)
+}
+
+// UnsetAvailableBalance ensures that no value is present for AvailableBalance, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) UnsetAvailableBalance() {
+	o.AvailableBalance.Unset()
 }
 
 // GetHolds returns the Holds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetHolds() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetHolds() string {
+	if o == nil || IsNil(o.Holds.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Holds
+	return *o.Holds.Get()
 }
 
 // GetHoldsOk returns a tuple with the Holds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetHoldsOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Holds) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetHoldsOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Holds, true
+	return o.Holds.Get(), o.Holds.IsSet()
 }
 
 // HasHolds returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdGet200ResponseData) HasHolds() bool {
-	if o != nil && !IsNil(o.Holds) {
+	if o != nil && o.Holds.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHolds gets a reference to the given map[string]interface{} and assigns it to the Holds field.
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetHolds(v map[string]interface{}) {
-	o.Holds = v
+// SetHolds gets a reference to the given NullableString and assigns it to the Holds field.
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetHolds(v string) {
+	o.Holds.Set(&v)
+}
+// SetHoldsNil sets the value for Holds to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetHoldsNil() {
+	o.Holds.Set(nil)
+}
+
+// UnsetHolds ensures that no value is present for Holds, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) UnsetHolds() {
+	o.Holds.Unset()
 }
 
 // GetInterest returns the Interest field value if set, zero value otherwise.
@@ -412,135 +439,171 @@ func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetInterestRates(v []ApiMps
 }
 
 // GetBankTheRest returns the BankTheRest field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetBankTheRest() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetBankTheRest() string {
+	if o == nil || IsNil(o.BankTheRest.Get()) {
+		var ret string
 		return ret
 	}
-	return o.BankTheRest
+	return *o.BankTheRest.Get()
 }
 
 // GetBankTheRestOk returns a tuple with the BankTheRest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetBankTheRestOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.BankTheRest) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetBankTheRestOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.BankTheRest, true
+	return o.BankTheRest.Get(), o.BankTheRest.IsSet()
 }
 
 // HasBankTheRest returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdGet200ResponseData) HasBankTheRest() bool {
-	if o != nil && !IsNil(o.BankTheRest) {
+	if o != nil && o.BankTheRest.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBankTheRest gets a reference to the given map[string]interface{} and assigns it to the BankTheRest field.
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetBankTheRest(v map[string]interface{}) {
-	o.BankTheRest = v
+// SetBankTheRest gets a reference to the given NullableString and assigns it to the BankTheRest field.
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetBankTheRest(v string) {
+	o.BankTheRest.Set(&v)
+}
+// SetBankTheRestNil sets the value for BankTheRest to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetBankTheRestNil() {
+	o.BankTheRest.Set(nil)
+}
+
+// UnsetBankTheRest ensures that no value is present for BankTheRest, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) UnsetBankTheRest() {
+	o.BankTheRest.Unset()
 }
 
 // GetOverdraftLimit returns the OverdraftLimit field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftLimit() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftLimit() string {
+	if o == nil || IsNil(o.OverdraftLimit.Get()) {
+		var ret string
 		return ret
 	}
-	return o.OverdraftLimit
+	return *o.OverdraftLimit.Get()
 }
 
 // GetOverdraftLimitOk returns a tuple with the OverdraftLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftLimitOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.OverdraftLimit) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftLimitOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.OverdraftLimit, true
+	return o.OverdraftLimit.Get(), o.OverdraftLimit.IsSet()
 }
 
 // HasOverdraftLimit returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdGet200ResponseData) HasOverdraftLimit() bool {
-	if o != nil && !IsNil(o.OverdraftLimit) {
+	if o != nil && o.OverdraftLimit.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOverdraftLimit gets a reference to the given map[string]interface{} and assigns it to the OverdraftLimit field.
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOverdraftLimit(v map[string]interface{}) {
-	o.OverdraftLimit = v
+// SetOverdraftLimit gets a reference to the given NullableString and assigns it to the OverdraftLimit field.
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOverdraftLimit(v string) {
+	o.OverdraftLimit.Set(&v)
+}
+// SetOverdraftLimitNil sets the value for OverdraftLimit to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOverdraftLimitNil() {
+	o.OverdraftLimit.Set(nil)
+}
+
+// UnsetOverdraftLimit ensures that no value is present for OverdraftLimit, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) UnsetOverdraftLimit() {
+	o.OverdraftLimit.Unset()
 }
 
 // GetOverdraftPlan returns the OverdraftPlan field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftPlan() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftPlan() string {
+	if o == nil || IsNil(o.OverdraftPlan.Get()) {
+		var ret string
 		return ret
 	}
-	return o.OverdraftPlan
+	return *o.OverdraftPlan.Get()
 }
 
 // GetOverdraftPlanOk returns a tuple with the OverdraftPlan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftPlanOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.OverdraftPlan) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftPlanOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.OverdraftPlan, true
+	return o.OverdraftPlan.Get(), o.OverdraftPlan.IsSet()
 }
 
 // HasOverdraftPlan returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdGet200ResponseData) HasOverdraftPlan() bool {
-	if o != nil && !IsNil(o.OverdraftPlan) {
+	if o != nil && o.OverdraftPlan.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOverdraftPlan gets a reference to the given map[string]interface{} and assigns it to the OverdraftPlan field.
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOverdraftPlan(v map[string]interface{}) {
-	o.OverdraftPlan = v
+// SetOverdraftPlan gets a reference to the given NullableString and assigns it to the OverdraftPlan field.
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOverdraftPlan(v string) {
+	o.OverdraftPlan.Set(&v)
+}
+// SetOverdraftPlanNil sets the value for OverdraftPlan to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOverdraftPlanNil() {
+	o.OverdraftPlan.Set(nil)
+}
+
+// UnsetOverdraftPlan ensures that no value is present for OverdraftPlan, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) UnsetOverdraftPlan() {
+	o.OverdraftPlan.Unset()
 }
 
 // GetOpeningDate returns the OpeningDate field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOpeningDate() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOpeningDate() string {
+	if o == nil || IsNil(o.OpeningDate.Get()) {
+		var ret string
 		return ret
 	}
-	return o.OpeningDate
+	return *o.OpeningDate.Get()
 }
 
 // GetOpeningDateOk returns a tuple with the OpeningDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOpeningDateOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.OpeningDate) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOpeningDateOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.OpeningDate, true
+	return o.OpeningDate.Get(), o.OpeningDate.IsSet()
 }
 
 // HasOpeningDate returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdGet200ResponseData) HasOpeningDate() bool {
-	if o != nil && !IsNil(o.OpeningDate) {
+	if o != nil && o.OpeningDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOpeningDate gets a reference to the given map[string]interface{} and assigns it to the OpeningDate field.
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOpeningDate(v map[string]interface{}) {
-	o.OpeningDate = v
+// SetOpeningDate gets a reference to the given NullableString and assigns it to the OpeningDate field.
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOpeningDate(v string) {
+	o.OpeningDate.Set(&v)
+}
+// SetOpeningDateNil sets the value for OpeningDate to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOpeningDateNil() {
+	o.OpeningDate.Set(nil)
+}
+
+// UnsetOpeningDate ensures that no value is present for OpeningDate, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) UnsetOpeningDate() {
+	o.OpeningDate.Unset()
 }
 
 // GetAssociatedAccounts returns the AssociatedAccounts field value if set, zero value otherwise.
@@ -608,36 +671,45 @@ func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetBusinessFunctions(v []Ap
 }
 
 // GetClosingDate returns the ClosingDate field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetClosingDate() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetClosingDate() string {
+	if o == nil || IsNil(o.ClosingDate.Get()) {
+		var ret string
 		return ret
 	}
-	return o.ClosingDate
+	return *o.ClosingDate.Get()
 }
 
 // GetClosingDateOk returns a tuple with the ClosingDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetClosingDateOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.ClosingDate) {
-		return map[string]interface{}{}, false
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetClosingDateOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.ClosingDate, true
+	return o.ClosingDate.Get(), o.ClosingDate.IsSet()
 }
 
 // HasClosingDate returns a boolean if a field has been set.
 func (o *ApiMpsaAccountsAccountIdGet200ResponseData) HasClosingDate() bool {
-	if o != nil && !IsNil(o.ClosingDate) {
+	if o != nil && o.ClosingDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetClosingDate gets a reference to the given map[string]interface{} and assigns it to the ClosingDate field.
-func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetClosingDate(v map[string]interface{}) {
-	o.ClosingDate = v
+// SetClosingDate gets a reference to the given NullableString and assigns it to the ClosingDate field.
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetClosingDate(v string) {
+	o.ClosingDate.Set(&v)
+}
+// SetClosingDateNil sets the value for ClosingDate to be an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetClosingDateNil() {
+	o.ClosingDate.Set(nil)
+}
+
+// UnsetClosingDate ensures that no value is present for ClosingDate, not even an explicit nil
+func (o *ApiMpsaAccountsAccountIdGet200ResponseData) UnsetClosingDate() {
+	o.ClosingDate.Unset()
 }
 
 func (o ApiMpsaAccountsAccountIdGet200ResponseData) MarshalJSON() ([]byte, error) {
@@ -665,17 +737,17 @@ func (o ApiMpsaAccountsAccountIdGet200ResponseData) ToMap() (map[string]interfac
 	if !IsNil(o.DaysFromStartDate) {
 		toSerialize["daysFromStartDate"] = o.DaysFromStartDate
 	}
-	if o.Alias != nil {
-		toSerialize["alias"] = o.Alias
+	if o.Alias.IsSet() {
+		toSerialize["alias"] = o.Alias.Get()
 	}
 	if !IsNil(o.PrimaryBalance) {
 		toSerialize["primaryBalance"] = o.PrimaryBalance
 	}
-	if o.AvailableBalance != nil {
-		toSerialize["availableBalance"] = o.AvailableBalance
+	if o.AvailableBalance.IsSet() {
+		toSerialize["availableBalance"] = o.AvailableBalance.Get()
 	}
-	if o.Holds != nil {
-		toSerialize["holds"] = o.Holds
+	if o.Holds.IsSet() {
+		toSerialize["holds"] = o.Holds.Get()
 	}
 	if !IsNil(o.Interest) {
 		toSerialize["interest"] = o.Interest
@@ -683,17 +755,17 @@ func (o ApiMpsaAccountsAccountIdGet200ResponseData) ToMap() (map[string]interfac
 	if !IsNil(o.InterestRates) {
 		toSerialize["interestRates"] = o.InterestRates
 	}
-	if o.BankTheRest != nil {
-		toSerialize["bankTheRest"] = o.BankTheRest
+	if o.BankTheRest.IsSet() {
+		toSerialize["bankTheRest"] = o.BankTheRest.Get()
 	}
-	if o.OverdraftLimit != nil {
-		toSerialize["overdraftLimit"] = o.OverdraftLimit
+	if o.OverdraftLimit.IsSet() {
+		toSerialize["overdraftLimit"] = o.OverdraftLimit.Get()
 	}
-	if o.OverdraftPlan != nil {
-		toSerialize["overdraftPlan"] = o.OverdraftPlan
+	if o.OverdraftPlan.IsSet() {
+		toSerialize["overdraftPlan"] = o.OverdraftPlan.Get()
 	}
-	if o.OpeningDate != nil {
-		toSerialize["openingDate"] = o.OpeningDate
+	if o.OpeningDate.IsSet() {
+		toSerialize["openingDate"] = o.OpeningDate.Get()
 	}
 	if !IsNil(o.AssociatedAccounts) {
 		toSerialize["associatedAccounts"] = o.AssociatedAccounts
@@ -701,8 +773,8 @@ func (o ApiMpsaAccountsAccountIdGet200ResponseData) ToMap() (map[string]interfac
 	if !IsNil(o.BusinessFunctions) {
 		toSerialize["businessFunctions"] = o.BusinessFunctions
 	}
-	if o.ClosingDate != nil {
-		toSerialize["closingDate"] = o.ClosingDate
+	if o.ClosingDate.IsSet() {
+		toSerialize["closingDate"] = o.ClosingDate.Get()
 	}
 	return toSerialize, nil
 }

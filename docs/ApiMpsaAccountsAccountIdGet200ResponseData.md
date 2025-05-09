@@ -9,19 +9,19 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DaysFromStartDate** | Pointer to **string** |  | [optional] 
-**Alias** | Pointer to **map[string]interface{}** |  | [optional] 
+**Alias** | Pointer to **NullableString** |  | [optional] 
 **PrimaryBalance** | Pointer to [**ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner**](ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner.md) |  | [optional] 
-**AvailableBalance** | Pointer to **map[string]interface{}** |  | [optional] 
-**Holds** | Pointer to **map[string]interface{}** |  | [optional] 
+**AvailableBalance** | Pointer to **NullableString** |  | [optional] 
+**Holds** | Pointer to **NullableString** |  | [optional] 
 **Interest** | Pointer to [**ApiMpsaAccountsAccountIdGet200ResponseDataInterest**](ApiMpsaAccountsAccountIdGet200ResponseDataInterest.md) |  | [optional] 
 **InterestRates** | Pointer to [**[]ApiMpsaAccountsAccountIdGet200ResponseDataInterestRatesInner**](ApiMpsaAccountsAccountIdGet200ResponseDataInterestRatesInner.md) |  | [optional] 
-**BankTheRest** | Pointer to **map[string]interface{}** |  | [optional] 
-**OverdraftLimit** | Pointer to **map[string]interface{}** |  | [optional] 
-**OverdraftPlan** | Pointer to **map[string]interface{}** |  | [optional] 
-**OpeningDate** | Pointer to **map[string]interface{}** |  | [optional] 
+**BankTheRest** | Pointer to **NullableString** |  | [optional] 
+**OverdraftLimit** | Pointer to **NullableString** |  | [optional] 
+**OverdraftPlan** | Pointer to **NullableString** |  | [optional] 
+**OpeningDate** | Pointer to **NullableString** |  | [optional] 
 **AssociatedAccounts** | Pointer to **[]interface{}** |  | [optional] 
 **BusinessFunctions** | Pointer to [**[]ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner**](ApiMpsaAccountsAccountIdGet200ResponseDataBusinessFunctionsInner.md) |  | [optional] 
-**ClosingDate** | Pointer to **map[string]interface{}** |  | [optional] 
+**ClosingDate** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -169,20 +169,20 @@ HasDaysFromStartDate returns a boolean if a field has been set.
 
 ### GetAlias
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAlias() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAlias() string`
 
 GetAlias returns the Alias field if non-nil, zero value otherwise.
 
 ### GetAliasOk
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAliasOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAliasOk() (*string, bool)`
 
 GetAliasOk returns a tuple with the Alias field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlias
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetAlias(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetAlias(v string)`
 
 SetAlias sets Alias field to given value.
 
@@ -229,20 +229,20 @@ HasPrimaryBalance returns a boolean if a field has been set.
 
 ### GetAvailableBalance
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAvailableBalance() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAvailableBalance() string`
 
 GetAvailableBalance returns the AvailableBalance field if non-nil, zero value otherwise.
 
 ### GetAvailableBalanceOk
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAvailableBalanceOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetAvailableBalanceOk() (*string, bool)`
 
 GetAvailableBalanceOk returns a tuple with the AvailableBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailableBalance
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetAvailableBalance(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetAvailableBalance(v string)`
 
 SetAvailableBalance sets AvailableBalance field to given value.
 
@@ -264,20 +264,20 @@ HasAvailableBalance returns a boolean if a field has been set.
 UnsetAvailableBalance ensures that no value is present for AvailableBalance, not even an explicit nil
 ### GetHolds
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetHolds() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetHolds() string`
 
 GetHolds returns the Holds field if non-nil, zero value otherwise.
 
 ### GetHoldsOk
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetHoldsOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetHoldsOk() (*string, bool)`
 
 GetHoldsOk returns a tuple with the Holds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHolds
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetHolds(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetHolds(v string)`
 
 SetHolds sets Holds field to given value.
 
@@ -349,20 +349,20 @@ HasInterestRates returns a boolean if a field has been set.
 
 ### GetBankTheRest
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetBankTheRest() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetBankTheRest() string`
 
 GetBankTheRest returns the BankTheRest field if non-nil, zero value otherwise.
 
 ### GetBankTheRestOk
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetBankTheRestOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetBankTheRestOk() (*string, bool)`
 
 GetBankTheRestOk returns a tuple with the BankTheRest field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBankTheRest
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetBankTheRest(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetBankTheRest(v string)`
 
 SetBankTheRest sets BankTheRest field to given value.
 
@@ -384,20 +384,20 @@ HasBankTheRest returns a boolean if a field has been set.
 UnsetBankTheRest ensures that no value is present for BankTheRest, not even an explicit nil
 ### GetOverdraftLimit
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftLimit() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftLimit() string`
 
 GetOverdraftLimit returns the OverdraftLimit field if non-nil, zero value otherwise.
 
 ### GetOverdraftLimitOk
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftLimitOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftLimitOk() (*string, bool)`
 
 GetOverdraftLimitOk returns a tuple with the OverdraftLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOverdraftLimit
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOverdraftLimit(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOverdraftLimit(v string)`
 
 SetOverdraftLimit sets OverdraftLimit field to given value.
 
@@ -419,20 +419,20 @@ HasOverdraftLimit returns a boolean if a field has been set.
 UnsetOverdraftLimit ensures that no value is present for OverdraftLimit, not even an explicit nil
 ### GetOverdraftPlan
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftPlan() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftPlan() string`
 
 GetOverdraftPlan returns the OverdraftPlan field if non-nil, zero value otherwise.
 
 ### GetOverdraftPlanOk
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftPlanOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOverdraftPlanOk() (*string, bool)`
 
 GetOverdraftPlanOk returns a tuple with the OverdraftPlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOverdraftPlan
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOverdraftPlan(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOverdraftPlan(v string)`
 
 SetOverdraftPlan sets OverdraftPlan field to given value.
 
@@ -454,20 +454,20 @@ HasOverdraftPlan returns a boolean if a field has been set.
 UnsetOverdraftPlan ensures that no value is present for OverdraftPlan, not even an explicit nil
 ### GetOpeningDate
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOpeningDate() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOpeningDate() string`
 
 GetOpeningDate returns the OpeningDate field if non-nil, zero value otherwise.
 
 ### GetOpeningDateOk
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOpeningDateOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetOpeningDateOk() (*string, bool)`
 
 GetOpeningDateOk returns a tuple with the OpeningDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOpeningDate
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOpeningDate(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetOpeningDate(v string)`
 
 SetOpeningDate sets OpeningDate field to given value.
 
@@ -539,20 +539,20 @@ HasBusinessFunctions returns a boolean if a field has been set.
 
 ### GetClosingDate
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetClosingDate() map[string]interface{}`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetClosingDate() string`
 
 GetClosingDate returns the ClosingDate field if non-nil, zero value otherwise.
 
 ### GetClosingDateOk
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetClosingDateOk() (*map[string]interface{}, bool)`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) GetClosingDateOk() (*string, bool)`
 
 GetClosingDateOk returns a tuple with the ClosingDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClosingDate
 
-`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetClosingDate(v map[string]interface{})`
+`func (o *ApiMpsaAccountsAccountIdGet200ResponseData) SetClosingDate(v string)`
 
 SetClosingDate sets ClosingDate field to given value.
 

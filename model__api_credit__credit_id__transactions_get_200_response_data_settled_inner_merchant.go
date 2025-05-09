@@ -21,18 +21,18 @@ var _ MappedNullable = &ApiCreditCreditIdTransactionsGet200ResponseDataSettledIn
 type ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant struct {
 	Name *string `json:"name,omitempty"`
 	CategoryCode *string `json:"categoryCode,omitempty"`
-	Category map[string]interface{} `json:"category,omitempty"`
+	Category NullableString `json:"category,omitempty"`
 	CountryCode *string `json:"countryCode,omitempty"`
-	Address map[string]interface{} `json:"address,omitempty"`
+	Address NullableString `json:"address,omitempty"`
 	City *string `json:"city,omitempty"`
 	State *string `json:"state,omitempty"`
-	Country map[string]interface{} `json:"country,omitempty"`
-	ZipCode map[string]interface{} `json:"zipCode,omitempty"`
-	Website map[string]interface{} `json:"website,omitempty"`
-	CustomerServicePageUrl map[string]interface{} `json:"customerServicePageUrl,omitempty"`
-	FacebookPageUrl map[string]interface{} `json:"facebookPageUrl,omitempty"`
-	TwitterPageUrl map[string]interface{} `json:"twitterPageUrl,omitempty"`
-	MerchantImageRef map[string]interface{} `json:"merchantImageRef,omitempty"`
+	Country NullableString `json:"country,omitempty"`
+	ZipCode NullableString `json:"zipCode,omitempty"`
+	Website NullableString `json:"website,omitempty"`
+	CustomerServicePageUrl NullableString `json:"customerServicePageUrl,omitempty"`
+	FacebookPageUrl NullableString `json:"facebookPageUrl,omitempty"`
+	TwitterPageUrl NullableString `json:"twitterPageUrl,omitempty"`
+	MerchantImageRef NullableString `json:"merchantImageRef,omitempty"`
 }
 
 // NewApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant instantiates a new ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant object
@@ -117,36 +117,45 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) Se
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCategory() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCategory() string {
+	if o == nil || IsNil(o.Category.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCategoryOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Category) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCategoryOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // HasCategory returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) HasCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given map[string]interface{} and assigns it to the Category field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCategory(v map[string]interface{}) {
-	o.Category = v
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCategory(v string) {
+	o.Category.Set(&v)
+}
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) UnsetCategory() {
+	o.Category.Unset()
 }
 
 // GetCountryCode returns the CountryCode field value if set, zero value otherwise.
@@ -182,36 +191,45 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) Se
 }
 
 // GetAddress returns the Address field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetAddress() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetAddress() string {
+	if o == nil || IsNil(o.Address.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Address
+	return *o.Address.Get()
 }
 
 // GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetAddressOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Address) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetAddressOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Address, true
+	return o.Address.Get(), o.Address.IsSet()
 }
 
 // HasAddress returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) HasAddress() bool {
-	if o != nil && !IsNil(o.Address) {
+	if o != nil && o.Address.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAddress gets a reference to the given map[string]interface{} and assigns it to the Address field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetAddress(v map[string]interface{}) {
-	o.Address = v
+// SetAddress gets a reference to the given NullableString and assigns it to the Address field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetAddress(v string) {
+	o.Address.Set(&v)
+}
+// SetAddressNil sets the value for Address to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetAddressNil() {
+	o.Address.Set(nil)
+}
+
+// UnsetAddress ensures that no value is present for Address, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) UnsetAddress() {
+	o.Address.Unset()
 }
 
 // GetCity returns the City field value if set, zero value otherwise.
@@ -279,234 +297,297 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) Se
 }
 
 // GetCountry returns the Country field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCountry() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCountry() string {
+	if o == nil || IsNil(o.Country.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Country
+	return *o.Country.Get()
 }
 
 // GetCountryOk returns a tuple with the Country field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCountryOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Country) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCountryOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Country, true
+	return o.Country.Get(), o.Country.IsSet()
 }
 
 // HasCountry returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) HasCountry() bool {
-	if o != nil && !IsNil(o.Country) {
+	if o != nil && o.Country.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCountry gets a reference to the given map[string]interface{} and assigns it to the Country field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCountry(v map[string]interface{}) {
-	o.Country = v
+// SetCountry gets a reference to the given NullableString and assigns it to the Country field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCountry(v string) {
+	o.Country.Set(&v)
+}
+// SetCountryNil sets the value for Country to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCountryNil() {
+	o.Country.Set(nil)
+}
+
+// UnsetCountry ensures that no value is present for Country, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) UnsetCountry() {
+	o.Country.Unset()
 }
 
 // GetZipCode returns the ZipCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetZipCode() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetZipCode() string {
+	if o == nil || IsNil(o.ZipCode.Get()) {
+		var ret string
 		return ret
 	}
-	return o.ZipCode
+	return *o.ZipCode.Get()
 }
 
 // GetZipCodeOk returns a tuple with the ZipCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetZipCodeOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.ZipCode) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetZipCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.ZipCode, true
+	return o.ZipCode.Get(), o.ZipCode.IsSet()
 }
 
 // HasZipCode returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) HasZipCode() bool {
-	if o != nil && !IsNil(o.ZipCode) {
+	if o != nil && o.ZipCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZipCode gets a reference to the given map[string]interface{} and assigns it to the ZipCode field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetZipCode(v map[string]interface{}) {
-	o.ZipCode = v
+// SetZipCode gets a reference to the given NullableString and assigns it to the ZipCode field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetZipCode(v string) {
+	o.ZipCode.Set(&v)
+}
+// SetZipCodeNil sets the value for ZipCode to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetZipCodeNil() {
+	o.ZipCode.Set(nil)
+}
+
+// UnsetZipCode ensures that no value is present for ZipCode, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) UnsetZipCode() {
+	o.ZipCode.Unset()
 }
 
 // GetWebsite returns the Website field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetWebsite() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetWebsite() string {
+	if o == nil || IsNil(o.Website.Get()) {
+		var ret string
 		return ret
 	}
-	return o.Website
+	return *o.Website.Get()
 }
 
 // GetWebsiteOk returns a tuple with the Website field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetWebsiteOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Website) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetWebsiteOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.Website, true
+	return o.Website.Get(), o.Website.IsSet()
 }
 
 // HasWebsite returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) HasWebsite() bool {
-	if o != nil && !IsNil(o.Website) {
+	if o != nil && o.Website.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWebsite gets a reference to the given map[string]interface{} and assigns it to the Website field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetWebsite(v map[string]interface{}) {
-	o.Website = v
+// SetWebsite gets a reference to the given NullableString and assigns it to the Website field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetWebsite(v string) {
+	o.Website.Set(&v)
+}
+// SetWebsiteNil sets the value for Website to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetWebsiteNil() {
+	o.Website.Set(nil)
+}
+
+// UnsetWebsite ensures that no value is present for Website, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) UnsetWebsite() {
+	o.Website.Unset()
 }
 
 // GetCustomerServicePageUrl returns the CustomerServicePageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCustomerServicePageUrl() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCustomerServicePageUrl() string {
+	if o == nil || IsNil(o.CustomerServicePageUrl.Get()) {
+		var ret string
 		return ret
 	}
-	return o.CustomerServicePageUrl
+	return *o.CustomerServicePageUrl.Get()
 }
 
 // GetCustomerServicePageUrlOk returns a tuple with the CustomerServicePageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCustomerServicePageUrlOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.CustomerServicePageUrl) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetCustomerServicePageUrlOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.CustomerServicePageUrl, true
+	return o.CustomerServicePageUrl.Get(), o.CustomerServicePageUrl.IsSet()
 }
 
 // HasCustomerServicePageUrl returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) HasCustomerServicePageUrl() bool {
-	if o != nil && !IsNil(o.CustomerServicePageUrl) {
+	if o != nil && o.CustomerServicePageUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerServicePageUrl gets a reference to the given map[string]interface{} and assigns it to the CustomerServicePageUrl field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCustomerServicePageUrl(v map[string]interface{}) {
-	o.CustomerServicePageUrl = v
+// SetCustomerServicePageUrl gets a reference to the given NullableString and assigns it to the CustomerServicePageUrl field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCustomerServicePageUrl(v string) {
+	o.CustomerServicePageUrl.Set(&v)
+}
+// SetCustomerServicePageUrlNil sets the value for CustomerServicePageUrl to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetCustomerServicePageUrlNil() {
+	o.CustomerServicePageUrl.Set(nil)
+}
+
+// UnsetCustomerServicePageUrl ensures that no value is present for CustomerServicePageUrl, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) UnsetCustomerServicePageUrl() {
+	o.CustomerServicePageUrl.Unset()
 }
 
 // GetFacebookPageUrl returns the FacebookPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetFacebookPageUrl() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetFacebookPageUrl() string {
+	if o == nil || IsNil(o.FacebookPageUrl.Get()) {
+		var ret string
 		return ret
 	}
-	return o.FacebookPageUrl
+	return *o.FacebookPageUrl.Get()
 }
 
 // GetFacebookPageUrlOk returns a tuple with the FacebookPageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetFacebookPageUrlOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.FacebookPageUrl) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetFacebookPageUrlOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.FacebookPageUrl, true
+	return o.FacebookPageUrl.Get(), o.FacebookPageUrl.IsSet()
 }
 
 // HasFacebookPageUrl returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) HasFacebookPageUrl() bool {
-	if o != nil && !IsNil(o.FacebookPageUrl) {
+	if o != nil && o.FacebookPageUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFacebookPageUrl gets a reference to the given map[string]interface{} and assigns it to the FacebookPageUrl field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetFacebookPageUrl(v map[string]interface{}) {
-	o.FacebookPageUrl = v
+// SetFacebookPageUrl gets a reference to the given NullableString and assigns it to the FacebookPageUrl field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetFacebookPageUrl(v string) {
+	o.FacebookPageUrl.Set(&v)
+}
+// SetFacebookPageUrlNil sets the value for FacebookPageUrl to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetFacebookPageUrlNil() {
+	o.FacebookPageUrl.Set(nil)
+}
+
+// UnsetFacebookPageUrl ensures that no value is present for FacebookPageUrl, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) UnsetFacebookPageUrl() {
+	o.FacebookPageUrl.Unset()
 }
 
 // GetTwitterPageUrl returns the TwitterPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetTwitterPageUrl() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetTwitterPageUrl() string {
+	if o == nil || IsNil(o.TwitterPageUrl.Get()) {
+		var ret string
 		return ret
 	}
-	return o.TwitterPageUrl
+	return *o.TwitterPageUrl.Get()
 }
 
 // GetTwitterPageUrlOk returns a tuple with the TwitterPageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetTwitterPageUrlOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.TwitterPageUrl) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetTwitterPageUrlOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.TwitterPageUrl, true
+	return o.TwitterPageUrl.Get(), o.TwitterPageUrl.IsSet()
 }
 
 // HasTwitterPageUrl returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) HasTwitterPageUrl() bool {
-	if o != nil && !IsNil(o.TwitterPageUrl) {
+	if o != nil && o.TwitterPageUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTwitterPageUrl gets a reference to the given map[string]interface{} and assigns it to the TwitterPageUrl field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetTwitterPageUrl(v map[string]interface{}) {
-	o.TwitterPageUrl = v
+// SetTwitterPageUrl gets a reference to the given NullableString and assigns it to the TwitterPageUrl field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetTwitterPageUrl(v string) {
+	o.TwitterPageUrl.Set(&v)
+}
+// SetTwitterPageUrlNil sets the value for TwitterPageUrl to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetTwitterPageUrlNil() {
+	o.TwitterPageUrl.Set(nil)
+}
+
+// UnsetTwitterPageUrl ensures that no value is present for TwitterPageUrl, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) UnsetTwitterPageUrl() {
+	o.TwitterPageUrl.Unset()
 }
 
 // GetMerchantImageRef returns the MerchantImageRef field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetMerchantImageRef() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetMerchantImageRef() string {
+	if o == nil || IsNil(o.MerchantImageRef.Get()) {
+		var ret string
 		return ret
 	}
-	return o.MerchantImageRef
+	return *o.MerchantImageRef.Get()
 }
 
 // GetMerchantImageRefOk returns a tuple with the MerchantImageRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetMerchantImageRefOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.MerchantImageRef) {
-		return map[string]interface{}{}, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) GetMerchantImageRefOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
-	return o.MerchantImageRef, true
+	return o.MerchantImageRef.Get(), o.MerchantImageRef.IsSet()
 }
 
 // HasMerchantImageRef returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) HasMerchantImageRef() bool {
-	if o != nil && !IsNil(o.MerchantImageRef) {
+	if o != nil && o.MerchantImageRef.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMerchantImageRef gets a reference to the given map[string]interface{} and assigns it to the MerchantImageRef field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetMerchantImageRef(v map[string]interface{}) {
-	o.MerchantImageRef = v
+// SetMerchantImageRef gets a reference to the given NullableString and assigns it to the MerchantImageRef field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetMerchantImageRef(v string) {
+	o.MerchantImageRef.Set(&v)
+}
+// SetMerchantImageRefNil sets the value for MerchantImageRef to be an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) SetMerchantImageRefNil() {
+	o.MerchantImageRef.Set(nil)
+}
+
+// UnsetMerchantImageRef ensures that no value is present for MerchantImageRef, not even an explicit nil
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) UnsetMerchantImageRef() {
+	o.MerchantImageRef.Unset()
 }
 
 func (o ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) MarshalJSON() ([]byte, error) {
@@ -525,14 +606,14 @@ func (o ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) ToM
 	if !IsNil(o.CategoryCode) {
 		toSerialize["categoryCode"] = o.CategoryCode
 	}
-	if o.Category != nil {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
 	if !IsNil(o.CountryCode) {
 		toSerialize["countryCode"] = o.CountryCode
 	}
-	if o.Address != nil {
-		toSerialize["address"] = o.Address
+	if o.Address.IsSet() {
+		toSerialize["address"] = o.Address.Get()
 	}
 	if !IsNil(o.City) {
 		toSerialize["city"] = o.City
@@ -540,26 +621,26 @@ func (o ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant) ToM
 	if !IsNil(o.State) {
 		toSerialize["state"] = o.State
 	}
-	if o.Country != nil {
-		toSerialize["country"] = o.Country
+	if o.Country.IsSet() {
+		toSerialize["country"] = o.Country.Get()
 	}
-	if o.ZipCode != nil {
-		toSerialize["zipCode"] = o.ZipCode
+	if o.ZipCode.IsSet() {
+		toSerialize["zipCode"] = o.ZipCode.Get()
 	}
-	if o.Website != nil {
-		toSerialize["website"] = o.Website
+	if o.Website.IsSet() {
+		toSerialize["website"] = o.Website.Get()
 	}
-	if o.CustomerServicePageUrl != nil {
-		toSerialize["customerServicePageUrl"] = o.CustomerServicePageUrl
+	if o.CustomerServicePageUrl.IsSet() {
+		toSerialize["customerServicePageUrl"] = o.CustomerServicePageUrl.Get()
 	}
-	if o.FacebookPageUrl != nil {
-		toSerialize["facebookPageUrl"] = o.FacebookPageUrl
+	if o.FacebookPageUrl.IsSet() {
+		toSerialize["facebookPageUrl"] = o.FacebookPageUrl.Get()
 	}
-	if o.TwitterPageUrl != nil {
-		toSerialize["twitterPageUrl"] = o.TwitterPageUrl
+	if o.TwitterPageUrl.IsSet() {
+		toSerialize["twitterPageUrl"] = o.TwitterPageUrl.Get()
 	}
-	if o.MerchantImageRef != nil {
-		toSerialize["merchantImageRef"] = o.MerchantImageRef
+	if o.MerchantImageRef.IsSet() {
+		toSerialize["merchantImageRef"] = o.MerchantImageRef.Get()
 	}
 	return toSerialize, nil
 }
