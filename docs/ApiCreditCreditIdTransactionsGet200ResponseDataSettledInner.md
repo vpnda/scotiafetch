@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **TsysCode** | Pointer to **string** |  | [optional] 
 **IsTsys** | Pointer to **bool** |  | [optional] 
 **IsDisputable** | Pointer to **string** |  | [optional] 
-**OriginalAmount** | Pointer to **NullableString** |  | [optional] 
+**OriginalAmount** | Pointer to **map[string]interface{}** |  | [optional] 
 **RunningBalance** | Pointer to **NullableString** |  | [optional] 
 **AssociatedCardNumber** | Pointer to **string** |  | [optional] 
 **PurchaseCountryCode** | Pointer to **NullableString** |  | [optional] 
@@ -390,20 +390,20 @@ HasIsDisputable returns a boolean if a field has been set.
 
 ### GetOriginalAmount
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOriginalAmount() string`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOriginalAmount() map[string]interface{}`
 
 GetOriginalAmount returns the OriginalAmount field if non-nil, zero value otherwise.
 
 ### GetOriginalAmountOk
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOriginalAmountOk() (*string, bool)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOriginalAmountOk() (*map[string]interface{}, bool)`
 
 GetOriginalAmountOk returns a tuple with the OriginalAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOriginalAmount
 
-`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetOriginalAmount(v string)`
+`func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetOriginalAmount(v map[string]interface{})`
 
 SetOriginalAmount sets OriginalAmount field to given value.
 

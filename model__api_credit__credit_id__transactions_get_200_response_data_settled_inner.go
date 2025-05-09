@@ -31,7 +31,7 @@ type ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner struct {
 	TsysCode *string `json:"tsysCode,omitempty"`
 	IsTsys *bool `json:"isTsys,omitempty"`
 	IsDisputable *string `json:"isDisputable,omitempty"`
-	OriginalAmount NullableString `json:"originalAmount,omitempty"`
+	OriginalAmount map[string]interface{} `json:"originalAmount,omitempty"`
 	RunningBalance NullableString `json:"runningBalance,omitempty"`
 	AssociatedCardNumber *string `json:"associatedCardNumber,omitempty"`
 	PurchaseCountryCode NullableString `json:"purchaseCountryCode,omitempty"`
@@ -487,45 +487,36 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetIsDispu
 }
 
 // GetOriginalAmount returns the OriginalAmount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOriginalAmount() string {
-	if o == nil || IsNil(o.OriginalAmount.Get()) {
-		var ret string
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOriginalAmount() map[string]interface{} {
+	if o == nil {
+		var ret map[string]interface{}
 		return ret
 	}
-	return *o.OriginalAmount.Get()
+	return o.OriginalAmount
 }
 
 // GetOriginalAmountOk returns a tuple with the OriginalAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOriginalAmountOk() (*string, bool) {
-	if o == nil {
-		return nil, false
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetOriginalAmountOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.OriginalAmount) {
+		return map[string]interface{}{}, false
 	}
-	return o.OriginalAmount.Get(), o.OriginalAmount.IsSet()
+	return o.OriginalAmount, true
 }
 
 // HasOriginalAmount returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasOriginalAmount() bool {
-	if o != nil && o.OriginalAmount.IsSet() {
+	if o != nil && !IsNil(o.OriginalAmount) {
 		return true
 	}
 
 	return false
 }
 
-// SetOriginalAmount gets a reference to the given NullableString and assigns it to the OriginalAmount field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetOriginalAmount(v string) {
-	o.OriginalAmount.Set(&v)
-}
-// SetOriginalAmountNil sets the value for OriginalAmount to be an explicit nil
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetOriginalAmountNil() {
-	o.OriginalAmount.Set(nil)
-}
-
-// UnsetOriginalAmount ensures that no value is present for OriginalAmount, not even an explicit nil
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) UnsetOriginalAmount() {
-	o.OriginalAmount.Unset()
+// SetOriginalAmount gets a reference to the given map[string]interface{} and assigns it to the OriginalAmount field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetOriginalAmount(v map[string]interface{}) {
+	o.OriginalAmount = v
 }
 
 // GetRunningBalance returns the RunningBalance field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1686,8 +1677,8 @@ func (o ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) ToMap() (ma
 	if !IsNil(o.IsDisputable) {
 		toSerialize["isDisputable"] = o.IsDisputable
 	}
-	if o.OriginalAmount.IsSet() {
-		toSerialize["originalAmount"] = o.OriginalAmount.Get()
+	if o.OriginalAmount != nil {
+		toSerialize["originalAmount"] = o.OriginalAmount
 	}
 	if o.RunningBalance.IsSet() {
 		toSerialize["runningBalance"] = o.RunningBalance.Get()
