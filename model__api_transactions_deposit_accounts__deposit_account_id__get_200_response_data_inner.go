@@ -29,7 +29,7 @@ type ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner struc
 	MnemonicCode *string `json:"mnemonicCode,omitempty"`
 	TsysCode NullableString `json:"tsysCode,omitempty"`
 	IsTsys *bool `json:"isTsys,omitempty"`
-	IsDisputable NullableBool `json:"isDisputable,omitempty"`
+	IsDisputable *string `json:"isDisputable,omitempty"`
 	OriginalAmount *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerOriginalAmount `json:"originalAmount,omitempty"`
 	RunningBalance *ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner `json:"runningBalance,omitempty"`
 	AssociatedCardNumber NullableString `json:"associatedCardNumber,omitempty"`
@@ -433,27 +433,27 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) 
 }
 
 // GetIsDisputable returns the IsDisputable field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetIsDisputable() bool {
-	if o == nil || IsNil(o.IsDisputable.Get()) {
-		var ret bool
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetIsDisputable() string {
+	if o == nil || IsNil(o.IsDisputable) {
+		var ret string
 		return ret
 	}
-	return *o.IsDisputable.Get()
+	return *o.IsDisputable
 }
 
 // GetIsDisputableOk returns a tuple with the IsDisputable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetIsDisputableOk() (*bool, bool) {
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) GetIsDisputableOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.IsDisputable.Get(), o.IsDisputable.IsSet()
+	return o.IsDisputable, !IsNil(o.IsDisputable)
 }
 
 // HasIsDisputable returns a boolean if a field has been set.
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) HasIsDisputable() bool {
-	if o != nil && o.IsDisputable.IsSet() {
+	if o != nil && !IsNil(o.IsDisputable) {
 		return true
 	}
 
@@ -461,17 +461,17 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) 
 }
 
 // SetIsDisputable gets a reference to the given NullableBool and assigns it to the IsDisputable field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetIsDisputable(v bool) {
-	o.IsDisputable.Set(&v)
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetIsDisputable(v string) {
+	o.IsDisputable = &v
 }
 // SetIsDisputableNil sets the value for IsDisputable to be an explicit nil
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) SetIsDisputableNil() {
-	o.IsDisputable.Set(nil)
+	o.IsDisputable = nil
 }
 
 // UnsetIsDisputable ensures that no value is present for IsDisputable, not even an explicit nil
 func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) UnsetIsDisputable() {
-	o.IsDisputable.Unset()
+	o.IsDisputable = nil
 }
 
 // GetOriginalAmount returns the OriginalAmount field value if set, zero value otherwise.
@@ -1720,8 +1720,8 @@ func (o ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner) T
 	if !IsNil(o.IsTsys) {
 		toSerialize["isTsys"] = o.IsTsys
 	}
-	if o.IsDisputable.IsSet() {
-		toSerialize["isDisputable"] = o.IsDisputable.Get()
+	if !IsNil(o.IsDisputable) {
+		toSerialize["isDisputable"] = o.IsDisputable
 	}
 	if !IsNil(o.OriginalAmount) {
 		toSerialize["originalAmount"] = o.OriginalAmount
