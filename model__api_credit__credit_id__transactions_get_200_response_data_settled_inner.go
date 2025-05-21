@@ -30,7 +30,7 @@ type ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner struct {
 	Type *string `json:"type,omitempty"`
 	TsysCode *string `json:"tsysCode,omitempty"`
 	IsTsys *bool `json:"isTsys,omitempty"`
-	IsDisputable *bool `json:"isDisputable,omitempty"`
+	IsDisputable *string `json:"isDisputable,omitempty"`
 	OriginalAmount map[string]interface{} `json:"originalAmount,omitempty"`
 	RunningBalance NullableString `json:"runningBalance,omitempty"`
 	AssociatedCardNumber *string `json:"associatedCardNumber,omitempty"`
@@ -455,9 +455,9 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetIsTsys(
 }
 
 // GetIsDisputable returns the IsDisputable field value if set, zero value otherwise.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetIsDisputable() bool {
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetIsDisputable() string {
 	if o == nil || IsNil(o.IsDisputable) {
-		var ret bool
+		var ret string
 		return ret
 	}
 	return *o.IsDisputable
@@ -465,7 +465,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetIsDispu
 
 // GetIsDisputableOk returns a tuple with the IsDisputable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetIsDisputableOk() (*bool, bool) {
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetIsDisputableOk() (*string, bool) {
 	if o == nil || IsNil(o.IsDisputable) {
 		return nil, false
 	}
@@ -482,7 +482,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasIsDispu
 }
 
 // SetIsDisputable gets a reference to the given string and assigns it to the IsDisputable field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetIsDisputable(v bool) {
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetIsDisputable(v string) {
 	o.IsDisputable = &v
 }
 
