@@ -29,7 +29,7 @@ type ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner struct {
 	Type NullableString `json:"type,omitempty"`
 	TsysCode NullableString `json:"tsysCode,omitempty"`
 	IsTsys *bool `json:"isTsys,omitempty"`
-	IsDisputable *string `json:"isDisputable,omitempty"`
+	IsDisputable *bool `json:"isDisputable,omitempty"`
 	OriginalAmount *ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner `json:"originalAmount,omitempty"`
 	RunningBalance NullableString `json:"runningBalance,omitempty"`
 	AssociatedCardNumber *string `json:"associatedCardNumber,omitempty"`
@@ -459,9 +459,9 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetIsTsys(
 }
 
 // GetIsDisputable returns the IsDisputable field value if set, zero value otherwise.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetIsDisputable() string {
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetIsDisputable() bool {
 	if o == nil || IsNil(o.IsDisputable) {
-		var ret string
+		var ret bool
 		return ret
 	}
 	return *o.IsDisputable
@@ -469,7 +469,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetIsDispu
 
 // GetIsDisputableOk returns a tuple with the IsDisputable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetIsDisputableOk() (*string, bool) {
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) GetIsDisputableOk() (*bool, bool) {
 	if o == nil || IsNil(o.IsDisputable) {
 		return nil, false
 	}
@@ -486,7 +486,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) HasIsDispu
 }
 
 // SetIsDisputable gets a reference to the given string and assigns it to the IsDisputable field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetIsDisputable(v string) {
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataPendingInner) SetIsDisputable(v bool) {
 	o.IsDisputable = &v
 }
 
