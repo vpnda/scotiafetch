@@ -19,8 +19,8 @@ var _ MappedNullable = &ApiTransactionsDepositAccountsDepositAccountIdGet200Resp
 
 // ApiTransactionsDepositAccountsDepositAccountIdGet200Response struct for ApiTransactionsDepositAccountsDepositAccountIdGet200Response
 type ApiTransactionsDepositAccountsDepositAccountIdGet200Response struct {
-	Data []ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner `json:"data,omitempty"`
-	Notifications map[string]interface{} `json:"notifications,omitempty"`
+	Data          []ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInner `json:"data,omitempty"`
+	Notifications []string                                                                `json:"notifications,omitempty"`
 }
 
 // NewApiTransactionsDepositAccountsDepositAccountIdGet200Response instantiates a new ApiTransactionsDepositAccountsDepositAccountIdGet200Response object
@@ -73,9 +73,9 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200Response) SetData(v
 }
 
 // GetNotifications returns the Notifications field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200Response) GetNotifications() map[string]interface{} {
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200Response) GetNotifications() []string {
 	if o == nil {
-		var ret map[string]interface{}
+		var ret []string
 		return ret
 	}
 	return o.Notifications
@@ -84,9 +84,9 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200Response) GetNotifi
 // GetNotificationsOk returns a tuple with the Notifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200Response) GetNotificationsOk() (map[string]interface{}, bool) {
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200Response) GetNotificationsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Notifications) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Notifications, true
 }
@@ -100,13 +100,13 @@ func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200Response) HasNotifi
 	return false
 }
 
-// SetNotifications gets a reference to the given map[string]interface{} and assigns it to the Notifications field.
-func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200Response) SetNotifications(v map[string]interface{}) {
+// SetNotifications gets a reference to the given []string and assigns it to the Notifications field.
+func (o *ApiTransactionsDepositAccountsDepositAccountIdGet200Response) SetNotifications(v []string) {
 	o.Notifications = v
 }
 
 func (o ApiTransactionsDepositAccountsDepositAccountIdGet200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -159,5 +159,3 @@ func (v *NullableApiTransactionsDepositAccountsDepositAccountIdGet200Response) U
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
