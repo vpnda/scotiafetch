@@ -19,50 +19,50 @@ var _ MappedNullable = &ApiCreditCreditIdTransactionsGet200ResponseDataSettledIn
 
 // ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner struct for ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner
 type ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner struct {
-	Key *string `json:"key,omitempty"`
-	Id *string `json:"id,omitempty"`
-	PostedDate *string `json:"postedDate,omitempty"`
-	Description *string `json:"description,omitempty"`
-	DescriptionLines NullableString `json:"descriptionLines,omitempty"`
-	SubDescription *string `json:"subDescription,omitempty"`
-	CleanDescription *string `json:"cleanDescription,omitempty"`
-	MnemonicCode NullableString `json:"mnemonicCode,omitempty"`
-	Type *string `json:"type,omitempty"`
-	TsysCode *string `json:"tsysCode,omitempty"`
-	IsTsys *bool `json:"isTsys,omitempty"`
-	IsDisputable *string `json:"isDisputable,omitempty"`
-	OriginalAmount map[string]interface{} `json:"originalAmount,omitempty"`
-	RunningBalance NullableString `json:"runningBalance,omitempty"`
-	AssociatedCardNumber *string `json:"associatedCardNumber,omitempty"`
-	PurchaseCountryCode NullableString `json:"purchaseCountryCode,omitempty"`
-	OutOfCountryIndicator NullableString `json:"outOfCountryIndicator,omitempty"`
-	ReferenceNumber NullableString `json:"referenceNumber,omitempty"`
-	ReasonCode NullableString `json:"reasonCode,omitempty"`
-	Status *string `json:"status,omitempty"`
-	RecurringPaymentIndicator NullableString `json:"recurringPaymentIndicator,omitempty"`
-	StatementIndicator *bool `json:"statementIndicator,omitempty"`
-	FromAccount NullableString `json:"fromAccount,omitempty"`
-	ToAccount NullableString `json:"toAccount,omitempty"`
-	PurchaseType NullableString `json:"purchaseType,omitempty"`
-	RewardsCategory *string `json:"rewardsCategory,omitempty"`
-	RewardCard NullableString `json:"rewardCard,omitempty"`
-	Category *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerCategory `json:"category,omitempty"`
-	UserInputTag NullableString `json:"userInputTag,omitempty"`
-	Cheque NullableString `json:"cheque,omitempty"`
-	Merchant *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant `json:"merchant,omitempty"`
-	Enriched *bool `json:"enriched,omitempty"`
-	AcquirerReferenceNumber *string `json:"acquirerReferenceNumber,omitempty"`
-	TransactionId *string `json:"transactionId,omitempty"`
-	TransactionKey *string `json:"transactionKey,omitempty"`
-	TransactionDate *string `json:"transactionDate,omitempty"`
-	TransactionCode *string `json:"transactionCode,omitempty"`
-	DescriptionLine1 *string `json:"descriptionLine1,omitempty"`
-	DescriptionLine2 *string `json:"descriptionLine2,omitempty"`
-	TransactionAmount *ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner `json:"transactionAmount,omitempty"`
-	TransactionType *string `json:"transactionType,omitempty"`
-	TransactionCategory *string `json:"transactionCategory,omitempty"`
-	TransactionCategoryCode *string `json:"transactionCategoryCode,omitempty"`
-	Subdescription *string `json:"subdescription,omitempty"`
+	Key                       *string                                                                        `json:"key,omitempty"`
+	Id                        *string                                                                        `json:"id,omitempty"`
+	PostedDate                *string                                                                        `json:"postedDate,omitempty"`
+	Description               *string                                                                        `json:"description,omitempty"`
+	DescriptionLines          []string                                                                       `json:"descriptionLines,omitempty"`
+	SubDescription            *string                                                                        `json:"subDescription,omitempty"`
+	CleanDescription          *string                                                                        `json:"cleanDescription,omitempty"`
+	MnemonicCode              NullableString                                                                 `json:"mnemonicCode,omitempty"`
+	Type                      *string                                                                        `json:"type,omitempty"`
+	TsysCode                  *string                                                                        `json:"tsysCode,omitempty"`
+	IsTsys                    *bool                                                                          `json:"isTsys,omitempty"`
+	IsDisputable              *string                                                                        `json:"isDisputable,omitempty"`
+	OriginalAmount            map[string]interface{}                                                         `json:"originalAmount,omitempty"`
+	RunningBalance            NullableString                                                                 `json:"runningBalance,omitempty"`
+	AssociatedCardNumber      *string                                                                        `json:"associatedCardNumber,omitempty"`
+	PurchaseCountryCode       NullableString                                                                 `json:"purchaseCountryCode,omitempty"`
+	OutOfCountryIndicator     NullableString                                                                 `json:"outOfCountryIndicator,omitempty"`
+	ReferenceNumber           NullableString                                                                 `json:"referenceNumber,omitempty"`
+	ReasonCode                NullableString                                                                 `json:"reasonCode,omitempty"`
+	Status                    *string                                                                        `json:"status,omitempty"`
+	RecurringPaymentIndicator NullableString                                                                 `json:"recurringPaymentIndicator,omitempty"`
+	StatementIndicator        *bool                                                                          `json:"statementIndicator,omitempty"`
+	FromAccount               NullableString                                                                 `json:"fromAccount,omitempty"`
+	ToAccount                 NullableString                                                                 `json:"toAccount,omitempty"`
+	PurchaseType              NullableString                                                                 `json:"purchaseType,omitempty"`
+	RewardsCategory           *string                                                                        `json:"rewardsCategory,omitempty"`
+	RewardCard                NullableString                                                                 `json:"rewardCard,omitempty"`
+	Category                  *ApiTransactionsDepositAccountsDepositAccountIdGet200ResponseDataInnerCategory `json:"category,omitempty"`
+	UserInputTag              NullableString                                                                 `json:"userInputTag,omitempty"`
+	Cheque                    NullableString                                                                 `json:"cheque,omitempty"`
+	Merchant                  *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInnerMerchant           `json:"merchant,omitempty"`
+	Enriched                  *bool                                                                          `json:"enriched,omitempty"`
+	AcquirerReferenceNumber   *string                                                                        `json:"acquirerReferenceNumber,omitempty"`
+	TransactionId             *string                                                                        `json:"transactionId,omitempty"`
+	TransactionKey            *string                                                                        `json:"transactionKey,omitempty"`
+	TransactionDate           *string                                                                        `json:"transactionDate,omitempty"`
+	TransactionCode           *string                                                                        `json:"transactionCode,omitempty"`
+	DescriptionLine1          *string                                                                        `json:"descriptionLine1,omitempty"`
+	DescriptionLine2          *string                                                                        `json:"descriptionLine2,omitempty"`
+	TransactionAmount         *ApiAccountsSummaryGet200ResponseDataProductsInnerPrimaryBalancesInner         `json:"transactionAmount,omitempty"`
+	TransactionType           *string                                                                        `json:"transactionType,omitempty"`
+	TransactionCategory       *string                                                                        `json:"transactionCategory,omitempty"`
+	TransactionCategoryCode   *string                                                                        `json:"transactionCategoryCode,omitempty"`
+	Subdescription            *string                                                                        `json:"subdescription,omitempty"`
 }
 
 // NewApiCreditCreditIdTransactionsGet200ResponseDataSettledInner instantiates a new ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner object
@@ -211,45 +211,46 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetDescrip
 }
 
 // GetDescriptionLines returns the DescriptionLines field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetDescriptionLines() string {
-	if o == nil || IsNil(o.DescriptionLines.Get()) {
-		var ret string
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetDescriptionLines() []string {
+	if o == nil || IsNil(o.DescriptionLines) {
+		var ret []string
 		return ret
 	}
-	return *o.DescriptionLines.Get()
+	return o.DescriptionLines
 }
 
 // GetDescriptionLinesOk returns a tuple with the DescriptionLines field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetDescriptionLinesOk() (*string, bool) {
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) GetDescriptionLinesOk() ([]string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.DescriptionLines.Get(), o.DescriptionLines.IsSet()
+	return o.DescriptionLines, true
 }
 
 // HasDescriptionLines returns a boolean if a field has been set.
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasDescriptionLines() bool {
-	if o != nil && o.DescriptionLines.IsSet() {
+	if o != nil && o.DescriptionLines != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDescriptionLines gets a reference to the given NullableString and assigns it to the DescriptionLines field.
-func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetDescriptionLines(v string) {
-	o.DescriptionLines.Set(&v)
+// SetDescriptionLines gets a reference to the given []string and assigns it to the DescriptionLines field.
+func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetDescriptionLines(v []string) {
+	o.DescriptionLines = v
 }
+
 // SetDescriptionLinesNil sets the value for DescriptionLines to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetDescriptionLinesNil() {
-	o.DescriptionLines.Set(nil)
+	o.DescriptionLines = nil
 }
 
 // UnsetDescriptionLines ensures that no value is present for DescriptionLines, not even an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) UnsetDescriptionLines() {
-	o.DescriptionLines.Unset()
+	o.DescriptionLines = nil
 }
 
 // GetSubDescription returns the SubDescription field value if set, zero value otherwise.
@@ -348,6 +349,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasMnemoni
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetMnemonicCode(v string) {
 	o.MnemonicCode.Set(&v)
 }
+
 // SetMnemonicCodeNil sets the value for MnemonicCode to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetMnemonicCodeNil() {
 	o.MnemonicCode.Set(nil)
@@ -551,6 +553,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasRunning
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetRunningBalance(v string) {
 	o.RunningBalance.Set(&v)
 }
+
 // SetRunningBalanceNil sets the value for RunningBalance to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetRunningBalanceNil() {
 	o.RunningBalance.Set(nil)
@@ -625,6 +628,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasPurchas
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetPurchaseCountryCode(v string) {
 	o.PurchaseCountryCode.Set(&v)
 }
+
 // SetPurchaseCountryCodeNil sets the value for PurchaseCountryCode to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetPurchaseCountryCodeNil() {
 	o.PurchaseCountryCode.Set(nil)
@@ -667,6 +671,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasOutOfCo
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetOutOfCountryIndicator(v string) {
 	o.OutOfCountryIndicator.Set(&v)
 }
+
 // SetOutOfCountryIndicatorNil sets the value for OutOfCountryIndicator to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetOutOfCountryIndicatorNil() {
 	o.OutOfCountryIndicator.Set(nil)
@@ -709,6 +714,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasReferen
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetReferenceNumber(v string) {
 	o.ReferenceNumber.Set(&v)
 }
+
 // SetReferenceNumberNil sets the value for ReferenceNumber to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetReferenceNumberNil() {
 	o.ReferenceNumber.Set(nil)
@@ -751,6 +757,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasReasonC
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetReasonCode(v string) {
 	o.ReasonCode.Set(&v)
 }
+
 // SetReasonCodeNil sets the value for ReasonCode to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetReasonCodeNil() {
 	o.ReasonCode.Set(nil)
@@ -825,6 +832,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasRecurri
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetRecurringPaymentIndicator(v string) {
 	o.RecurringPaymentIndicator.Set(&v)
 }
+
 // SetRecurringPaymentIndicatorNil sets the value for RecurringPaymentIndicator to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetRecurringPaymentIndicatorNil() {
 	o.RecurringPaymentIndicator.Set(nil)
@@ -899,6 +907,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasFromAcc
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetFromAccount(v string) {
 	o.FromAccount.Set(&v)
 }
+
 // SetFromAccountNil sets the value for FromAccount to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetFromAccountNil() {
 	o.FromAccount.Set(nil)
@@ -941,6 +950,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasToAccou
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetToAccount(v string) {
 	o.ToAccount.Set(&v)
 }
+
 // SetToAccountNil sets the value for ToAccount to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetToAccountNil() {
 	o.ToAccount.Set(nil)
@@ -983,6 +993,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasPurchas
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetPurchaseType(v string) {
 	o.PurchaseType.Set(&v)
 }
+
 // SetPurchaseTypeNil sets the value for PurchaseType to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetPurchaseTypeNil() {
 	o.PurchaseType.Set(nil)
@@ -1057,6 +1068,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasRewardC
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetRewardCard(v string) {
 	o.RewardCard.Set(&v)
 }
+
 // SetRewardCardNil sets the value for RewardCard to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetRewardCardNil() {
 	o.RewardCard.Set(nil)
@@ -1131,6 +1143,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasUserInp
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetUserInputTag(v string) {
 	o.UserInputTag.Set(&v)
 }
+
 // SetUserInputTagNil sets the value for UserInputTag to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetUserInputTagNil() {
 	o.UserInputTag.Set(nil)
@@ -1173,6 +1186,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) HasCheque(
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetCheque(v string) {
 	o.Cheque.Set(&v)
 }
+
 // SetChequeNil sets the value for Cheque to be an explicit nil
 func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetChequeNil() {
 	o.Cheque.Set(nil)
@@ -1632,7 +1646,7 @@ func (o *ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) SetSubdesc
 }
 
 func (o ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1653,8 +1667,8 @@ func (o ApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) ToMap() (ma
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if o.DescriptionLines.IsSet() {
-		toSerialize["descriptionLines"] = o.DescriptionLines.Get()
+	if o.DescriptionLines != nil {
+		toSerialize["descriptionLines"] = o.DescriptionLines
 	}
 	if !IsNil(o.SubDescription) {
 		toSerialize["subDescription"] = o.SubDescription
@@ -1811,5 +1825,3 @@ func (v *NullableApiCreditCreditIdTransactionsGet200ResponseDataSettledInner) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
